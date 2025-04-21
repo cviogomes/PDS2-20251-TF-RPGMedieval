@@ -1,4 +1,4 @@
-Classe: Jogador
+#Classe: Jogador
 
 Responsabilidades:
 Armazenar informações de vida, ataque, defesa e ouro.
@@ -16,7 +16,7 @@ Loja: para melhorar atributos e investir ouro.
 Combate: para enfrentar inimigos.
 
 
-Classe: Inimigo
+#Classe: Inimigo
 
 Responsabilidades:
 Armazenar informações de nome, vida e ataque.
@@ -30,10 +30,10 @@ Jogador: para realizar combates.
 Combate: para controlar o fluxo de luta.
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<ul>
 
 
-User Story 1 @Hebert2008
+#User Story 1 @Hebert2008
 Como jogador
 Quero atacar, defender ou recuperar vida no meu turno
 Para ter controle sobre a estratégia de combate
@@ -44,7 +44,7 @@ O jogador deve escolher entre atacar, defender ou curar.
 
 A escolha deve produzir o efeito esperado imediatamente.
 
-User Story 2 @Hebert2008
+#User Story 2 @Hebert2008
 Como jogador
 Quero restaurar minha vida antes de cada batalha
 Para começar cada combate em igualdade de condições
