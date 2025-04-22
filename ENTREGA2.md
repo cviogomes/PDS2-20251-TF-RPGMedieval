@@ -73,29 +73,39 @@ Controlar reinício ou saída.
   </ul>
 </p>
 
-<h2></h2>
+<h2>Combate</h2>
 <h3>Responsabilidades</h3>
 <p>
-  
+  Iniciar batalhas entre jogador e inimigo.
+Controlar turnos do jogador e do inimigo.
+Definir ações possíveis: atacar, defender, recuperar vida.
+Atualizar status de vida dos participantes.
+Determinar resultado da batalha (vitória ou derrota).
+Calcular danos e efeitos das ações.
+Anunciar vencedor e distribuir recompensas.
+Encerrar combate e retornar ao menu/loja.
 </p>
 <h3>Colaborações</h3>
 <p>
   <ul>
-    <li></li>
-    <li></li>
+    <li>Jogador: para realizar ações.</li>
+    <li>Inimigo: para processar os ataques e ações.</li>
   </ul>
 </p>
 
-<h2></h2>
+<h2>Inventário</h2>
 <h3>Responsabilidades</h3>
 <p>
-  
+  Exibir as habilidades e itens disponíveis para batalha.
+Selecionar habilidades e itens para batalha.
+Controlar quantidade itens e habilidades utilizadas pelo jogador.
 </p>
 <h3>Colaborações</h3>
 <p>
   <ul>
-    <li></li>
-    <li></li>
+    <li>Loja: Para verificar itens adquiridos </li>
+    <li>Jogador: Para controlar ataques e efeitos de habilidades</li>
+    <li>Combate: Para processar efeitos durante a batalha</li>
   </ul>
 </p>
 
@@ -142,33 +152,35 @@ Critérios de aceitação:
 <p>
 Como jogador
 Quero investir parte do meu ouro
-Para receber um retorno de 10% ao voltar à loja
+Para receber um retorno de 50% ao voltar à loja
 Critérios de aceitação:
   <ul>
     <li>O jogador deve poder escolher o valor a investir.</li>
-    <li>O retorno de 10% deve ser aplicado corretamente ao retornar</li>
+    <li>O retorno de 50% deve ser aplicado corretamente ao retornar</li>
   </ul>
 </p>
 
-<h2>User Story 5 | @</h2>
+<h2>User Story 5 | @cviogomes</h2>
 <p>
-
+Como jogador
+Quero enfrentar os Cavaleiros do Apocalipse em ordem
+Para seguir a história e aumentar a dificuldade
 Critérios de aceitação:
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>Os bosses devem aparecer na ordem correta.</li>
+    <li>Os bosses devem ter atributos superiores aos inimigos comuns.</li>
   </ul>
 </p>
 
-<h2>User Storie 6 | @</h2>
+<h2>User Storie 6 | @cviogomes</h2>
 <p>
-
+Como jogador
+Quero ganhar ouro após vencer batalhas
+Para comprar melhorias na loja
 Critérios de aceitação:
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>O jogador deve receber X de ouro após cada vitória.</li>
+    <li>O valor do ouro deve ser atualizado corretamente.</li>
   </ul>
 </p>
 
