@@ -184,7 +184,7 @@ Critérios de aceitação:
   </ul>
 </p>
 
-<h2>User Storie 7 | @</h2>
+<h2>User Storie 7 | @joshuadcr</h2>
 <p>
 
 Critérios de aceitação:
