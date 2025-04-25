@@ -110,6 +110,45 @@ Controlar quantidade itens e habilidades utilizadas pelo jogador.
 </p>
 
 
+<h2>Habilidade</h2>
+<h3>Responsabilidades</h3>
+<p>
+  Armazenar nome, descrição, custo de mana (ou outro recurso), dano/cura e outros efeitos (ex: atordoamento, envenenamento).
+  Aplicar o efeito da habilidade ao alvo (jogador ou inimigo).
+  Verificar se o jogador possui recursos suficientes para usar a habilidade.
+  Exibir informações da habilidade para o jogador.
+</p>
+<h3>Colaborações</h3>
+<p>
+  <ul>
+    <li>Jogador: para acessar e usar as habilidades.</li>
+    <li>Inimigo: para receber os efeitos das habilidades.</li>
+    <li>Combate: para processar a utilização e os efeitos durante a batalha.</li>
+    <li>Inventário: para gerenciar as habilidades disponíveis.</li>
+  </ul>
+</p>
+
+<h2>Item</h2>
+<h3>Responsabilidades</h3>
+<p>
+  Armazenar nome, descrição e tipo (consumível, equipamento, etc.).
+  Definir o efeito do item ao ser usado (ex: cura, aumento temporário de ataque/defesa).
+  Aplicar o efeito do item ao jogador.
+  Controlar a quantidade de itens que o jogador possui.
+  Exibir informações do item para o jogador.
+</p>
+<h3>Colaborações</h3>
+<p>
+  <ul>
+    <li>Jogador: para usar os itens.</li>
+    <li>Loja: para comprar itens (se aplicável).</li>
+    <li>Inventário: para gerenciar os itens possuídos.</li>
+    <li>Combate: para processar o uso de itens durante a batalha.</li>
+  </ul>
+</p>
+
+
+
 <h1>User Stories</h1>
 
 <h2>User Story 1 | @Hebert2008</h2>
@@ -186,22 +225,30 @@ Critérios de aceitação:
 
 <h2>User Storie 7 | @joshuadcr</h2>
 <p>
+Como jogador
+Quero usar habilidades especiais em combate
+Para ter mais opções estratégicas contra os inimigos
 
 Critérios de aceitação:
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>O jogador deve ter acesso a uma lista de habilidades no combate.</li>
+    <li>Ao usar uma habilidade, o custo de mana (ou outro recurso) deve ser descontado.</li>
+    <li>O efeito da habilidade (dano, cura, etc.) deve ser aplicado ao alvo corretamente.</li>
+    <li>O jogador deve receber uma mensagem indicando o uso e o efeito da habilidade.</li>
   </ul>
 </p>
 
-<h2>User Storie 8 | @</h2>
+<h2>User Storie 8 | @joshuadcr</h2>
 <p>
+Como jogador
+Quero usar itens do meu inventário durante o combate ou fora dele
+Para obter benefícios como cura ou buffs
 
 Critérios de aceitação:
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>O jogador deve ter acesso ao seu inventário de itens.</li>
+    <li>Ao usar um item consumível, sua quantidade deve diminuir.</li>
+    <li>O efeito do item deve ser aplicado ao jogador (ou outro alvo, se aplicável).</li>
+    <li>O jogador deve receber uma mensagem indicando o uso e o efeito do item.</li>
   </ul>
 </p>
