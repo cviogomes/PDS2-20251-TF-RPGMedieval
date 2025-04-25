@@ -179,6 +179,7 @@ Critérios de Aceitação:
 Como jogador
 Quero visitar a loja após derrotar um inimigo
 Para gastar meu ouro em melhorias
+
 Critérios de aceitação:
   <ul>
     <li>A loja deve abrir após cada vitória.</li>
@@ -192,6 +193,7 @@ Critérios de aceitação:
 Como jogador
 Quero investir parte do meu ouro
 Para receber um retorno de 50% ao voltar à loja
+
 Critérios de aceitação:
   <ul>
     <li>O jogador deve poder escolher o valor a investir.</li>
@@ -203,7 +205,8 @@ Critérios de aceitação:
 <p>
 Como jogador
 Quero enfrentar os Cavaleiros do Apocalipse em ordem
-Para seguir a história e aumentar a dificuldade
+Para seguir a história e aumentar a dificuldade.
+
 Critérios de aceitação:
   <ul>
     <li>Os bosses devem aparecer na ordem correta.</li>
@@ -216,6 +219,7 @@ Critérios de aceitação:
 Como jogador
 Quero ganhar ouro após vencer batalhas
 Para comprar melhorias na loja
+
 Critérios de aceitação:
   <ul>
     <li>O jogador deve receber X de ouro após cada vitória.</li>
