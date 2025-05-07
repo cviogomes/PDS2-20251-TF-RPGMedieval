@@ -16,7 +16,7 @@ void Jogador::mostrarOuro() const {
 
 void Jogador::ganharOuro(int quantidade) {
     ouro_ += quantidade;
-    std::cout << "Você ganhou " << quantidade << " de ouro!" << std::endl;
+    std::cout << "Você ganhou " << quantidade << " de ouro! (Total: " << ouro_ << ")\n";
 }
 
 void Jogador::investirOuro(int quantidade) {
@@ -33,7 +33,7 @@ void Jogador::retornarInvestimento() {
     if (investimento_ > 0) {
         int retorno = static_cast<int>(investimento_ * 1.5);
         ouro_ += retorno;
-        std::cout << "Seu investimento rendeu " << retorno << " de ouro!" << std::endl;
+        std::cout << "Seu investimento rendeu " << retorno << " de ouro! (Total: " << ouro_ << ")\n";
         investimento_ = 0;
     }
 }
@@ -54,7 +54,9 @@ void Jogador::usarPocao() {
 }
 
 void Jogador::visitarLoja() {
+
     std::cout << "\n--- Loja ---\n";
+    retornarInvestimento();
     std::cout << "1 - Aumentar ataque (50 ouro)\n";
     std::cout << "2 - Aumentar defesa (50 ouro)\n";
     std::cout << "3 - Aumentar vida (50 ouro)\n";
@@ -62,7 +64,8 @@ void Jogador::visitarLoja() {
     std::cout << "5 - Investir ouro\n";
     std::cout << "6 - Sair da loja\n";
     int escolha;
-    do{
+
+    do{    
     std::cout << "Escolha uma opção: ";
     std::cin >> escolha;
     switch (escolha) {

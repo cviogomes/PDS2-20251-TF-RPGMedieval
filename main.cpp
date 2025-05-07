@@ -22,9 +22,6 @@ int main() {
         default: jogador = new Jogador("Mago", 70, 30, 3); break;
     }
 
-    // Para testar a loja logo de início
-    jogador->ganharOuro(120);
-
     // 2) Ciclo de 4 etapas: 2 inimigos fracos → loja → 1 boss
     Personagem fracos[] = {
         Personagem("Esqueleto", 50, 15, 3),
@@ -43,27 +40,27 @@ int main() {
         // dois inimigos fracos aleatórios
         for (int i = 0; i < 2; ++i) {
             int idx = std::rand() % 4;
-            lutar(*jogador, fracos[idx]);
+            Personagem inimigo = fracos[idx];
+            lutar(*jogador, inimigo);
             if (!jogador->estaVivo()) {
                 std::cout << "\nGame Over!\n";
                 delete jogador;
                 return 0;
             }
+            jogador->ganharOuro(100);
+            jogador->visitarLoja();
         }
-        // loja
-        jogador->visitarLoja();
-        if (!jogador->estaVivo()) {
-            std::cout << "\nGame Over!\n";
-            delete jogador;
-            return 0;
-        }
+        
         // boss
-        lutar(*jogador, bosses[etapa]);
+        Personagem chefe = bosses[etapa];
+        lutar(*jogador, chefe);
         if (!jogador->estaVivo()) {
             std::cout << "\nGame Over!\n";
             delete jogador;
             return 0;
         }
+        jogador->ganharOuro(1000);
+        jogador->visitarLoja();
     }
 
     std::cout << "\nParabéns! Você derrotou os Quatro Cavaleiros do Apocalipse!\n";

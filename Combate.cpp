@@ -27,5 +27,8 @@ void lutar(Jogador &jogador, Personagem &inimigo) {
 
             
         }
+        if (inimigo.estaVivo()) {
+            inimigo.atacar(jogador);
+        }
     }
 }

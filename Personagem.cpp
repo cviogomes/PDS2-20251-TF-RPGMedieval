@@ -16,7 +16,7 @@ void Personagem::atacar(Personagem& alvo){
     //interessante comentar essa linha abaixo durante a apresentacao hein
     int dano = std::max(1, ataque_ - alvo.defesa_);
     alvo.vida_ -= dano;
-    std::cout << nome_ << " ataca " << alvo.nome_ << " causando " << dano << " de dano!" << std::endl;
+    std::cout << nome_ << " ataca " << alvo.nome_ << " causando " << dano << " de dano! ( " << alvo.vida_ << "/" << alvo.vidaMax_ << " )\n";
 }
 
 void Personagem::defender(){
