@@ -13,6 +13,12 @@ class Goblin : public Inimigo {
         jogador.investirOuro(-roubo);
         std::cout << nome_ << " te acerta e rouba " << roubo << " de ouro!\n";
     }
+
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Goblin>(*this);
+    }
+
+
 };
 
 #endif

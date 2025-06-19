@@ -14,6 +14,11 @@ class CavaleiroDaFome : public Inimigo{
         jogador.vida_ = jogador.vidaMax_;
         std::cout << nome_ << " te enfraquece! Vida máxima agora em " << jogador.vidaMax_ << "\n";
     }
+
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<CavaleiroDaFome>(*this);
+    }
+
 };
 
 #endif

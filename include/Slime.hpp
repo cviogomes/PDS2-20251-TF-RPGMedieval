@@ -18,6 +18,11 @@ class Slime : public Inimigo {
         }
     }
 
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Slime>(*this);
+    }
+
+
     private:
     bool dividido_;
 };

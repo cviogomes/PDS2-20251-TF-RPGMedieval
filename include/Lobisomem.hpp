@@ -16,6 +16,11 @@ class Lobisomem : public Inimigo {
         }
     }
 
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Lobisomem>(*this);
+    }
+
+
     private:
     bool transformado_;
 };

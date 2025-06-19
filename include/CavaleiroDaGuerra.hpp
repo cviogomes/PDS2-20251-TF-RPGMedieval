@@ -12,6 +12,12 @@ class CavaleiroDaGuerra : public Inimigo {
         jogador.ataque_ = std::max(1, jogador.ataque_ - 1);
         std::cout << nome_ << " enfraquece seu ataque! Agora em " << jogador.ataque_ << "\n";
     }
+
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<CavaleiroDaGuerra>(*this);
+    }
+
+
 };
 
 #endif

@@ -15,6 +15,11 @@ class Zumbi : public Inimigo {
                 std::cout << nome_ << " se autocanibalizou e recuperou a vida para " << vida_ << "/" << vidaMax_ << " de vida!\n";
             }
         }
+        
+        std::unique_ptr<Inimigo> clone() const override {
+        return std::make_unique<Zumbi>(*this);
+        }
+
 };
 
 #endif // ZUMBI_HPP

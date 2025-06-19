@@ -16,6 +16,10 @@ class Aranha : public Inimigo {
     bool estaParalisado() const { return paralisado_; }
     void limparParalisia() { paralisado_ = false; }
 
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Aranha>(*this);
+    }
+
     private:
     bool paralisado_;
 };

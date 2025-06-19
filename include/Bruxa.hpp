@@ -24,6 +24,11 @@ class Bruxa : public Inimigo{
         }
     }
 
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Bruxa>(*this);
+    }
+
+
     private:
     Jogador* jogadorEstados_ = nullptr;
     bool maldito_ = false;

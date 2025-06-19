@@ -14,6 +14,11 @@ class Vampiro : public Inimigo {
         vida_ = std::min(vidaMax_, vida_ + dano / 2);
         std::cout << nome_ << " suga " << dano << " de vida e recupera " << dano / 2 << "!\n";
     }
+
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<Vampiro>(*this);
+    }
+
 };
 
 #endif

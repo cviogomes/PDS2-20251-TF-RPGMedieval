@@ -22,6 +22,11 @@ class CavaleiroDaMorte : public Inimigo {
         return dano;
     }
 
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<CavaleiroDaMorte>(*this);
+    }
+
+
     private:
     int refletirProJogador_ = 0;
 };
