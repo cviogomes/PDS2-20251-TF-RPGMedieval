@@ -50,13 +50,21 @@ int main() {
     bossesPrototype.push_back(std::make_unique<CavaleiroDaFome>());
     bossesPrototype.push_back(std::make_unique<CavaleiroDaMorte>());
 
-    for (int etapa = 0; etapa < 1; ++etapa) {
+    for (int etapa = 0; etapa < 4; ++etapa) {
         std::cout << "\n===== Etapa " << etapa + 1 << " =====\n";
 
+    //impede que o lobisomem não seja o primeiro inimigo pois ele é extremamente quebrado
     for (int i = 0; i < 2; ++i) {
-            int idx = std::rand() % fracosPrototype.size();
-            std::vector<std::unique_ptr<Inimigo>> batalha;
-            batalha.push_back(fracosPrototype[idx]->clone());
+        std::vector<std::unique_ptr<Inimigo>> candidatos;
+        for (const auto& inimigo : fracosPrototype) {
+            if (etapa == 0 && inimigo->getNome() == "Lobisomem") continue;
+            candidatos.push_back(inimigo->clone());
+        }
+
+        int idx = std::rand() % candidatos.size();
+        std::vector<std::unique_ptr<Inimigo>> batalha;
+        batalha.push_back(std::move(candidatos[idx]));
+
             lutar(*jogador, std::move(batalha));
 
             if (!jogador->estaVivo()) {
