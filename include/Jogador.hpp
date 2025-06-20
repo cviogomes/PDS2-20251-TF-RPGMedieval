@@ -3,6 +3,8 @@
 
 #include "Personagem.hpp"
 #include <string>
+#include <vector>
+#include <memory>
 
 class Jogador : public Personagem {
     public:

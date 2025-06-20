@@ -4,6 +4,7 @@
 #include "Inimigo.hpp"
 #include <iostream>
 #include <vector>
+#include <memory>
 
 class Slime : public Inimigo {
     public:

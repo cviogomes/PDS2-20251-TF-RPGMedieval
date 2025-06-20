@@ -4,6 +4,8 @@
 #include "Inimigo.hpp"
 #include <algorithm>
 #include <iostream>
+#include <vector>
+#include <memory>
 
 class CavaleiroDaPeste : public Inimigo {
     public:

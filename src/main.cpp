@@ -1,10 +1,13 @@
-// ======================= main.cpp (reescrito com múltiplos inimigos e clone) =======================
 #include <iostream>
 #include <ctime>
 #include <vector>
 #include <memory>
+#include <cstdlib>
+
+
 #include "Jogador.hpp"
 #include "Combate.hpp"
+#include "Esqueleto.hpp"
 #include "Zumbi.hpp"
 #include "Bruxa.hpp"
 #include "Lobisomem.hpp"
@@ -32,6 +35,7 @@ int main() {
     }
 
     std::vector<std::unique_ptr<Inimigo>> fracosPrototype;
+    fracosPrototype.push_back(std::make_unique<Esqueleto>());
     fracosPrototype.push_back(std::make_unique<Zumbi>());
     fracosPrototype.push_back(std::make_unique<Bruxa>());
     fracosPrototype.push_back(std::make_unique<Lobisomem>());
@@ -46,29 +50,34 @@ int main() {
     bossesPrototype.push_back(std::make_unique<CavaleiroDaFome>());
     bossesPrototype.push_back(std::make_unique<CavaleiroDaMorte>());
 
-    for (int etapa = 0; etapa < 4; ++etapa) {
-        for (int i = 0; i < 2; ++i) {
+    for (int etapa = 0; etapa < 1; ++etapa) {
+        std::cout << "\n===== Etapa " << etapa + 1 << " =====\n";
+
+    for (int i = 0; i < 2; ++i) {
             int idx = std::rand() % fracosPrototype.size();
-            std::vector<std::unique_ptr<Inimigo>> inimigos;
-            inimigos.push_back(fracosPrototype[idx]->clone());
-            lutar(*jogador, std::move(inimigos));
+            std::vector<std::unique_ptr<Inimigo>> batalha;
+            batalha.push_back(fracosPrototype[idx]->clone());
+            lutar(*jogador, std::move(batalha));
 
             if (!jogador->estaVivo()) {
                 std::cout << "\nGame Over!\n";
                 return 0;
             }
+
             jogador->ganharOuro(100);
             jogador->visitarLoja();
         }
 
+        int boss_idx = etapa % bossesPrototype.size();
         std::vector<std::unique_ptr<Inimigo>> boss;
-        boss.push_back(bossesPrototype[etapa]->clone());
+        boss.push_back(bossesPrototype[boss_idx]->clone());
         lutar(*jogador, std::move(boss));
 
         if (!jogador->estaVivo()) {
             std::cout << "\nGame Over!\n";
             return 0;
         }
+
         jogador->ganharOuro(1000);
         jogador->visitarLoja();
     }
@@ -76,3 +85,7 @@ int main() {
     std::cout << "\nParabéns! Você derrotou os Quatro Cavaleiros do Apocalipse!\n";
     return 0;
 }
+
+
+
+        

@@ -4,8 +4,11 @@
 #include "Inimigo.hpp"
 #include <iostream>
 #include <cstdlib>
+#include <vector>
+#include <memory>
 
 class CavaleiroDaMorte : public Inimigo {
+    public:
     CavaleiroDaMorte() : Inimigo("Cavaleiro da Morte", 500, 30, 12){}
 
     void aoReceberDano(int danoRecebido) override {

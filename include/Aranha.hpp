@@ -3,6 +3,8 @@
 
 #include "Inimigo.hpp"
 #include <iostream>
+#include <vector>
+#include <memory>
 
 class Aranha : public Inimigo {
     public:
