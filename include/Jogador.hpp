@@ -2,6 +2,7 @@
 #define JOGADOR_HPP
 
 #include "Personagem.hpp"
+#include "Efeitos.hpp"
 #include <string>
 #include <vector>
 #include <memory>
@@ -18,8 +19,12 @@ class Jogador : public Personagem {
         int getPocoes() const;
         void usarPocao();
 
+        void aplicarEfeito(const Efeito& efeito);
+        void processarEfeitos();
+        Efeito getEfeito() const;
 
     private:
+        Efeito efeito_;
         int ouro_;
         int pocoes_;
         double investimento_;

@@ -18,7 +18,11 @@ public:
     const std::string& getNome() const;
     int getVida() const;
     int getVidaMax() const;
-    
+
+    int getAtaque() const;
+    int getDefesa() const;
+
+protected:
     std::string nome_;
     int vida_;
     int vidaMax_;
