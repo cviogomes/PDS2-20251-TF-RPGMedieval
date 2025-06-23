@@ -6,17 +6,15 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>> inimigos) {
         auto& inimigo = *inimigos.front();
         std::cout << "\n" << inimigo.getNome() << " apareceu!\n";
 
-        // Processar efeitos no início do turno
         jogador.processarEfeitos();
 
-        // Verificar se o jogador está paralisado
         if (jogador.getEfeito().tipo == TipoEfeito::Paralisia && jogador.getEfeito().duracao > 0) {
             std::cout << jogador.getNome() << " está paralisado!\n";
             if (inimigo.estaVivo()) {
                 inimigo.aoAtacar(jogador);
                 inimigo.atacar(jogador);
             }
-            continue; // Pula para o próximo turno
+            continue; // pular o turno do jogador
         }
 
         std::cout << "Escolha uma ação:\n";
@@ -29,9 +27,9 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>> inimigos) {
 
         switch (acao) {
             case 1: {
-                int dano = jogador.getAtaque(); // captura o ataque antes
+                int dano = jogador.getAtaque();
                 jogador.atacar(inimigo);
-                inimigo.aoReceberDano(dano); // passa o dano real
+                inimigo.aoReceberDano(dano);
                 break;
             }
             case 2:
@@ -55,3 +53,4 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>> inimigos) {
         }
     }
 }
+
