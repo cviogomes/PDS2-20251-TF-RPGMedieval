@@ -13,8 +13,8 @@ class CavaleiroDaPeste : public Inimigo {
     
     void aoAtacar(Jogador& jogador) override {
         int reducao = 1;
-        jogador.defesa_ = std::max(0, jogador.defesa_ - reducao);
-        std::cout << nome_ << " contamina você com a peste! Defesa agora em " << jogador.defesa_ << "\n";
+        jogador.setDefesa(std::max(0, jogador.getDefesa() - reducao));
+        std::cout << nome_ << " contamina você com a peste! Defesa agora em " << jogador.getDefesa() << "\n";
     }
 
     std::unique_ptr<Inimigo> clone() const override {

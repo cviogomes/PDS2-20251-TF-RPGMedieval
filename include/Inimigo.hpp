@@ -8,6 +8,9 @@
 
 class Inimigo : public Personagem {
     public:
+    
+    int getDefesa() const { return defesa_; }
+    void setDefesa(int defesa) { defesa_ = defesa; }
         
         Inimigo(const std::string& nome, int vida, int ataque, int defesa)
         : Personagem(nome, vida, ataque, defesa) {}

@@ -10,11 +10,19 @@ class CavaleiroDaFome : public Inimigo{
     public:
     CavaleiroDaFome() : Inimigo("Cavaleiro da Fome", 400, 20, 8){}
 
+    int getVidaMax() const {
+    return vidaMax_;
+    }
+
+    void setVidaMax(int novaVidaMax) {
+    vidaMax_ = novaVidaMax;
+    }
+    
     void aoAtacar(Jogador& jogador) override {
-        jogador.vidaMax_ = std::max(10, jogador.vidaMax_ - 5);
-        if (jogador.vida_ > jogador.vidaMax_)
-        jogador.vida_ = jogador.vidaMax_;
-        std::cout << nome_ << " te enfraquece! Vida máxima agora em " << jogador.vidaMax_ << "\n";
+        jogador.setVidaMax(std::max(10, jogador.getVidaMax() - 5));
+        if (jogador.getVida() > jogador.getVidaMax())
+            jogador.setVida(jogador.getVidaMax());
+        std::cout << nome_ << " te enfraquece! Vida máxima agora em " << jogador.getVidaMax() << "\n";
     }
 
     std::unique_ptr<Inimigo> clone() const override {

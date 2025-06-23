@@ -23,6 +23,18 @@ class Jogador : public Personagem {
         void processarEfeitos();
         Efeito getEfeito() const;
 
+        void setVidaMax(int novaVidaMax);
+        void setVida(int novaVida);
+
+        int getAtaque() const;
+        void reduzirAtaque(int valor) {
+        ataque_ -= valor;
+        if (ataque_ < 0) ataque_ = 0;
+        }
+
+        int getDefesa() const;
+        void setDefesa(int defesa) { defesa_ = defesa; }
+
     private:
         Efeito efeito_;
         int ouro_;

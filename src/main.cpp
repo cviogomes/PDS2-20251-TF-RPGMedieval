@@ -53,7 +53,7 @@ int main() {
     for (int etapa = 0; etapa < 4; ++etapa) {
         std::cout << "\n===== Etapa " << etapa + 1 << " =====\n";
 
-    //impede que o lobisomem não seja o primeiro inimigo pois ele é extremamente quebrado
+    //impede que o lobisomem seja o primeiro inimigo pois ele é extremamente quebrado
     for (int i = 0; i < 2; ++i) {
         std::vector<std::unique_ptr<Inimigo>> candidatos;
         for (const auto& inimigo : fracosPrototype) {
