@@ -19,3 +19,4 @@ void setupTerminal(){
     // Define o locale para suportar caracteres do sistema operacional
     setlocale(LC_ALL, "");
 }
+
