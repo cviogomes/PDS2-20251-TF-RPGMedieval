@@ -128,3 +128,53 @@ void Jogador::visitarLoja() {
         }
     }while (escolha != 6);
 }
+
+void Jogador::aplicarEfeito(const Efeito& efeito) {
+    efeito_ = efeito;
+    std::cout << nome_ << " foi afetado por " << static_cast<int>(efeito.tipo) << " por " << efeito.duracao << " turnos.\n";
+}
+
+void Jogador::processarEfeitos() {
+    if (efeito_.duracao > 0) {
+        switch (efeito_.tipo) {
+            case TipoEfeito::Veneno:
+                vida_ -= 5;
+                std::cout << nome_ << " sofre 5 de dano de veneno! Vida atual: " << vida_ << "/" << vidaMax_ << "\n";
+                break;
+            case TipoEfeito::Paralisia:
+                std::cout << nome_ << " está paralisado e perde o turno!\n";
+                break;
+            case TipoEfeito::Maldição:
+                ataque_ = std::max(1, ataque_ - 1);
+                std::cout << nome_ << " está amaldiçoado! Ataque reduzido para " << ataque_ << "\n";
+                break;
+            default:
+                break;
+        }
+        efeito_.duracao--;
+    }
+}
+
+Efeito Jogador::getEfeito() const {
+    return efeito_;
+}
+
+int Jogador::getAtaque() const {
+    return ataque_;
+}
+
+void Jogador::setVida(int novaVida) {
+    vida_ = std::max(0, std::min(novaVida, vidaMax_));
+}
+
+void Jogador::setVidaMax(int novaVidaMax) {
+    vidaMax_ = novaVidaMax;
+    if (vida_ > vidaMax_) {
+        vida_ = vidaMax_;
+    }
+}
+
+int Jogador::getDefesa() const {
+    return defesa_;
+}
+

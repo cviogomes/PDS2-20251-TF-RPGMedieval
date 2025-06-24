@@ -1,6 +1,9 @@
 #ifndef PERSONAGEM_HPP
 #define PERSONAGEM_HPP
+
 #include <string>
+#include <vector>
+#include <memory>
 
 class Personagem {
 public:
@@ -16,7 +19,8 @@ public:
     int getVida() const;
     int getVidaMax() const;
 
-
+    int getAtaque() const;
+    int getDefesa() const;
 
 protected:
     std::string nome_;

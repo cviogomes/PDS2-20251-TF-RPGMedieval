@@ -44,5 +44,13 @@ int Personagem::getVida() const {
 int Personagem::getVidaMax() const {
     return vidaMax_;
 }
+int Personagem::getAtaque() const {
+    return ataque_;
+}
+
+int Personagem::getDefesa() const {
+    return defesa_;
+}
+
 
 

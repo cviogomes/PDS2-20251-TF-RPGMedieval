@@ -1,0 +1,37 @@
+#ifndef CAVALEIRO_DA_MORTE_HPP
+#define CAVALEIRO_DA_MORTE_HPP
+
+#include "Inimigo.hpp"
+#include <iostream>
+#include <cstdlib>
+#include <vector>
+#include <memory>
+
+class CavaleiroDaMorte : public Inimigo {
+    public:
+    CavaleiroDaMorte() : Inimigo("Cavaleiro da Morte", 500, 30, 12){}
+
+    void aoReceberDano(int danoRecebido) override {
+        int chance = rand() % 100;
+        if (chance < 30) {
+            std::cout << nome_ << " reflete o dano!\n";
+            refletirProJogador_ = danoRecebido;
+        }
+    }
+    
+    int getRefletido() {
+        int dano = refletirProJogador_;
+        refletirProJogador_ = 0;
+        return dano;
+    }
+
+    std::unique_ptr<Inimigo> clone() const override {
+    return std::make_unique<CavaleiroDaMorte>(*this);
+    }
+
+
+    private:
+    int refletirProJogador_ = 0;
+};
+
+#endif
