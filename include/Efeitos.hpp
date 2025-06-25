@@ -3,14 +3,16 @@
 
 #include <string>
 
-enum class TipoEfeito {
+enum class TipoEfeito
+{
     Nenhum,
     Veneno,
     Paralisia,
-    Maldição
+    Maldicao
 };
 
-struct Efeito {
+struct Efeito
+{
     TipoEfeito tipo = TipoEfeito::Nenhum;
     int duracao = 0;
 };

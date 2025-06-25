@@ -7,16 +7,19 @@
 #include <iostream>
 #include <memory>
 
-class Bruxa : public Inimigo {
+class Bruxa : public Inimigo
+{
 public:
     Bruxa() : Inimigo("Bruxa", 60, 18, 5) {}
 
-    void aoAtacar(Jogador& jogador) override {
-        Efeito maldicao{TipoEfeito::Maldição, 3};  // 3 turnos de maldição
+    void aoAtacar(Jogador &jogador) override
+    {
+        Efeito maldicao{TipoEfeito::Maldicao, 3}; // 3 turnos de maldição
         jogador.aplicarEfeito(maldicao);
     }
 
-    std::unique_ptr<Inimigo> clone() const override {
+    std::unique_ptr<Inimigo> clone() const override
+    {
         return std::make_unique<Bruxa>(*this);
     }
 };
