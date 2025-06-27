@@ -249,14 +249,6 @@ Efeito Jogador::getEfeito() const {
     return efeito_;
 }
 
-int Jogador::getAtaque() const {
-    return ataque_;
-}
-
-void Jogador::setVida(int novaVida) {
-    vida_ = std::max(0, std::min(novaVida, vidaMax_));
-}
-
 void Jogador::setVidaMax(int novaVidaMax) {
     vidaMax_ = novaVidaMax;
     if (vida_ > vidaMax_) {
@@ -264,7 +256,11 @@ void Jogador::setVidaMax(int novaVidaMax) {
     }
 }
 
-int Jogador::getDefesa() const {
-    return defesa_;
+void Jogador::reduzirAtaque(int valor) {
+    ataque_ -= valor;
+    if (ataque_ < 0) ataque_ = 0;
 }
 
+void Jogador::setDefesa(int defesa) {
+    defesa_ = defesa;
+}
