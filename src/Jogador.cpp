@@ -63,6 +63,14 @@ int Jogador::getMoral() const {
     return moral_;
 }
 
+void Jogador::setAliadoNyx(bool valor) {
+    aliadoNyx_ = valor;
+}
+
+bool Jogador::temAliadoNyx() const {
+    return aliadoNyx_;
+}
+
 void Jogador::visitarLoja() {
 
     std::cout << "\n--- Loja ---\n";
