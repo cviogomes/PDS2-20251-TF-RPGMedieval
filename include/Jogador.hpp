@@ -30,12 +30,14 @@ class Jogador : public Personagem {
         }
 
         void setDefesa(int defesa) { defesa_ = defesa; }
-
+        void adicionarMoral(int valor);
+        int getMoral() const;
     private:
         Efeito efeito_;
         int ouro_;
         int pocoes_;
         double investimento_;
+        int moral_;
 };
 
 #endif // JOGADOR_HPP
