@@ -50,6 +50,19 @@ int Jogador::getPocoes() const {
     return pocoes_;
 }
 
+void Jogador::adicionarMoral(int valor) {
+    moral_ += valor;
+    if (valor > 0) {
+        battlePrint("[Sua moral aumentou!]\n");
+    } else {
+        battlePrint("[Sua moral diminuiu!]\n");
+    }
+}
+
+int Jogador::getMoral() const {
+    return moral_;
+}
+
 void Jogador::visitarLoja() {
 
     std::cout << "\n--- Loja ---\n";
