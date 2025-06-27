@@ -1,14 +1,17 @@
 #include "Jogador.hpp"
+#include "Utils.hpp"
 #include <iostream>
+#include <algorithm>
+
 
 Jogador::Jogador(const std::string& nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
       ouro_(0),
-      pocoes_(0),
-      investimento_(0.0)
-{
-
-}
+      pocoes_(3),
+      investimento_(0.0),
+      moral_(10),
+      aliadoNyx_(false)
+{}
 
 void Jogador::mostrarOuro() const {
     std::cout << "Ouro atual: " << ouro_ << std::endl;
