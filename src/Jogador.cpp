@@ -221,7 +221,7 @@ void Jogador::visitarLoja(int capitulo) {
 
 void Jogador::aplicarEfeito(const Efeito& efeito) {
     efeito_ = efeito;
-    std::cout << nome_ << " foi afetado por " << static_cast<int>(efeito.tipo) << " por " << efeito.duracao << " turnos.\n";
+    battlePrint(nome_ + " foi afetado por um efeito por " + std::to_string(efeito.duracao) + " turnos.\n");
 }
 
 void Jogador::processarEfeitos() {
@@ -229,14 +229,14 @@ void Jogador::processarEfeitos() {
         switch (efeito_.tipo) {
             case TipoEfeito::Veneno:
                 vida_ -= 5;
-                std::cout << nome_ << " sofre 5 de dano de veneno! Vida atual: " << vida_ << "/" << vidaMax_ << "\n";
+                battlePrint(nome_ + " sofre 5 de dano de veneno! Vida atual: " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "\n");
                 break;
             case TipoEfeito::Paralisia:
-                std::cout << nome_ << " está paralisado e perde o turno!\n";
+                battlePrint(nome_ + " está paralisado e perde o turno!\n");
                 break;
             case TipoEfeito::Maldição:
                 ataque_ = std::max(1, ataque_ - 1);
-                std::cout << nome_ << " está amaldiçoado! Ataque reduzido para " << ataque_ << "\n";
+                battlePrint(nome_ + " está amaldiçoado! Ataque reduzido para " + std::to_string(ataque_) + "\n");
                 break;
             default:
                 break;
