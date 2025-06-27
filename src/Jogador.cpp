@@ -13,13 +13,9 @@ Jogador::Jogador(const std::string& nome, int vidaMax, int ataque, int defesa)
       aliadoNyx_(false)
 {}
 
-void Jogador::mostrarOuro() const {
-    std::cout << "Ouro atual: " << ouro_ << std::endl;
-}
-
 void Jogador::ganharOuro(int quantidade) {
     ouro_ += quantidade;
-    std::cout << "Você ganhou " << quantidade << " de ouro! (Total: " << ouro_ << ")\n";
+    battlePrint("Você ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
 }
 
 void Jogador::investirOuro(int quantidade) {
