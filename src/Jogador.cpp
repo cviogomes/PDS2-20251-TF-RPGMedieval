@@ -22,9 +22,9 @@ void Jogador::investirOuro(int quantidade) {
     if (quantidade > 0 && quantidade <= ouro_) {
         ouro_ -= quantidade;
         investimento_ += quantidade;
-        std::cout << "Você investiu " << quantidade << " de ouro!" << std::endl;
+        typeText("Você investiu " + std::to_string(quantidade) + " de ouro!\n", TextSpeed::NORMAL);
     } else {
-        std::cout << "Aprenda matemática, campeão!" << std::endl;
+        typeText("Quantidade inválida ou ouro insuficiente!\n", TextSpeed::NORMAL);
     }
 }
 
@@ -32,7 +32,7 @@ void Jogador::retornarInvestimento() {
     if (investimento_ > 0) {
         int retorno = static_cast<int>(investimento_ * 1.5);
         ouro_ += retorno;
-        std::cout << "Seu investimento rendeu " << retorno << " de ouro! (Total: " << ouro_ << ")\n";
+        typeText("Seu investimento rendeu " + std::to_string(retorno) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n", TextSpeed::NORMAL);
         investimento_ = 0;
     }
 }
