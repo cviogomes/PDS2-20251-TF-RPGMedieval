@@ -12,5 +12,4 @@ public:
         return std::make_unique<Esqueleto>(*this);
     }
 };
-
-#endif // ESQUELETO_HPP
+#endif
