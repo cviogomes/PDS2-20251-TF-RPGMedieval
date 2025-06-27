@@ -10,7 +10,6 @@
 class Jogador : public Personagem {
     public:
         Jogador (const std::string& nome, int vidaMax, int ataque, int defesa);
-        void mostrarOuro() const;
         void ganharOuro(int quantidade);
         void investirOuro(int quantidade);
         void retornarInvestimento();
@@ -24,15 +23,12 @@ class Jogador : public Personagem {
         Efeito getEfeito() const;
 
         void setVidaMax(int novaVidaMax);
-        void setVida(int novaVida);
 
-        int getAtaque() const;
         void reduzirAtaque(int valor) {
         ataque_ -= valor;
         if (ataque_ < 0) ataque_ = 0;
         }
 
-        int getDefesa() const;
         void setDefesa(int defesa) { defesa_ = defesa; }
 
     private:
