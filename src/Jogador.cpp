@@ -37,19 +37,17 @@ void Jogador::retornarInvestimento() {
     }
 }
 
-int Jogador::getPocoes() const {
-    return pocoes_;
-}
-
 void Jogador::usarPocao() {
     if (pocoes_ > 0) {
         pocoes_--;
         restaurarVida();
-        std::cout << getNome() << " usou uma poção e recuperou vida! (" << getVida() << "/" << getVidaMax() << ")\n";
-
     } else {
-        std::cout << "Você não tem poções!\n";
+        battlePrint("Você não tem poções!\n");
     }
+}
+
+int Jogador::getPocoes() const {
+    return pocoes_;
 }
 
 void Jogador::visitarLoja() {
