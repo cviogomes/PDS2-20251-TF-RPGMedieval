@@ -13,7 +13,7 @@ class Jogador : public Personagem {
         void ganharOuro(int quantidade);
         void investirOuro(int quantidade);
         void retornarInvestimento();
-        void visitarLoja();
+        void visitarLoja(int capitulo);
 
         int getPocoes() const;
         void usarPocao();
@@ -23,13 +23,9 @@ class Jogador : public Personagem {
         Efeito getEfeito() const;
 
         void setVidaMax(int novaVidaMax);
+        void reduzirAtaque(int valor);
+        void setDefesa(int defesa);
 
-        void reduzirAtaque(int valor) {
-        ataque_ -= valor;
-        if (ataque_ < 0) ataque_ = 0;
-        }
-
-        void setDefesa(int defesa) { defesa_ = defesa; }
         void adicionarMoral(int valor);
         int getMoral() const;
 
