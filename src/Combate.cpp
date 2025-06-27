@@ -1,5 +1,5 @@
 #include "Combate.hpp"
-#include "Utils.hpp" // Adicione esta linha no topo do arquivo
+#include "Utils.hpp"
 #include <iostream>
 #include <limits>
 
@@ -17,25 +17,28 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>>& inimigos) {
             jogador.processarEfeitos();
             if (!jogador.estaVivo()) break;
 
-            // Lógica de paralisia e ação ainda não estão finais aqui
-            typeText("Escolha uma ação:\n1 - Atacar\n2 - Defender\n3 - Usar Poção\nOpção: ", TextSpeed::NORMAL);
-            int acao;
-            std::cin >> acao;
+            if (jogador.getEfeito().tipo != TipoEfeito::Paralisia) { // Lógica de paralisia refinada
+                typeText("Escolha uma ação:\n1 - Atacar\n2 - Defender\n3 - Usar Poção\nOpção: ", TextSpeed::NORMAL);
+                int acao;
+                std::cin >> acao;
 
-            switch (acao) {
-                case 1:
-                    jogador.atacar(*inimigo);
-                    inimigo->aoReceberDano(jogador.getAtaque());
-                    break;
-                case 2:
-                    jogador.defender();
-                    break;
-                case 3:
-                    jogador.usarPocao();
-                    break;
-                default:
-                    battlePrint("Ação inválida. Você perdeu o turno!\n");
-                    break;
+                switch (acao) {
+                    case 1:
+                        jogador.atacar(*inimigo);
+                        inimigo->aoReceberDano(jogador.getAtaque());
+                        break;
+                    case 2:
+                        jogador.defender();
+                        break;
+                    case 3:
+                        jogador.usarPocao();
+                        break;
+                    default:
+                        battlePrint("Ação inválida. Você perdeu o turno!\n");
+                        std::cin.clear(); // Tratamento de erro
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Tratamento de erro
+                        break;
+                }
             }
 
             if (inimigo->estaVivo()) {
