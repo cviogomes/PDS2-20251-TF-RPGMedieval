@@ -3,7 +3,7 @@
 
 #include "Inimigo.hpp"
 #include "Jogador.hpp"
-#include "Efeitos.hpp"
+#include "Utils.hpp"
 #include <iostream>
 #include <memory>
 
@@ -13,18 +13,14 @@ public:
 
     void aoAtacar(Jogador& jogador) override {
         int dano = std::max(1, ataque_ - jogador.getDefesa());
-        jogador.setVida(jogador.getVida() - dano);
+        // Não atacamos aqui, a função atacar principal fará isso.
+        // Apenas preparamos o efeito.
         vida_ = std::min(vidaMax_, vida_ + dano / 2);
-        std::cout << nome_ << " suga " << dano << " de vida e recupera " << dano / 2 << "!\n";
-
-        // Aplica paralisia por 1 turno
-        Efeito paralisia{TipoEfeito::Paralisia, 1};
-        jogador.aplicarEfeito(paralisia);
+        battlePrint(nome_ + " suga sua força vital e recupera " + std::to_string(dano / 2) + " de vida!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {
         return std::make_unique<Vampiro>(*this);
     }
 };
-
-#endif // VAMPIRO_HPP
+#endif
