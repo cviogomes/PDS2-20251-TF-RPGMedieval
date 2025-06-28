@@ -16,3 +16,11 @@ public:
     void restaurarVida();
 
     bool estaVivo() const;
+
+    const std::string& getNome() const;
+    int getVida() const;
+    int getVidaMax() const;
+    int getAtaque() const;
+    int getDefesa() const;
+
+    void setVida(int novaVida);
