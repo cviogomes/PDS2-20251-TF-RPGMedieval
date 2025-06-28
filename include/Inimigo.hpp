@@ -14,3 +14,8 @@ public:
 
     virtual void aoReceberDano(int danoRecebido) {}
     virtual void aoAtacar(Jogador& jogador) {}
+
+    virtual std::unique_ptr<Inimigo> clone() const = 0;
+};
+
+#endif // INIMIGO_HPP
