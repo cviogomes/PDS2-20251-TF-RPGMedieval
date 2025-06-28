@@ -24,3 +24,8 @@ void setupTerminal() {
 
 void typeText(const std::string& text, TextSpeed speed) {
     int delay_ms = 0;
+
+    switch (speed) {
+        case TextSpeed::NARRATIVE:
+            delay_ms = 40;
+            break;
