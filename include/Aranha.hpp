@@ -2,28 +2,23 @@
 #define ARANHA_HPP
 
 #include "Inimigo.hpp"
+#include "Jogador.hpp"
+#include "Efeitos.hpp"
+#include "Utils.hpp"
 #include <iostream>
-#include <vector>
 #include <memory>
 
 class Aranha : public Inimigo {
-    public:
-    Aranha() : Inimigo("Aranha", 45, 12, 2), paralisado_(false) {}
+public:
+    Aranha() : Inimigo("Aranha", 45, 12, 2) {}
 
     void aoAtacar(Jogador& jogador) override {
-        std::cout << nome_ << " cospe teia! Você ficará por 1 turno!\n";
-        paralisado_ = true;
+        battlePrint(nome_ + " cospe teia! Você ficará paralisado por 1 turno!\n");
+        jogador.aplicarEfeito({TipoEfeito::Paralisia, 1});
     }
-
-    bool estaParalisado() const { return paralisado_; }
-    void limparParalisia() { paralisado_ = false; }
 
     std::unique_ptr<Inimigo> clone() const override {
-    return std::make_unique<Aranha>(*this);
+        return std::make_unique<Aranha>(*this);
     }
-
-    private:
-    bool paralisado_;
 };
-
 #endif

@@ -6,6 +6,6 @@
 #include <vector>
 #include <memory>
 
-void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>> inimigos);
+void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>>& inimigos);
 
 #endif // COMBATE_HPP

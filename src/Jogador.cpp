@@ -1,23 +1,22 @@
 #include "Jogador.hpp"
+#include "Utils.hpp"
 #include <iostream>
+#include <algorithm>
+
 
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
       ouro_(0),
-      pocoes_(0),
-      investimento_(0.0)
-{
-}
-
-void Jogador::mostrarOuro() const
-{
-    std::cout << "Ouro atual: " << ouro_ << std::endl;
-}
+      pocoes_(3),
+      investimento_(0.0),
+      moral_(10),
+      aliadoNyx_(false)
+{}
 
 void Jogador::ganharOuro(int quantidade)
 {
     ouro_ += quantidade;
-    std::cout << "Você ganhou " << quantidade << " de ouro! (Total: " << ouro_ << ")\n";
+    battlePrint("Você ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
 }
 
 void Jogador::investirOuro(int quantidade)
@@ -26,11 +25,10 @@ void Jogador::investirOuro(int quantidade)
     {
         ouro_ -= quantidade;
         investimento_ += quantidade;
-        std::cout << "Você investiu " << quantidade << " de ouro!" << std::endl;
-    }
-    else
-    {
-        std::cout << "Aprenda matemática, campeão!" << std::endl;
+        typeText("Você investiu " + std::to_string(quantidade) + " de ouro!\n", TextSpeed::NORMAL);
+    } else {
+        typeText("Quantidade inválida ou ouro insuficiente!\n", TextSpeed::NORMAL);
+
     }
 }
 
@@ -40,32 +38,119 @@ void Jogador::retornarInvestimento()
     {
         int retorno = static_cast<int>(investimento_ * 1.5);
         ouro_ += retorno;
-        std::cout << "Seu investimento rendeu " << retorno << " de ouro! (Total: " << ouro_ << ")\n";
+        typeText("Seu investimento rendeu " + std::to_string(retorno) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n", TextSpeed::NORMAL);
         investimento_ = 0;
     }
 }
 
-int Jogador::getPocoes() const
-{
+void Jogador::usarPocao() {
+    if (pocoes_ > 0) {
+        pocoes_--;
+        restaurarVida();
+    } else {
+        battlePrint("Você não tem poções!\n");
+    }
+}
+
+int Jogador::getPocoes() const {
     return pocoes_;
 }
 
-void Jogador::usarPocao()
-{
-    if (pocoes_ > 0)
-    {
-        pocoes_--;
-        restaurarVida();
-        std::cout << getNome() << " usou uma poção e recuperou vida! (" << getVida() << "/" << getVidaMax() << ")\n";
-    }
-    else
-    {
-        std::cout << "Você não tem poções!\n";
+void Jogador::adicionarMoral(int valor) {
+    moral_ += valor;
+    if (valor > 0) {
+        battlePrint("[Sua moral aumentou!]\n");
+    } else {
+        battlePrint("[Sua moral diminuiu!]\n");
     }
 }
 
-void Jogador::visitarLoja()
-{
+int Jogador::getMoral() const {
+    return moral_;
+}
+
+void Jogador::setAliadoNyx(bool valor) {
+    aliadoNyx_ = valor;
+}
+
+bool Jogador::temAliadoNyx() const {
+    return aliadoNyx_;
+}
+
+void Jogador::visitarLoja(int capitulo) {
+    typeText("\n--- Loja do Mercador Errante ---\n", TextSpeed::NORMAL);
+    retornarInvestimento();
+
+    int escolha = 0;
+    do {
+        typeText("\nOuro atual: " + std::to_string(ouro_) + "\n", TextSpeed::NORMAL);
+        typeText("---------------------------------\n", TextSpeed::NORMAL);
+
+        if (capitulo == 1) {
+            typeText("1 - Melhorar Ataque (+5)  (50 Ouro)\n", TextSpeed::NORMAL);
+            typeText("2 - Melhorar Defesa (+5)  (50 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Poção de Cura (20 Ouro)\n", TextSpeed::NORMAL);
+            typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
+        } else if (capitulo == 2) {
+            typeText("1 - Melhorar Ataque (+5)      (50 Ouro)\n", TextSpeed::NORMAL);
+            typeText("2 - Melhorar Vida Máxima (+10) (60 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Poção de Cura      (40 Ouro)\n", TextSpeed::NORMAL);
+            typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
+        } else if (capitulo == 3) {
+            typeText("1 - Melhorar Defesa (+5)       (60 Ouro)\n", TextSpeed::NORMAL);
+            typeText("2 - Melhorar Vida Máxima (+15)  (80 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Poção de Cura       (60 Ouro)\n", TextSpeed::NORMAL);
+            typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
+        }
+        typeText("5 - Sair da loja\n", TextSpeed::NORMAL);
+
+        std::cout << "Opção: ";
+        std::cin >> escolha;
+
+        switch (escolha) {
+            case 1:
+                if(capitulo == 1 || capitulo == 2) {
+                    if (ouro_ >= 50) { ataque_ += 5; ouro_ -= 50; typeText("Ataque aumentado!\n", TextSpeed::NORMAL); }
+                    else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
+                } else if (capitulo == 3) {
+                     if (ouro_ >= 60) { defesa_ += 5; ouro_ -= 60; typeText("Defesa aumentada!\n", TextSpeed::NORMAL); }
+                     else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
+                }
+                break;
+            case 2:
+                if (capitulo == 1) {
+                     if (ouro_ >= 50) { defesa_ += 5; ouro_ -= 50; typeText("Defesa aumentada!\n", TextSpeed::NORMAL); }
+                     else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
+                } else if (capitulo == 2 || capitulo == 3) {
+                    int custo = (capitulo == 2) ? 60 : 80;
+                    int bonus = (capitulo == 2) ? 10 : 15;
+                    if (ouro_ >= custo) { vidaMax_ += bonus; vida_ = vidaMax_; ouro_ -= custo; typeText("Vida máxima aumentada!\n", TextSpeed::NORMAL); }
+                    else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
+                }
+                break;
+            case 3: {
+                int custo = (capitulo == 1) ? 20 : (capitulo == 2 ? 40 : 60);
+                if (ouro_ >= custo) { pocoes_++; ouro_ -= custo; typeText("Você comprou uma poção!\n", TextSpeed::NORMAL); }
+                else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
+                break;
+            }
+            case 4: {
+                int valor;
+                typeText("Quanto deseja investir? ", TextSpeed::NORMAL);
+                std::cin >> valor;
+                investirOuro(valor);
+                break;
+            }
+            case 5:
+                typeText("Você saiu da loja.\n", TextSpeed::NORMAL);
+                break;
+            default:
+                typeText("Opção inválida.\n", TextSpeed::NORMAL);
+                break;
+        }
+    } while (escolha != 5);
+}
+
 
     std::cout << "\n--- Loja ---\n";
     retornarInvestimento();
@@ -159,28 +244,27 @@ void Jogador::visitarLoja()
 void Jogador::aplicarEfeito(const Efeito &efeito)
 {
     efeito_ = efeito;
-    std::cout << nome_ << " foi afetado por " << static_cast<int>(efeito.tipo) << " por " << efeito.duracao << " turnos.\n";
+    battlePrint(nome_ + " foi afetado por um efeito por " + std::to_string(efeito.duracao) + " turnos.\n");
 }
 
-void Jogador::processarEfeitos()
-{
-    if (efeito_.duracao > 0)
-    {
-        switch (efeito_.tipo)
-        {
-        case TipoEfeito::Veneno:
-            vida_ -= 5;
-            std::cout << nome_ << " sofre 5 de dano de veneno! Vida atual: " << vida_ << "/" << vidaMax_ << "\n";
-            break;
-        case TipoEfeito::Paralisia:
-            std::cout << nome_ << " está paralisado e perde o turno!\n";
-            break;
-        case TipoEfeito::Maldicao:
-            ataque_ = std::max(1, ataque_ - 1);
-            std::cout << nome_ << " está amaldiçoado! Ataque reduzido para " << ataque_ << "\n";
-            break;
-        default:
-            break;
+
+void Jogador::processarEfeitos() {
+    if (efeito_.duracao > 0) {
+        switch (efeito_.tipo) {
+            case TipoEfeito::Veneno:
+                vida_ -= 5;
+                battlePrint(nome_ + " sofre 5 de dano de veneno! Vida atual: " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "\n");
+                break;
+            case TipoEfeito::Paralisia:
+                battlePrint(nome_ + " está paralisado e perde o turno!\n");
+                break;
+            case TipoEfeito::Maldição:
+                ataque_ = std::max(1, ataque_ - 1);
+                battlePrint(nome_ + " está amaldiçoado! Ataque reduzido para " + std::to_string(ataque_) + "\n");
+                break;
+            default:
+                break;
+
         }
         efeito_.duracao--;
     }
@@ -191,18 +275,8 @@ Efeito Jogador::getEfeito() const
     return efeito_;
 }
 
-int Jogador::getAtaque() const
-{
-    return ataque_;
-}
+void Jogador::setVidaMax(int novaVidaMax) {
 
-void Jogador::setVida(int novaVida)
-{
-    vida_ = std::max(0, std::min(novaVida, vidaMax_));
-}
-
-void Jogador::setVidaMax(int novaVidaMax)
-{
     vidaMax_ = novaVidaMax;
     if (vida_ > vidaMax_)
     {
@@ -210,15 +284,12 @@ void Jogador::setVidaMax(int novaVidaMax)
     }
 }
 
-int Jogador::getDefesa() const
-{
-    return defesa_;
+void Jogador::reduzirAtaque(int valor) {
+    ataque_ -= valor;
+    if (ataque_ < 0) ataque_ = 0;
 }
 
-int Jogador::getMoral() const {
-    return moral_;
-}
+void Jogador::setDefesa(int defesa) {
+    defesa_ = defesa;
 
-void Jogador::adicionarMoral(int valor) {
-    moral_ += valor;
 }

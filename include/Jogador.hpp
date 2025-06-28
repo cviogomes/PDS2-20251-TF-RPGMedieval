@@ -10,11 +10,10 @@
 class Jogador : public Personagem {
     public:
         Jogador (const std::string& nome, int vidaMax, int ataque, int defesa);
-        void mostrarOuro() const;
         void ganharOuro(int quantidade);
         void investirOuro(int quantidade);
         void retornarInvestimento();
-        void visitarLoja();
+        void visitarLoja(int capitulo);
 
         int getPocoes() const;
         void usarPocao();
@@ -29,24 +28,22 @@ class Jogador : public Personagem {
         Efeito getEfeito() const;
 
         void setVidaMax(int novaVidaMax);
-        void setVida(int novaVida);
+        void reduzirAtaque(int valor);
+        void setDefesa(int defesa);
 
-        int getAtaque() const;
-        void reduzirAtaque(int valor) {
-        ataque_ -= valor;
-        if (ataque_ < 0) ataque_ = 0;
-        }
+        void adicionarMoral(int valor);
+        int getMoral() const;
 
-        int getDefesa() const;
-        void setDefesa(int defesa) { defesa_ = defesa; }
+        void setAliadoNyx(bool valor);
+        bool temAliadoNyx() const;
 
     private:
         Efeito efeito_;
         int ouro_;
         int pocoes_ = 3;
         double investimento_;
-        int moral_ = 0;
-        bool aliadoNyx_;
+        int moral_;
+
 };
 
 #endif // JOGADOR_HPP

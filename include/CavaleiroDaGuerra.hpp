@@ -2,28 +2,22 @@
 #define CAVALEIRO_DA_GUERRA_HPP
 
 #include "Inimigo.hpp"
+#include "Jogador.hpp"
+#include "Utils.hpp"
 #include <iostream>
-#include <vector>
 #include <memory>
 
 class CavaleiroDaGuerra : public Inimigo {
-    public:
-    CavaleiroDaGuerra() : Inimigo("Cavaleiro da Guerra", 300, 25, 10) {}
-
-    int getAtaque() const {
-        return ataque_;
-    }
+public:
+    CavaleiroDaGuerra() : Inimigo("Thargon, Cavaleiro da Guerra", 300, 25, 10) {}
 
     void aoAtacar(Jogador& jogador) override {
         jogador.reduzirAtaque(1);
-        std::cout << nome_ << " enfraquece seu ataque! Agora em " << jogador.getAtaque() << "\n";
+        battlePrint(nome_ + " esmaga seu espírito de luta! Seu ataque foi reduzido para " + std::to_string(jogador.getAtaque()) + "!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {
-    return std::make_unique<CavaleiroDaGuerra>(*this);
+        return std::make_unique<CavaleiroDaGuerra>(*this);
     }
-
-
 };
-
 #endif

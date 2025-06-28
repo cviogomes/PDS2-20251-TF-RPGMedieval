@@ -1,3 +1,4 @@
+PERSONAGEM.HPP ATUALIZADO
 #ifndef PERSONAGEM_HPP
 #define PERSONAGEM_HPP
 
@@ -9,8 +10,9 @@ class Personagem {
 public:
     Personagem(const std::string& nome, int vidaMax, int ataque, int defesa);
     virtual ~Personagem() = default;
+
     virtual void atacar(Personagem& alvo);
-    virtual void defender();
+    void defender();
     void restaurarVida();
 
     bool estaVivo() const;
@@ -18,7 +20,6 @@ public:
     const std::string& getNome() const;
     int getVida() const;
     int getVidaMax() const;
-
     int getAtaque() const;
     int getDefesa() const;
 
@@ -30,9 +31,6 @@ protected:
     int vidaMax_;
     int ataque_;
     int defesa_;
-    
 };
-
-
 
 #endif // PERSONAGEM_HPP

@@ -12,10 +12,10 @@ class Bruxa : public Inimigo
 public:
     Bruxa() : Inimigo("Bruxa", 60, 18, 5) {}
 
-    void aoAtacar(Jogador &jogador) override
-    {
-        Efeito maldicao{TipoEfeito::Maldicao, 3}; // 3 turnos de maldição
-        jogador.aplicarEfeito(maldicao);
+    void aoAtacar(Jogador& jogador) override {
+        battlePrint(nome_ + " lança uma maldição em você!\n");
+        jogador.aplicarEfeito({TipoEfeito::Maldição, 3});
+
     }
 
     std::unique_ptr<Inimigo> clone() const override
@@ -23,5 +23,4 @@ public:
         return std::make_unique<Bruxa>(*this);
     }
 };
-
-#endif // BRUXA_HPP
+#endif

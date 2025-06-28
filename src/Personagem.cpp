@@ -1,4 +1,6 @@
-#include "personagem.hpp"
+PERSONAGEM.CPP ATUALIZADO
+#include "Personagem.hpp"
+#include "Utils.hpp" // Incluído para usar battlePrint
 #include <iostream>
 #include <algorithm>
 
@@ -8,25 +10,23 @@ Personagem::Personagem(const std::string& nome, int vidaMax, int ataque, int def
       vidaMax_(vidaMax),
       ataque_(ataque),
       defesa_(defesa)
-{
+{}
 
+void Personagem::atacar(Personagem& alvo) {
+    int dano = std::max(1, ataque_ - alvo.getDefesa());
+    alvo.setVida(alvo.getVida() - dano);
+
+    std::string mensagem = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
+    battlePrint(mensagem);
 }
 
-void Personagem::atacar(Personagem& alvo){
-    //interessante comentar essa linha abaixo durante a apresentacao hein
-    int dano = std::max(1, ataque_ - alvo.defesa_);
-    alvo.vida_ -= dano;
-    std::cout << nome_ << " ataca " << alvo.nome_ << " causando " << dano << " de dano! ( " << alvo.vida_ << "/" << alvo.vidaMax_ << " )\n";
+void Personagem::defender() {
+    battlePrint(nome_ + " assume postura defensiva.\n");
 }
 
-void Personagem::defender(){
-    //so avisa que ta defendendo
-    std::cout << nome_ << " assume postura defensiva" << std::endl;
-}
-
-void Personagem::restaurarVida(){
+void Personagem::restaurarVida() {
     vida_ = vidaMax_;
-    std::cout << nome_ << " restaurou a vida para " << vida_ << "/" << vidaMax_ << std::endl;
+    battlePrint(nome_ + " restaurou a vida para " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "!\n");
 }
 
 bool Personagem::estaVivo() const {
@@ -44,6 +44,7 @@ int Personagem::getVida() const {
 int Personagem::getVidaMax() const {
     return vidaMax_;
 }
+
 int Personagem::getAtaque() const {
     return ataque_;
 }
@@ -53,6 +54,7 @@ int Personagem::getDefesa() const {
 }
 
 void Personagem::setVida(int novaVida) {
-    vida_ = novaVida;
+
+    vida_ = std::max(0, novaVida);
 }
 

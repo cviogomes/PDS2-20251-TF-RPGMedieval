@@ -1,56 +1,55 @@
 #include "Combate.hpp"
+#include "Utils.hpp"
 #include <iostream>
+#include <limits>
 
-void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>> inimigos) {
-    while (jogador.estaVivo() && !inimigos.empty()) {
-        auto& inimigo = *inimigos.front();
-        std::cout << "\n" << inimigo.getNome() << " apareceu!\n";
+void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>>& inimigos) {
+    for (auto& inimigo : inimigos) {
+        if (!jogador.estaVivo()) break;
 
-        jogador.processarEfeitos();
+        battlePrint("\n" + inimigo->getNome() + " apareceu!\n");
 
-        if (jogador.getEfeito().tipo == TipoEfeito::Paralisia && jogador.getEfeito().duracao > 0) {
-            std::cout << jogador.getNome() << " está paralisado!\n";
-            if (inimigo.estaVivo()) {
-                inimigo.aoAtacar(jogador);
-                inimigo.atacar(jogador);
+        while (jogador.estaVivo() && inimigo->estaVivo()) {
+            std::cout << "\n";
+            battlePrint("Vida: " + std::to_string(jogador.getVida()) + "/" + std::to_string(jogador.getVidaMax()) + " | Poções: " + std::to_string(jogador.getPocoes()) + "\n");
+            battlePrint("Inimigo: " + inimigo->getNome() + " | Vida: " + std::to_string(inimigo->getVida()) + "/" + std::to_string(inimigo->getVidaMax()) + "\n");
+
+            jogador.processarEfeitos();
+            if (!jogador.estaVivo()) break;
+
+            if (jogador.getEfeito().tipo != TipoEfeito::Paralisia) { // Lógica de paralisia refinada
+                typeText("Escolha uma ação:\n1 - Atacar\n2 - Defender\n3 - Usar Poção\nOpção: ", TextSpeed::NORMAL);
+                int acao;
+                std::cin >> acao;
+
+                switch (acao) {
+                    case 1:
+                        jogador.atacar(*inimigo);
+                        inimigo->aoReceberDano(jogador.getAtaque());
+                        break;
+                    case 2:
+                        jogador.defender();
+                        break;
+                    case 3:
+                        jogador.usarPocao();
+                        break;
+                    default:
+                        battlePrint("Ação inválida. Você perdeu o turno!\n");
+                        std::cin.clear(); // Tratamento de erro
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Tratamento de erro
+                        break;
+                }
             }
-            continue; // pular o turno do jogador
-        }
 
-        std::cout << "Escolha uma ação:\n";
-        std::cout << "1 - Atacar\n";
-        std::cout << "2 - Defender\n";
-        std::cout << "3 - Beber poção\n";
-        std::cout << "Opção: ";
-        int acao;
-        std::cin >> acao;
-
-        switch (acao) {
-            case 1: {
-                int dano = jogador.getAtaque();
-                jogador.atacar(inimigo);
-                inimigo.aoReceberDano(dano);
-                break;
+            if (inimigo->estaVivo()) {
+                inimigo->aoAtacar(jogador);
+                inimigo->atacar(jogador);
             }
-            case 2:
-                jogador.defender();
-                break;
-            case 3:
-                jogador.usarPocao();
-                break;
-            default:
-                std::cout << "Ação inválida. Perdeu o turno!\n";
-                break;
         }
 
-        if (inimigo.estaVivo()) {
-            inimigo.aoAtacar(jogador);
-            inimigo.atacar(jogador);
-        }
-
-        if (!inimigo.estaVivo()) {
-            inimigos.erase(inimigos.begin());
+        if (!inimigo->estaVivo()) {
+            battlePrint(inimigo->getNome() + " foi derrotado!\n");
         }
     }
+    inimigos.clear();
 }
-
