@@ -23,3 +23,8 @@ void Personagem::atacar(Personagem& alvo) {
 void Personagem::defender() {
     battlePrint(nome_ + " assume postura defensiva.\n");
 }
+
+void Personagem::restaurarVida() {
+    vida_ = vidaMax_;
+    battlePrint(nome_ + " restaurou a vida para " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "!\n");
+}
