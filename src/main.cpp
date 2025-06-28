@@ -141,3 +141,11 @@ int main() {
     lutar(*jogador, miniboss_c2);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
     
+    narrativePrint("Vorstag", "Comam... ou sejam comidos. Não há outro caminho.");
+    std::vector<std::unique_ptr<Inimigo>> boss_c2 = {std::make_unique<CavaleiroDaFome>()};
+    lutar(*jogador, boss_c2);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Vorstag", "A fome... nunca acaba... ela apenas espera...");
+    jogador->ganharOuro(75);
+    jogador->visitarLoja(2);
