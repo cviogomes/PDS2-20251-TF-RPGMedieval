@@ -125,3 +125,6 @@ int main() {
     int caminho_c2 = fazerEscolha("Dois caminhos se abrem. Qual você seguirá?", {"A Floresta Sombria", "As Montanhas Rochosas"});
     if (caminho_c2 == 1) {
         narrativePrint("Narrador", "Você adentra a Floresta Sombria, lar de aranhas e lobisomens.");
+
+        std::vector<std::unique_ptr<Inimigo>> inimigos_c2 = {std::make_unique<Aranha>(), std::make_unique<Lobisomem>()};
+        lutar(*jogador, inimigos_c2);
