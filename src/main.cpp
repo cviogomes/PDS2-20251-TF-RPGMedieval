@@ -95,3 +95,6 @@ int main() {
     std::vector<std::unique_ptr<Inimigo>> miniboss_c1 = {std::make_unique<Vampiro>()};
     lutar(*jogador, miniboss_c1);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Seraphina", "Pobrezinho... Ainda acredita em esperança? Eu sou a cura para este mundo podre.");
+    std::vector<std::unique_ptr<Inimigo>> boss_c1 = {std::make_unique<CavaleiroDaPeste>()};
