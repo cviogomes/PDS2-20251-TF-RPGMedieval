@@ -196,3 +196,8 @@ int main() {
         lutar(*jogador, miniboss_nyx);
         if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
     }
+
+    narrativePrint("Moros", "...");
+    std::vector<std::unique_ptr<Inimigo>> boss_c4 = {std::make_unique<CavaleiroDaMorte>()};
+    lutar(*jogador, boss_c4);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
