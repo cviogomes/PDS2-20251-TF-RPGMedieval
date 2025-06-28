@@ -5,3 +5,5 @@ INIMIGO.HPP ATUALIZADO
 #include "Personagem.hpp"
 
 class Jogador;
+
+class Inimigo : public Personagem {
