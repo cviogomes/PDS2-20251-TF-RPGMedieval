@@ -27,3 +27,5 @@
 // Classes de Chefes
 #include "CavaleiroDaPeste.hpp"
 #include "CavaleiroDaFome.hpp"
+#include "CavaleiroDaGuerra.hpp"
+#include "CavaleiroDaMorte.hpp"
