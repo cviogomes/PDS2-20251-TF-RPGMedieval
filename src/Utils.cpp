@@ -47,8 +47,10 @@ void typeText(const std::string& text, TextSpeed speed) {
         std::wcout << wtext;
     } else {
         for (wchar_t c : wtext) {
-            std::wcout << c << std::flush;
-        }
+        std::wcout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
+}
+
     }
 }
 

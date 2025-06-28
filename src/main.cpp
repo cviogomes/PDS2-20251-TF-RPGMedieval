@@ -51,8 +51,6 @@ int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& op
 
 int main() {
 
-    Musica musica;
-    musica.PlayMusic("musicas/minecraft.wav");
     setupTerminal();
     std::srand(static_cast<unsigned>(std::time(nullptr)
         )
