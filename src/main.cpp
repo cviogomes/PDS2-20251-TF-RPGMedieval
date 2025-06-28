@@ -184,3 +184,15 @@ int main() {
     narrativePrint("Nyx", "Você chegou longe, herói. Junte-se a mim... ou pereça.");
     
     int escolha_c4_nyx = fazerEscolha("Nyx oferece poder, mas a um custo. Qual seu caminho?", {"Aliar-se a Nyx", "Combater Nyx"});
+
+    if (escolha_c4_nyx == 1) {
+        narrativePrint("Narrador", "Você aceita a oferta de Nyx, sentindo um poder sombrio fluir em você.");
+        jogador->setAliadoNyx(true);
+        jogador->adicionarMoral(-10);
+    } else {
+        narrativePrint("Narrador", "Você recusa a oferta e se prepara para lutar. Sua honra permanece intacta.");
+        jogador->adicionarMoral(10);
+        std::vector<std::unique_ptr<Inimigo>> miniboss_nyx = {std::make_unique<Bruxa>()};
+        lutar(*jogador, miniboss_nyx);
+        if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+    }
