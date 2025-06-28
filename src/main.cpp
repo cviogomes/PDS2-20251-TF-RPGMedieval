@@ -201,3 +201,6 @@ int main() {
     std::vector<std::unique_ptr<Inimigo>> boss_c4 = {std::make_unique<CavaleiroDaMorte>()};
     lutar(*jogador, boss_c4);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+ // FINAIS
+    narrativePrint("Narrador", "A batalha termina. A fenda treme. O destino de Thyria está em suas mãos.");
