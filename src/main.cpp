@@ -71,3 +71,7 @@ int main() {
     else jogador = std::make_unique<Jogador>("Mago", 80, 30, 3);
     narrativePrint("Narrador", "E assim começou o fim... ou o início de sua redenção.");
 
+    // CAPÍTULO 1: O SUSPIRO DA PESTE
+    narrativePrint("Narrador", "Capítulo 1: O Suspiro da Peste.");
+    narrativePrint("Narrador", "Você desperta. Sua vila, Aldhaven, não é mais lar... mas um túmulo esperando ser preenchido.");
+    narrativePrint("Seraphina", "A morte não é fim... é libertação.");
