@@ -29,3 +29,6 @@ void typeText(const std::string& text, TextSpeed speed) {
         case TextSpeed::NARRATIVE:
             delay_ms = 40;
             break;
+        case TextSpeed::BATTLE:
+            delay_ms = 10;
+            break;
