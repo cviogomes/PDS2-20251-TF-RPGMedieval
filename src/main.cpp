@@ -118,7 +118,7 @@ int main() {
     jogador->ganharOuro(50);
     jogador->visitarLoja(1);
 
-    // --- CAPÍTULO 2: O BANQUETE DA FOME ---
+    // CAPÍTULO 2: O BANQUETE DA FOME
     narrativePrint("Narrador", "Capítulo 2: O Banquete da Fome.");
     narrativePrint("Narrador", "Com a Peste derrotada, a fome rasteja pelas terras, e sua sombra engole tudo.");
     
@@ -150,7 +150,7 @@ int main() {
     jogador->ganharOuro(75);
     jogador->visitarLoja(2);
 
-    // --- CAPÍTULO 3: A FORJA DA GUERRA ---
+    // CAPÍTULO 3: A FORJA DA GUERRA
     narrativePrint("Narrador", "Capítulo 3: A Forja da Guerra.");
     narrativePrint("Narrador", "O trovão da Guerra ecoa nas planícies. Thargon marcha com seu exército.");
  
@@ -173,3 +173,7 @@ int main() {
     std::vector<std::unique_ptr<Inimigo>> boss_c3 = {std::make_unique<CavaleiroDaGuerra>()};
     lutar(*jogador, boss_c3);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Thargon", "A guerra... nunca termina... apenas muda de rosto...");
+    jogador->ganharOuro(100);
+    jogador->visitarLoja(3);
