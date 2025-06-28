@@ -183,3 +183,4 @@ int main() {
     narrativePrint("Narrador", "Três Cavaleiros caíram. A Morte aguarda no coração da fenda. E ao seu lado... Nyx.");
     narrativePrint("Nyx", "Você chegou longe, herói. Junte-se a mim... ou pereça.");
     
+    int escolha_c4_nyx = fazerEscolha("Nyx oferece poder, mas a um custo. Qual seu caminho?", {"Aliar-se a Nyx", "Combater Nyx"});
