@@ -6,3 +6,6 @@
 #include <ctime>
 #include <cstdlib>
 #include <limits>
+
+// Funções de utilidade
+#include "Utils.hpp"
