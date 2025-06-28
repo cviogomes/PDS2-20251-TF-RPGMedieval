@@ -211,3 +211,7 @@ int main() {
     if (aliadoNyx) {
         narrativePrint("Narrador", "--- FINAL SOMBRIO ---");
         narrativePrint("Narrador", "Você se torna o novo arauto do apocalipse. Com Nyx ao seu lado, você governa um Thyria mergulhado em escuridão.");
+
+    } else if (moralFinal > 10) {
+        narrativePrint("Narrador", "--- FINAL HEROICO ---");
+        narrativePrint("Narrador", "Você fecha a fenda com um último golpe. A luz retorna a Thyria. Os sobreviventes cantam seu nome. Você é o herói que trouxe a redenção.");
