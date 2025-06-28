@@ -163,3 +163,8 @@ int main() {
         jogador->adicionarMoral(-5);
         jogador->ganharOuro(50);
     }
+
+    narrativePrint("Narrador", "As máquinas de guerra de Thargon avançam: Slimes Corrosivos e Goblins Guerreiros.");
+    std::vector<std::unique_ptr<Inimigo>> inimigos_c3 = {std::make_unique<Slime>(), std::make_unique<Goblin>()};
+    lutar(*jogador, inimigos_c3);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
