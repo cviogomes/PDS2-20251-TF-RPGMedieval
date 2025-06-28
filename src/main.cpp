@@ -46,7 +46,7 @@ int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& op
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
             break;
         }
-        typeText("Opção inválida. Tente novamente.\n");
+        typeText("Opção inválida. Tente novamente.\n", TextSpeed::NORMAL);
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
     }
