@@ -149,3 +149,7 @@ int main() {
     narrativePrint("Vorstag", "A fome... nunca acaba... ela apenas espera...");
     jogador->ganharOuro(75);
     jogador->visitarLoja(2);
+
+    // --- CAPÍTULO 3: A FORJA DA GUERRA ---
+    narrativePrint("Narrador", "Capítulo 3: A Forja da Guerra.");
+    narrativePrint("Narrador", "O trovão da Guerra ecoa nas planícies. Thargon marcha com seu exército.");
