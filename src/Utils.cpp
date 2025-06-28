@@ -37,3 +37,13 @@ void typeText(const std::string& text, TextSpeed speed) {
             delay_ms = 0;
             break;
     }
+
+    if (delay_ms == 0) {
+        std::cout << text;
+    } else {
+        for (char c : text) {
+            std::cout << c << std::flush;
+            std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
+        }
+    }
+}
