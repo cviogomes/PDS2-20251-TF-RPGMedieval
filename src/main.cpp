@@ -98,3 +98,5 @@ int main() {
 
     narrativePrint("Seraphina", "Pobrezinho... Ainda acredita em esperança? Eu sou a cura para este mundo podre.");
     std::vector<std::unique_ptr<Inimigo>> boss_c1 = {std::make_unique<CavaleiroDaPeste>()};
+    lutar(*jogador, boss_c1);
+    
