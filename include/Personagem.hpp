@@ -5,3 +5,8 @@ PERSONAGEM.HPP ATUALIZADO
 #include <string>
 #include <vector>
 #include <memory>
+
+class Personagem {
+public:
+    Personagem(const std::string& nome, int vidaMax, int ataque, int defesa);
+    virtual ~Personagem() = default;
