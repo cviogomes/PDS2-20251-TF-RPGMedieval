@@ -21,3 +21,6 @@ void setupTerminal() {
     // Define o locale para suportar caracteres do sistema operacional
     setlocale(LC_ALL, "");
 }
+
+void typeText(const std::string& text, TextSpeed speed) {
+    int delay_ms = 0;
