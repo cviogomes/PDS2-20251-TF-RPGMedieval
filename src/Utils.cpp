@@ -47,3 +47,9 @@ void typeText(const std::string& text, TextSpeed speed) {
         }
     }
 }
+
+void narrativePrint(const std::string& narrator, const std::string& text) {
+    std::cout << "\n";
+    typeText(narrator + ": ", TextSpeed::BATTLE); // Narrador fala rápido
+    typeText(text + "\n", TextSpeed::NARRATIVE);
+}
