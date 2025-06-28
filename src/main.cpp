@@ -90,3 +90,8 @@ int main() {
     std::vector<std::unique_ptr<Inimigo>> inimigos_c1 = {std::make_unique<Zumbi>(), std::make_unique<Esqueleto>()};
     lutar(*jogador, inimigos_c1);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Narrador", "Um vampiro degenerado, um lorde caído, bloqueia seu caminho.");
+    std::vector<std::unique_ptr<Inimigo>> miniboss_c1 = {std::make_unique<Vampiro>()};
+    lutar(*jogador, miniboss_c1);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
