@@ -204,3 +204,6 @@ int main() {
 
  // FINAIS
     narrativePrint("Narrador", "A batalha termina. A fenda treme. O destino de Thyria está em suas mãos.");
+    
+    int moralFinal = jogador->getMoral();
+    bool aliadoNyx = jogador->temAliadoNyx();
