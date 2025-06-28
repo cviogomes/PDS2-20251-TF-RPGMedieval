@@ -117,3 +117,8 @@ int main() {
     narrativePrint("Seraphina", "Não é o fim... Eles virão... todos virão... HAHAHA!");
     jogador->ganharOuro(50);
     jogador->visitarLoja(1);
+
+    // --- CAPÍTULO 2: O BANQUETE DA FOME ---
+    narrativePrint("Narrador", "Capítulo 2: O Banquete da Fome.");
+    narrativePrint("Narrador", "Com a Peste derrotada, a fome rasteja pelas terras, e sua sombra engole tudo.");
+    
