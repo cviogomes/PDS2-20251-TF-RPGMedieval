@@ -44,3 +44,15 @@ int Personagem::getVida() const {
 int Personagem::getVidaMax() const {
     return vidaMax_;
 }
+
+int Personagem::getAtaque() const {
+    return ataque_;
+}
+
+int Personagem::getDefesa() const {
+    return defesa_;
+}
+
+void Personagem::setVida(int novaVida) {
+    vida_ = std::max(0, novaVida);
+}
