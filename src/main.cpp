@@ -62,3 +62,12 @@ int main() {
     narrativePrint("Narrador", "Thyria... outrora um reino próspero de cavaleiros, florestas verdejantes e vilarejos cheios de vida. Agora... um eco.");
     narrativePrint("Narrador", "Duas figuras encapuzadas ajoelham-se em um círculo profano. As sombras rasgam o céu. A fenda foi aberta.");
     narrativePrint("Nyx", "Por suas perdas... por sua dor... eu vos trago aquilo que mais desejam... mas todo preço deve ser pago.");
+
+    // ESCOLHA DA CLASSE
+    int classe = fazerEscolha("O mundo precisa de um herói. Quem você será?", {"Guerreiro", "Arqueiro", "Mago"});
+    std::unique_ptr<Jogador> jogador;
+    if (classe == 1) jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 10);
+    else if (classe == 2) jogador = std::make_unique<Jogador>("Arqueiro", 100, 25, 5);
+    else jogador = std::make_unique<Jogador>("Mago", 80, 30, 3);
+    narrativePrint("Narrador", "E assim começou o fim... ou o início de sua redenção.");
+
