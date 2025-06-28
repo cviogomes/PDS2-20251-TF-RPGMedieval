@@ -9,3 +9,7 @@ UTILS.CPP
 #ifdef _WIN32
 #include <windows.h>
 #endif
+
+void setupTerminal() {
+    // Código para Windows
+#ifdef _WIN32
