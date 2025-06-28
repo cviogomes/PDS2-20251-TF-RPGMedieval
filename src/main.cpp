@@ -1,4 +1,3 @@
-// MAIN ATUALIZADA
 #include <iostream>
 #include <vector>
 #include <memory>

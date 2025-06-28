@@ -1,8 +1,8 @@
-#include "Jogador.hpp"
-#include "Utils.hpp"
 #include <iostream>
 #include <algorithm>
 
+#include "Jogador.hpp"
+#include "Utils.hpp"
 
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
@@ -151,96 +151,6 @@ void Jogador::visitarLoja(int capitulo) {
     } while (escolha != 5);
 }
 
-
-    std::cout << "\n--- Loja ---\n";
-    retornarInvestimento();
-    std::cout << "1 - Aumentar ataque (50 ouro)\n";
-    std::cout << "2 - Aumentar defesa (50 ouro)\n";
-    std::cout << "3 - Aumentar vida (50 ouro)\n";
-    std::cout << "4 - Comprar poção de cura (8 ouro)\n";
-    std::cout << "5 - Investir ouro\n";
-    std::cout << "6 - Sair da loja\n";
-    int escolha;
-
-    do
-    {
-        std::cout << "Escolha uma opção: ";
-        std::cin >> escolha;
-        switch (escolha)
-        {
-        case 1:
-            if (ouro_ >= 50)
-            {
-                ataque_ += 5;
-                ouro_ -= 50;
-                std::cout << "Ataque aumentado em 5! Ouro restante: " << ouro_ << std::endl;
-            }
-            else
-            {
-                std::cout << "Ouro insuficiente!" << std::endl;
-            }
-            break;
-
-        case 2:
-            if (ouro_ >= 50)
-            {
-                defesa_ += 5;
-                ouro_ -= 50;
-                std::cout << "Defesa aumentada em 5! Ouro restante: " << ouro_ << std::endl;
-            }
-            else
-            {
-                std::cout << "Ouro insuficiente!" << std::endl;
-            }
-            break;
-
-        case 3:
-            if (ouro_ >= 50)
-            {
-                vidaMax_ += 10;
-                vida_ = vidaMax_;
-                ouro_ -= 50;
-                std::cout << "Vida máxima aumentada em 10! Ouro restante: " << ouro_ << std::endl;
-            }
-            else
-            {
-                std::cout << "Ouro insuficiente!" << std::endl;
-            }
-            break;
-
-        case 4:
-            if (ouro_ >= 8)
-            {
-                ouro_ -= 8;
-                pocoes_++;
-                std::cout << "Você comprou uma poção! Agora tem " << pocoes_ << " poções." << std::endl;
-            }
-            else
-            {
-                std::cout << "Ouro insuficiente para comprar poção." << std::endl;
-            }
-            break;
-
-        case 5:
-        {
-            int valor;
-            std::cout << "Quanto deseja investir? (Ouro atual: " << ouro_ << "): ";
-            std::cin >> valor;
-            investirOuro(valor);
-            break;
-        }
-
-        case 6:
-            std::cout << "Você saiu da loja." << std::endl;
-            break;
-
-        default:
-            std::cout << "Saindo da loja...\n";
-            break;
-        }
-    } while (escolha != 6);
-}
-
 void Jogador::aplicarEfeito(const Efeito &efeito)
 {
     efeito_ = efeito;
@@ -258,7 +168,7 @@ void Jogador::processarEfeitos() {
             case TipoEfeito::Paralisia:
                 battlePrint(nome_ + " está paralisado e perde o turno!\n");
                 break;
-            case TipoEfeito::Maldição:
+            case TipoEfeito::Maldicao:
                 ataque_ = std::max(1, ataque_ - 1);
                 battlePrint(nome_ + " está amaldiçoado! Ataque reduzido para " + std::to_string(ataque_) + "\n");
                 break;

@@ -4,6 +4,7 @@
 #include "Inimigo.hpp"
 #include "Jogador.hpp"
 #include "Efeitos.hpp"
+#include "Utils.hpp"
 #include <iostream>
 #include <memory>
 
@@ -14,7 +15,7 @@ public:
 
     void aoAtacar(Jogador& jogador) override {
         battlePrint(nome_ + " lança uma maldição em você!\n");
-        jogador.aplicarEfeito({TipoEfeito::Maldição, 3});
+        jogador.aplicarEfeito({TipoEfeito::Maldicao, 3});
 
     }
 
