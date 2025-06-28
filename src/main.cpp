@@ -122,3 +122,6 @@ int main() {
     narrativePrint("Narrador", "Capítulo 2: O Banquete da Fome.");
     narrativePrint("Narrador", "Com a Peste derrotada, a fome rasteja pelas terras, e sua sombra engole tudo.");
     
+    int caminho_c2 = fazerEscolha("Dois caminhos se abrem. Qual você seguirá?", {"A Floresta Sombria", "As Montanhas Rochosas"});
+    if (caminho_c2 == 1) {
+        narrativePrint("Narrador", "Você adentra a Floresta Sombria, lar de aranhas e lobisomens.");
