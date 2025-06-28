@@ -40,3 +40,7 @@ const std::string& Personagem::getNome() const {
 int Personagem::getVida() const {
     return vida_;
 }
+
+int Personagem::getVidaMax() const {
+    return vidaMax_;
+}
