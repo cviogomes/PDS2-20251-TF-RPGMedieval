@@ -18,6 +18,11 @@ class Jogador : public Personagem {
         int getPocoes() const;
         void usarPocao();
 
+        void adicionarMoral(int valor);
+        int getMoral() const;
+        void setAliadoNyx(bool valor);
+        bool temAliadoNyx() const;
+
         void aplicarEfeito(const Efeito& efeito);
         void processarEfeitos();
         Efeito getEfeito() const;
@@ -35,10 +40,10 @@ class Jogador : public Personagem {
     private:
         Efeito efeito_;
         int ouro_;
-        int pocoes_;
+        int pocoes_ = 3;
         double investimento_;
         int moral_;
-        bool aliadoNyx_;
+
 };
 
 #endif // JOGADOR_HPP

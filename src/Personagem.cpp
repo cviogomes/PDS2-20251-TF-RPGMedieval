@@ -54,5 +54,7 @@ int Personagem::getDefesa() const {
 }
 
 void Personagem::setVida(int novaVida) {
+
     vida_ = std::max(0, novaVida);
 }
+

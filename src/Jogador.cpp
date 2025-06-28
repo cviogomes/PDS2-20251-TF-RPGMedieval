@@ -4,7 +4,7 @@
 #include <algorithm>
 
 
-Jogador::Jogador(const std::string& nome, int vidaMax, int ataque, int defesa)
+Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
       ouro_(0),
       pocoes_(3),
@@ -13,23 +13,29 @@ Jogador::Jogador(const std::string& nome, int vidaMax, int ataque, int defesa)
       aliadoNyx_(false)
 {}
 
-void Jogador::ganharOuro(int quantidade) {
+void Jogador::ganharOuro(int quantidade)
+{
     ouro_ += quantidade;
     battlePrint("Você ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
 }
 
-void Jogador::investirOuro(int quantidade) {
-    if (quantidade > 0 && quantidade <= ouro_) {
+void Jogador::investirOuro(int quantidade)
+{
+    if (quantidade > 0 && quantidade <= ouro_)
+    {
         ouro_ -= quantidade;
         investimento_ += quantidade;
         typeText("Você investiu " + std::to_string(quantidade) + " de ouro!\n", TextSpeed::NORMAL);
     } else {
         typeText("Quantidade inválida ou ouro insuficiente!\n", TextSpeed::NORMAL);
+
     }
 }
 
-void Jogador::retornarInvestimento() {
-    if (investimento_ > 0) {
+void Jogador::retornarInvestimento()
+{
+    if (investimento_ > 0)
+    {
         int retorno = static_cast<int>(investimento_ * 1.5);
         ouro_ += retorno;
         typeText("Seu investimento rendeu " + std::to_string(retorno) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n", TextSpeed::NORMAL);
@@ -145,6 +151,7 @@ void Jogador::visitarLoja(int capitulo) {
     } while (escolha != 5);
 }
 
+
     std::cout << "\n--- Loja ---\n";
     retornarInvestimento();
     std::cout << "1 - Aumentar ataque (50 ouro)\n";
@@ -155,58 +162,73 @@ void Jogador::visitarLoja(int capitulo) {
     std::cout << "6 - Sair da loja\n";
     int escolha;
 
-    do{    
-    std::cout << "Escolha uma opção: ";
-    std::cin >> escolha;
-    switch (escolha) {
+    do
+    {
+        std::cout << "Escolha uma opção: ";
+        std::cin >> escolha;
+        switch (escolha)
+        {
         case 1:
-            if (ouro_ >= 50) {
+            if (ouro_ >= 50)
+            {
                 ataque_ += 5;
                 ouro_ -= 50;
                 std::cout << "Ataque aumentado em 5! Ouro restante: " << ouro_ << std::endl;
-                } else {
-                    std::cout << "Ouro insuficiente!" << std::endl;
+            }
+            else
+            {
+                std::cout << "Ouro insuficiente!" << std::endl;
             }
             break;
 
         case 2:
-        if (ouro_ >= 50){
-            defesa_ += 5;
-            ouro_ -=50;
-            std::cout << "Defesa aumentada em 5! Ouro restante: " << ouro_ << std::endl;
-        } else {
-            std::cout << "Ouro insuficiente!" << std::endl;
-        }
-        break;
+            if (ouro_ >= 50)
+            {
+                defesa_ += 5;
+                ouro_ -= 50;
+                std::cout << "Defesa aumentada em 5! Ouro restante: " << ouro_ << std::endl;
+            }
+            else
+            {
+                std::cout << "Ouro insuficiente!" << std::endl;
+            }
+            break;
 
         case 3:
-            if (ouro_ >= 50) {
+            if (ouro_ >= 50)
+            {
                 vidaMax_ += 10;
                 vida_ = vidaMax_;
                 ouro_ -= 50;
                 std::cout << "Vida máxima aumentada em 10! Ouro restante: " << ouro_ << std::endl;
-            } else {
+            }
+            else
+            {
                 std::cout << "Ouro insuficiente!" << std::endl;
             }
             break;
 
         case 4:
-            if (ouro_ >= 8) {
+            if (ouro_ >= 8)
+            {
                 ouro_ -= 8;
                 pocoes_++;
                 std::cout << "Você comprou uma poção! Agora tem " << pocoes_ << " poções." << std::endl;
-            } else {
+            }
+            else
+            {
                 std::cout << "Ouro insuficiente para comprar poção." << std::endl;
             }
             break;
 
-        case 5: {
-                int valor;
-                std::cout << "Quanto deseja investir? (Ouro atual: " << ouro_ << "): ";
-                std::cin >> valor;
-                investirOuro(valor);
-                break;
-            }
+        case 5:
+        {
+            int valor;
+            std::cout << "Quanto deseja investir? (Ouro atual: " << ouro_ << "): ";
+            std::cin >> valor;
+            investirOuro(valor);
+            break;
+        }
 
         case 6:
             std::cout << "Você saiu da loja." << std::endl;
@@ -216,13 +238,15 @@ void Jogador::visitarLoja(int capitulo) {
             std::cout << "Saindo da loja...\n";
             break;
         }
-    }while (escolha != 6);
+    } while (escolha != 6);
 }
 
-void Jogador::aplicarEfeito(const Efeito& efeito) {
+void Jogador::aplicarEfeito(const Efeito &efeito)
+{
     efeito_ = efeito;
     battlePrint(nome_ + " foi afetado por um efeito por " + std::to_string(efeito.duracao) + " turnos.\n");
 }
+
 
 void Jogador::processarEfeitos() {
     if (efeito_.duracao > 0) {
@@ -240,18 +264,22 @@ void Jogador::processarEfeitos() {
                 break;
             default:
                 break;
+
         }
         efeito_.duracao--;
     }
 }
 
-Efeito Jogador::getEfeito() const {
+Efeito Jogador::getEfeito() const
+{
     return efeito_;
 }
 
 void Jogador::setVidaMax(int novaVidaMax) {
+
     vidaMax_ = novaVidaMax;
-    if (vida_ > vidaMax_) {
+    if (vida_ > vidaMax_)
+    {
         vida_ = vidaMax_;
     }
 }
@@ -263,4 +291,5 @@ void Jogador::reduzirAtaque(int valor) {
 
 void Jogador::setDefesa(int defesa) {
     defesa_ = defesa;
+
 }
