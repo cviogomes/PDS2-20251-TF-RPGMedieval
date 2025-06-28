@@ -23,3 +23,7 @@
 #include "Aranha.hpp"
 #include "Lobisomem.hpp"
 #include "Bruxa.hpp"
+
+// Classes de Chefes
+#include "CavaleiroDaPeste.hpp"
+#include "CavaleiroDaFome.hpp"
