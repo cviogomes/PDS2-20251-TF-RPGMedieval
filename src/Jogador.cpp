@@ -214,3 +214,11 @@ int Jogador::getDefesa() const
 {
     return defesa_;
 }
+
+int Jogador::getMoral() const {
+    return moral_;
+}
+
+void Jogador::adicionarMoral(int valor) {
+    moral_ += valor;
+}

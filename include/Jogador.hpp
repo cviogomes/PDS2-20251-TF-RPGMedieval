@@ -43,9 +43,9 @@ class Jogador : public Personagem {
     private:
         Efeito efeito_;
         int ouro_;
-        int pocoes_;
+        int pocoes_ = 3;
         double investimento_;
-        int moral_;
+        int moral_ = 0;
         bool aliadoNyx_;
 };
 

@@ -52,5 +52,7 @@ int Personagem::getDefesa() const {
     return defesa_;
 }
 
-
+void Personagem::setVida(int novaVida) {
+    vida_ = novaVida;
+}
 
