@@ -11,14 +11,14 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>>& inimigos) {
 
         while (jogador.estaVivo() && inimigo->estaVivo()) {
             std::cout << "\n";
-            battlePrint("Vida: " + std::to_string(jogador.getVida()) + "/" + std::to_string(jogador.getVidaMax()) + " | Poções: " + std::to_string(jogador.getPocoes()) + "\n");
+            battlePrint("Vida: " + std::to_string(jogador.getVida()) + "/" + std::to_string(jogador.getVidaMax()) + " | Pocoes: " + std::to_string(jogador.getPocoes()) + "\n");
             battlePrint("Inimigo: " + inimigo->getNome() + " | Vida: " + std::to_string(inimigo->getVida()) + "/" + std::to_string(inimigo->getVidaMax()) + "\n");
 
             jogador.processarEfeitos();
             if (!jogador.estaVivo()) break;
 
             if (jogador.getEfeito().tipo != TipoEfeito::Paralisia) { // Lógica de paralisia refinada
-                typeText("Escolha uma ação:\n1 - Atacar\n2 - Defender\n3 - Usar Poção\nOpção: ", TextSpeed::NORMAL);
+                typeText("Escolha uma acao:\n1 - Atacar\n2 - Defender\n3 - Usar Pocao\nOpcao: ", TextSpeed::NORMAL);
                 int acao;
                 std::cin >> acao;
 
@@ -34,7 +34,7 @@ void lutar(Jogador& jogador, std::vector<std::unique_ptr<Inimigo>>& inimigos) {
                         jogador.usarPocao();
                         break;
                     default:
-                        battlePrint("Ação inválida. Você perdeu o turno!\n");
+                        battlePrint("Acao invalida. Voce perdeu o turno!\n");
                         std::cin.clear(); // Tratamento de erro
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Tratamento de erro
                         break;

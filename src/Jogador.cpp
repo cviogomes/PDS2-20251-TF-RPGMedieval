@@ -25,9 +25,9 @@ void Jogador::investirOuro(int quantidade)
     {
         ouro_ -= quantidade;
         investimento_ += quantidade;
-        typeText("Você investiu " + std::to_string(quantidade) + " de ouro!\n", TextSpeed::NORMAL);
+        typeText("Voce investiu " + std::to_string(quantidade) + " de ouro!\n", TextSpeed::NORMAL);
     } else {
-        typeText("Quantidade inválida ou ouro insuficiente!\n", TextSpeed::NORMAL);
+        typeText("Quantidade invalida ou ouro insuficiente!\n", TextSpeed::NORMAL);
 
     }
 }
@@ -48,7 +48,7 @@ void Jogador::usarPocao() {
         pocoes_--;
         restaurarVida();
     } else {
-        battlePrint("Você não tem poções!\n");
+        battlePrint("Voce nao tem pocoes!\n");
     }
 }
 
@@ -89,22 +89,22 @@ void Jogador::visitarLoja(int capitulo) {
         if (capitulo == 1) {
             typeText("1 - Melhorar Ataque (+5)  (50 Ouro)\n", TextSpeed::NORMAL);
             typeText("2 - Melhorar Defesa (+5)  (50 Ouro)\n", TextSpeed::NORMAL);
-            typeText("3 - Comprar Poção de Cura (20 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Pocao de Cura (20 Ouro)\n", TextSpeed::NORMAL);
             typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
         } else if (capitulo == 2) {
             typeText("1 - Melhorar Ataque (+5)      (50 Ouro)\n", TextSpeed::NORMAL);
-            typeText("2 - Melhorar Vida Máxima (+10) (60 Ouro)\n", TextSpeed::NORMAL);
-            typeText("3 - Comprar Poção de Cura      (40 Ouro)\n", TextSpeed::NORMAL);
+            typeText("2 - Melhorar Vida Maxima (+10) (60 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Pocao de Cura      (40 Ouro)\n", TextSpeed::NORMAL);
             typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
         } else if (capitulo == 3) {
             typeText("1 - Melhorar Defesa (+5)       (60 Ouro)\n", TextSpeed::NORMAL);
-            typeText("2 - Melhorar Vida Máxima (+15)  (80 Ouro)\n", TextSpeed::NORMAL);
-            typeText("3 - Comprar Poção de Cura       (60 Ouro)\n", TextSpeed::NORMAL);
+            typeText("2 - Melhorar Vida Maxima (+15)  (80 Ouro)\n", TextSpeed::NORMAL);
+            typeText("3 - Comprar Pocao de Cura       (60 Ouro)\n", TextSpeed::NORMAL);
             typeText("4 - Investir Ouro (Retorno de 50%)\n", TextSpeed::NORMAL);
         }
         typeText("5 - Sair da loja\n", TextSpeed::NORMAL);
 
-        std::cout << "Opção: ";
+        std::cout << "Opcao: ";
         std::cin >> escolha;
 
         switch (escolha) {
@@ -124,13 +124,13 @@ void Jogador::visitarLoja(int capitulo) {
                 } else if (capitulo == 2 || capitulo == 3) {
                     int custo = (capitulo == 2) ? 60 : 80;
                     int bonus = (capitulo == 2) ? 10 : 15;
-                    if (ouro_ >= custo) { vidaMax_ += bonus; vida_ = vidaMax_; ouro_ -= custo; typeText("Vida máxima aumentada!\n", TextSpeed::NORMAL); }
+                    if (ouro_ >= custo) { vidaMax_ += bonus; vida_ = vidaMax_; ouro_ -= custo; typeText("Vida maxima aumentada!\n", TextSpeed::NORMAL); }
                     else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
                 }
                 break;
             case 3: {
                 int custo = (capitulo == 1) ? 20 : (capitulo == 2 ? 40 : 60);
-                if (ouro_ >= custo) { pocoes_++; ouro_ -= custo; typeText("Você comprou uma poção!\n", TextSpeed::NORMAL); }
+                if (ouro_ >= custo) { pocoes_++; ouro_ -= custo; typeText("Voce comprou uma pocao!\n", TextSpeed::NORMAL); }
                 else { typeText("Ouro insuficiente!\n", TextSpeed::NORMAL); }
                 break;
             }
@@ -142,10 +142,10 @@ void Jogador::visitarLoja(int capitulo) {
                 break;
             }
             case 5:
-                typeText("Você saiu da loja.\n", TextSpeed::NORMAL);
+                typeText("Voce saiu da loja.\n", TextSpeed::NORMAL);
                 break;
             default:
-                typeText("Opção inválida.\n", TextSpeed::NORMAL);
+                typeText("Opcao invalida.\n", TextSpeed::NORMAL);
                 break;
         }
     } while (escolha != 5);
@@ -166,11 +166,11 @@ void Jogador::processarEfeitos() {
                 battlePrint(nome_ + " sofre 5 de dano de veneno! Vida atual: " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "\n");
                 break;
             case TipoEfeito::Paralisia:
-                battlePrint(nome_ + " está paralisado e perde o turno!\n");
+                battlePrint(nome_ + " esta paralisado e perde o turno!\n");
                 break;
             case TipoEfeito::Maldicao:
                 ataque_ = std::max(1, ataque_ - 1);
-                battlePrint(nome_ + " está amaldiçoado! Ataque reduzido para " + std::to_string(ataque_) + "\n");
+                battlePrint(nome_ + " esta amaldicoado! Ataque reduzido para " + std::to_string(ataque_) + "\n");
                 break;
             default:
                 break;

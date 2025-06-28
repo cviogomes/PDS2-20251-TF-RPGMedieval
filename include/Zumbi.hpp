@@ -14,7 +14,7 @@ public:
         if (!curou_ && vida_ < vidaMax_ * 0.3) {
             vida_ = vidaMax_;
             curou_ = true;
-            battlePrint(nome_ + " se autocanibalizou e recuperou toda a sua vida!\n");
+            battlePrint(nome_ + " se autocanibalizou e recuperou toda a vida!\n");
         }
     }
 
