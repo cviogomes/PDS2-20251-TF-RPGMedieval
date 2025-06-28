@@ -29,3 +29,11 @@
 #include "CavaleiroDaFome.hpp"
 #include "CavaleiroDaGuerra.hpp"
 #include "CavaleiroDaMorte.hpp"
+
+// Função Auxiliar para Decisões 
+int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& opcoes) {
+    typeText("\n--- DECISÃO ---\n", TextSpeed::NORMAL);
+    typeText(pergunta + "\n", TextSpeed::NORMAL);
+    for (size_t i = 0; i < opcoes.size(); ++i) {
+        typeText(std::to_string(i + 1) + " - " + opcoes[i] + "\n", TextSpeed::NORMAL);
+    }
