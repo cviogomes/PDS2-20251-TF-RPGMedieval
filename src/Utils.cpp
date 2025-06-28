@@ -6,6 +6,7 @@
 #include <codecvt>
 #include <locale>
 
+
 // Inclui bibliotecas específicas do Windows para configurar o terminal
 #ifdef _WIN32
 #include <windows.h>
@@ -47,7 +48,6 @@ void typeText(const std::string& text, TextSpeed speed) {
     } else {
         for (wchar_t c : wtext) {
             std::wcout << c << std::flush;
-            std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
         }
     }
 }
@@ -60,5 +60,4 @@ void narrativePrint(const std::string& narrator, const std::string& text) {
 
 void battlePrint(const std::string& text) {
     typeText(text, TextSpeed::BATTLE);
-    std::this_thread::sleep_for(std::chrono::milliseconds(300));
 }

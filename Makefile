@@ -34,7 +34,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS)
 	@echo "Ligando os objetos para criar o executável final..."
 	@if not exist $(BIN_DIR) mkdir $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lwinmm
 
 # Inclui os arquivos de dependência gerados.
 # O traço na frente ignora erros se os arquivos ainda não existirem.
