@@ -215,3 +215,13 @@ int main() {
     } else if (moralFinal > 10) {
         narrativePrint("Narrador", "--- FINAL HEROICO ---");
         narrativePrint("Narrador", "Você fecha a fenda com um último golpe. A luz retorna a Thyria. Os sobreviventes cantam seu nome. Você é o herói que trouxe a redenção.");
+
+    } else {
+        narrativePrint("Narrador", "--- FINAL TRÁGICO ---");
+        narrativePrint("Narrador", "Você derrota Moros, mas a um custo terrível. A fenda consome Thyria. Você fica sozinho, vagando em um mundo vazio.");
+    }
+
+    narrativePrint("Narrador", "\n\nFIM DE JOGO.");
+
+    return 0;
+}
