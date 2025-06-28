@@ -19,3 +19,7 @@ void Personagem::atacar(Personagem& alvo) {
     std::string mensagem = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
     battlePrint(mensagem);
 }
+
+void Personagem::defender() {
+    battlePrint(nome_ + " assume postura defensiva.\n");
+}
