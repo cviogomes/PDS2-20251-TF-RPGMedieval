@@ -128,3 +128,16 @@ int main() {
 
         std::vector<std::unique_ptr<Inimigo>> inimigos_c2 = {std::make_unique<Aranha>(), std::make_unique<Lobisomem>()};
         lutar(*jogador, inimigos_c2);
+
+    } else {
+        narrativePrint("Narrador", "Você escala as Montanhas Rochosas, infestadas de slimes e goblins.");
+        std::vector<std::unique_ptr<Inimigo>> inimigos_c2 = {std::make_unique<Slime>(), std::make_unique<Goblin>()};
+        lutar(*jogador, inimigos_c2);
+    }
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Narrador", "Um goblin devoto, fanático por seu mestre, tenta impedi-lo.");
+    std::vector<std::unique_ptr<Inimigo>> miniboss_c2 = {std::make_unique<Goblin>()};
+    lutar(*jogador, miniboss_c2);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+    
