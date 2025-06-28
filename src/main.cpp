@@ -153,3 +153,13 @@ int main() {
     // --- CAPÍTULO 3: A FORJA DA GUERRA ---
     narrativePrint("Narrador", "Capítulo 3: A Forja da Guerra.");
     narrativePrint("Narrador", "O trovão da Guerra ecoa nas planícies. Thargon marcha com seu exército.");
+ 
+    int escolha_c3 = fazerEscolha("Você encontra uma fortaleza rebelde. O que você faz?", {"Ajudar os Rebeldes", "Invadir o acampamento sozinho"});
+    if (escolha_c3 == 1) {
+        narrativePrint("Narrador", "Você ajuda os rebeldes a fortificar a defesa, ganhando aliados para a batalha.");
+        jogador->adicionarMoral(5);
+    } else {
+        narrativePrint("Narrador", "Você decide agir sozinho, um caminho mais arriscado, porém com maiores recompensas.");
+        jogador->adicionarMoral(-5);
+        jogador->ganharOuro(50);
+    }
