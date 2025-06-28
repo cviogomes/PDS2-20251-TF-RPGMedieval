@@ -9,3 +9,7 @@
 
 // Funções de utilidade
 #include "Utils.hpp"
+
+// Classes de Personagens
+#include "Jogador.hpp"
+#include "Combate.hpp"
