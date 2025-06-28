@@ -94,9 +94,26 @@ int main() {
     narrativePrint("Narrador", "Um vampiro degenerado, um lorde caído, bloqueia seu caminho.");
     std::vector<std::unique_ptr<Inimigo>> miniboss_c1 = {std::make_unique<Vampiro>()};
     lutar(*jogador, miniboss_c1);
-    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    if (!jogador->estaVivo()) { 
+        narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); 
+        return 0; }
 
     narrativePrint("Seraphina", "Pobrezinho... Ainda acredita em esperança? Eu sou a cura para este mundo podre.");
     std::vector<std::unique_ptr<Inimigo>> boss_c1 = {std::make_unique<CavaleiroDaPeste>()};
     lutar(*jogador, boss_c1);
     
+    if (!jogador->estaVivo()) {
+         narrativePrint("Roland", "Levante-se, herói. Ainda não é sua hora.");
+         jogador->setVida(jogador->getVidaMax() * 0.5);
+         std::vector<std::unique_ptr<Inimigo>> boss_c1_retry = {std::make_unique<CavaleiroDaPeste>()};
+         lutar(*jogador, boss_c1_retry);
+    }
+    if (!jogador->estaVivo()) { 
+        narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida.");
+      return 0;
+    }
+    
+    narrativePrint("Seraphina", "Não é o fim... Eles virão... todos virão... HAHAHA!");
+    jogador->ganharOuro(50);
+    jogador->visitarLoja(1);
