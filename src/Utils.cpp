@@ -32,3 +32,8 @@ void typeText(const std::string& text, TextSpeed speed) {
         case TextSpeed::BATTLE:
             delay_ms = 10;
             break;
+        case TextSpeed::NORMAL:
+        default:
+            delay_ms = 0;
+            break;
+    }
