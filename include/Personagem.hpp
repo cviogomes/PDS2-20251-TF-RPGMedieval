@@ -24,3 +24,13 @@ public:
     int getDefesa() const;
 
     void setVida(int novaVida);
+
+protected:
+    std::string nome_;
+    int vida_;
+    int vidaMax_;
+    int ataque_;
+    int defesa_;
+};
+
+#endif // PERSONAGEM_HPP
