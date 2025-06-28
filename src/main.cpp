@@ -168,3 +168,8 @@ int main() {
     std::vector<std::unique_ptr<Inimigo>> inimigos_c3 = {std::make_unique<Slime>(), std::make_unique<Goblin>()};
     lutar(*jogador, inimigos_c3);
     if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
+
+    narrativePrint("Thargon", "Vocês chamam isso de luta? Eu sou a guerra encarnada!");
+    std::vector<std::unique_ptr<Inimigo>> boss_c3 = {std::make_unique<CavaleiroDaGuerra>()};
+    lutar(*jogador, boss_c3);
+    if (!jogador->estaVivo()) { narrativePrint("Narrador", "Sua jornada termina aqui. Thyria está perdida."); return 0; }
