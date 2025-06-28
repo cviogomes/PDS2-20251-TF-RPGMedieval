@@ -1,4 +1,4 @@
-//MAIN ATUALIZADA
+// MAIN ATUALIZADA
 #include <iostream>
 #include <vector>
 #include <memory>
@@ -52,3 +52,13 @@ int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& op
     }
     return escolha;
 }
+
+// Função Principal
+int main() {
+    setupTerminal();
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+
+    // PRÓLOGO
+    narrativePrint("Narrador", "Thyria... outrora um reino próspero de cavaleiros, florestas verdejantes e vilarejos cheios de vida. Agora... um eco.");
+    narrativePrint("Narrador", "Duas figuras encapuzadas ajoelham-se em um círculo profano. As sombras rasgam o céu. A fenda foi aberta.");
+    narrativePrint("Nyx", "Por suas perdas... por sua dor... eu vos trago aquilo que mais desejam... mas todo preço deve ser pago.");
