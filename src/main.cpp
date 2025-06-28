@@ -19,3 +19,7 @@
 #include "Esqueleto.hpp"
 #include "Vampiro.hpp"
 #include "Goblin.hpp"
+#include "Slime.hpp"
+#include "Aranha.hpp"
+#include "Lobisomem.hpp"
+#include "Bruxa.hpp"
