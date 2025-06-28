@@ -207,3 +207,7 @@ int main() {
     
     int moralFinal = jogador->getMoral();
     bool aliadoNyx = jogador->temAliadoNyx();
+
+    if (aliadoNyx) {
+        narrativePrint("Narrador", "--- FINAL SOMBRIO ---");
+        narrativePrint("Narrador", "Você se torna o novo arauto do apocalipse. Com Nyx ao seu lado, você governa um Thyria mergulhado em escuridão.");
