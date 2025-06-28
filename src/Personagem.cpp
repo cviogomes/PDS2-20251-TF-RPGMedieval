@@ -32,3 +32,11 @@ void Personagem::restaurarVida() {
 bool Personagem::estaVivo() const {
     return vida_ > 0;
 }
+
+const std::string& Personagem::getNome() const {
+    return nome_;
+}
+
+int Personagem::getVida() const {
+    return vida_;
+}
