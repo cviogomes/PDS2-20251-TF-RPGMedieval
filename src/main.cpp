@@ -177,3 +177,9 @@ int main() {
     narrativePrint("Thargon", "A guerra... nunca termina... apenas muda de rosto...");
     jogador->ganharOuro(100);
     jogador->visitarLoja(3);
+
+    // CAPÍTULO 4: O VÉU DA MORTE
+    narrativePrint("Narrador", "Capítulo 4: O Véu da Morte.");
+    narrativePrint("Narrador", "Três Cavaleiros caíram. A Morte aguarda no coração da fenda. E ao seu lado... Nyx.");
+    narrativePrint("Nyx", "Você chegou longe, herói. Junte-se a mim... ou pereça.");
+    
