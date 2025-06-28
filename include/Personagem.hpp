@@ -22,6 +22,8 @@ public:
     int getAtaque() const;
     int getDefesa() const;
 
+    void setVida(int novaVida);
+
 protected:
     std::string nome_;
     int vida_;
