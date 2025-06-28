@@ -3,6 +3,8 @@
 #include <thread>
 #include <chrono>
 #include <clocale>
+#include <codecvt>
+#include <locale>
 
 // Inclui bibliotecas específicas do Windows para configurar o terminal
 #ifdef _WIN32
@@ -10,51 +12,53 @@
 #endif
 
 void setupTerminal() {
-    // Código para Windows
 #ifdef _WIN32
-
-    // Define a página de código do console para UTF-8 para suportar acentos
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 #endif
-    // Define o locale para suportar caracteres do sistema operacional
-    setlocale(LC_ALL, "");
+    std::setlocale(LC_ALL, "");
+    try {
+    std::wcout.imbue(std::locale(""));
+    } catch (...) {
+    std::wcout.imbue(std::locale("C"));
+    }// usa locale do sistema no wcout
+}
+
+// Função auxiliar para converter string UTF-8 para wstring
+std::wstring utf8ToWstring(const std::string& str) {
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    return converter.from_bytes(str);
 }
 
 void typeText(const std::string& text, TextSpeed speed) {
     int delay_ms = 0;
 
     switch (speed) {
-        case TextSpeed::NARRATIVE:
-            delay_ms = 40;
-            break;
-        case TextSpeed::BATTLE:
-            delay_ms = 10;
-            break;
+        case TextSpeed::NARRATIVE: delay_ms = 40; break;
+        case TextSpeed::BATTLE: delay_ms = 10; break;
         case TextSpeed::NORMAL:
-        default:
-            delay_ms = 0;
-            break;
+        default: delay_ms = 0; break;
     }
 
+    std::wstring wtext = utf8ToWstring(text);
+
     if (delay_ms == 0) {
-        std::cout << text;
+        std::wcout << wtext;
     } else {
-        for (char c : text) {
-            std::cout << c << std::flush;
+        for (wchar_t c : wtext) {
+            std::wcout << c << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
         }
     }
 }
 
 void narrativePrint(const std::string& narrator, const std::string& text) {
-    std::cout << "\n";
-    typeText(narrator + ": ", TextSpeed::BATTLE); // Narrador fala rápido
+    std::wcout << L"\n";
+    typeText(narrator + ": ", TextSpeed::BATTLE);
     typeText(text + "\n", TextSpeed::NARRATIVE);
 }
 
 void battlePrint(const std::string& text) {
     typeText(text, TextSpeed::BATTLE);
-    // Adiciona uma pequena pausa após cada mensagem de batalha para legibilidade
     std::this_thread::sleep_for(std::chrono::milliseconds(300));
 }
