@@ -37,3 +37,18 @@ int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& op
     for (size_t i = 0; i < opcoes.size(); ++i) {
         typeText(std::to_string(i + 1) + " - " + opcoes[i] + "\n", TextSpeed::NORMAL);
     }
+  
+    int escolha = 0;
+    while (true) {
+        std::cout << "Opção: ";
+        std::cin >> escolha;
+        if (std::cin.good() && escolha > 0 && escolha <= opcoes.size()) {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            break;
+        }
+        typeText("Opção inválida. Tente novamente.\n");
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+    }
+    return escolha;
+}
