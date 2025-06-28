@@ -75,3 +75,13 @@ int main() {
     narrativePrint("Narrador", "Capítulo 1: O Suspiro da Peste.");
     narrativePrint("Narrador", "Você desperta. Sua vila, Aldhaven, não é mais lar... mas um túmulo esperando ser preenchido.");
     narrativePrint("Seraphina", "A morte não é fim... é libertação.");
+
+    int escolha_cap1 = fazerEscolha("Os gritos dos inocentes cortam o ar, mas os suprimentos em sua mão podem garantir sua sobrevivência. O que você prioriza?", {"Salvar os Civis", "Proteger Recursos"});
+    if (escolha_cap1 == 1) {
+        narrativePrint("Narrador", "Você guia os sobreviventes para um celeiro, ganhando sua lealdade, mas perde recursos valiosos.");
+        jogador->adicionarMoral(5);
+    } else {
+        narrativePrint("Narrador", "Você guarda os suprimentos, mas os gritos dos abandonados ecoarão em sua mente.");
+        jogador->ganharOuro(20);
+        jogador->adicionarMoral(-5);
+    }
