@@ -63,7 +63,10 @@
         "iomanip": "cpp",
         "mutex": "cpp",
         "sstream": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "codecvt": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp"
     },
     "makefile.configureOnOpen": true
 }
