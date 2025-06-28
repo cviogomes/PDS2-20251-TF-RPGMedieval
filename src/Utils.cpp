@@ -53,3 +53,9 @@ void narrativePrint(const std::string& narrator, const std::string& text) {
     typeText(narrator + ": ", TextSpeed::BATTLE); // Narrador fala rápido
     typeText(text + "\n", TextSpeed::NARRATIVE);
 }
+
+void battlePrint(const std::string& text) {
+    typeText(text, TextSpeed::BATTLE);
+    // Adiciona uma pequena pausa após cada mensagem de batalha para legibilidade
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+}
