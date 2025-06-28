@@ -24,6 +24,8 @@
 #include "CavaleiroDaGuerra.hpp"
 #include "CavaleiroDaMorte.hpp"
 
+#include "Musica.hpp"
+
 int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& opcoes) {
     typeText("\n--- DECISAO ---\n", TextSpeed::NORMAL);
     typeText(pergunta + "\n", TextSpeed::NORMAL);
@@ -47,6 +49,9 @@ int fazerEscolha(const std::string& pergunta, const std::vector<std::string>& op
 }
 
 int main() {
+
+    Musica musica;
+    musica.PlayMusic("musicas/minecraft.wav");
     setupTerminal();
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
