@@ -32,13 +32,13 @@ public:
     }
 
     std::unique_ptr<Inimigo> clone() const override {
-        // O clone sempre cria um slime de primeira geração que pode se dividir.
+        
         return std::make_unique<Slime>();
     }
 
-private:
-    // Construtor privado, usado para criar os "filhos" que não podem se dividir.
     Slime(bool podeDividir) : Inimigo("Slime Menor", 20, 8, 1), podeDividir_(podeDividir) {}
+private:
+    
 
     bool podeDividir_; // Flag que controla a habilidade de divisão.
 };
