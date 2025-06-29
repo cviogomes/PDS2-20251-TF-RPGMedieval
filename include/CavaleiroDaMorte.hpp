@@ -19,7 +19,7 @@ public:
     void aoReceberDano(int danoRecebido) override {
         int chance = rand() % 100;
         if (chance < 20) { // 20% de chance de refletir
-            battlePrint(nome_ + " reflete o dano de volta para você!\n");
+            battlePrint(nome_ + " reflete o dano de volta para voce!\n");
             // A lógica de reflexão teria que ser mais complexa,
             // envolvendo o jogador diretamente, então por enquanto é um efeito narrativo.
         }

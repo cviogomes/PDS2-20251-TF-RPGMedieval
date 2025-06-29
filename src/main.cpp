@@ -120,7 +120,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
     
     std::unique_ptr<Jogador> jogador;
     if (classe == 1) {
-        jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 10);
+        jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 30);
         std::string guerreiro = R"(
                                                                         ##MM    ##                          
                                                           ####mmmm####  MM    ####                  
@@ -176,7 +176,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
         std::cout << guerreiro;
 
     } else if (classe == 2) {
-        jogador = std::make_unique<Jogador>("Arqueiro", 100, 25, 5);
+        jogador = std::make_unique<Jogador>("Arqueiro", 100, 25, 10);
         std::string arqueiro = R"(
                                                                                  
                                                                         ..##--                                                              
@@ -221,7 +221,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
 
 
     } else {
-        jogador = std::make_unique<Jogador>("Mago", 80, 30, 3);
+        jogador = std::make_unique<Jogador>("Mago", 80, 30, 15);
         std::string mago = R"(
                                                                 ##                                          
                                                     ##########..                                    
@@ -390,7 +390,7 @@ std::cout << vila;
     narrativePrint("Narrador", "Capitulo 2: O Banquete da Fome.");
     narrativePrint("Narrador", "Com a Peste derrotada, a fome rasteja pelas terras, e sua sombra engole tudo.");
 
-    int caminho_c2 = fazerEscolha("Dois caminhos se abrem. Qual você seguira?", {"A Floresta Sombria", "As Montanhas Rochosas"});
+    int caminho_c2 = fazerEscolha("Dois caminhos se abrem. Qual voce seguira?", {"A Floresta Sombria", "As Montanhas Rochosas"});
     std::vector<std::unique_ptr<Inimigo>> inimigos_c2;
     if (caminho_c2 == 1) {
         narrativePrint("Narrador", "Voce adentra a Floresta Sombria, lar de aranhas e lobisomens.");

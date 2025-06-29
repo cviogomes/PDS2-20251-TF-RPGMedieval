@@ -10,12 +10,12 @@
 
 class CavaleiroDaPeste : public Inimigo {
 public:
-    CavaleiroDaPeste() : Inimigo("Seraphina, Cavaleira da Peste", 200, 30, 10) {}
+    CavaleiroDaPeste() : Inimigo("Seraphina, Cavaleira da Peste", 150, 22, 10) {}
 
     void aoAtacar(Jogador& jogador) override {
         int reducao = 1;
         jogador.setDefesa(std::max(0, jogador.getDefesa() - reducao));
-        battlePrint(nome_ + " contamina você com a peste! Sua defesa foi reduzida para " + std::to_string(jogador.getDefesa()) + "!\n");
+        battlePrint(nome_ + " contamina voce com a peste! Sua defesa foi reduzida para " + std::to_string(jogador.getDefesa()) + "!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {

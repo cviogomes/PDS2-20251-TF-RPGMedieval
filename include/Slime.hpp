@@ -14,7 +14,7 @@ public:
     // Esta mensagem serve como um efeito narrativo.
     void aoReceberDano(int) override {
         if (vida_ <= 0) {
-            battlePrint("Ao ser derrotado, o Slime se dissolve em uma poça gosmenta.\n");
+            battlePrint("Ao ser derrotado, o Slime se dissolve em uma poca gosmenta.\n");
         }
     }
 

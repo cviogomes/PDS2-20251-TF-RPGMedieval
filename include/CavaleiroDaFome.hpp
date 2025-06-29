@@ -15,7 +15,7 @@ public:
         jogador.setVidaMax(std::max(10, jogador.getVidaMax() - 5));
         if (jogador.getVida() > jogador.getVidaMax())
             jogador.setVida(jogador.getVidaMax());
-        battlePrint(nome_ + " te enfraquece com a fome! Sua vida máxima agora é " + std::to_string(jogador.getVidaMax()) + "!\n");
+        battlePrint(nome_ + " te enfraquece com a fome! Sua vida maxima agora e' " + std::to_string(jogador.getVidaMax()) + "!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {

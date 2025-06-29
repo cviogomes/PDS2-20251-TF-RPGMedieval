@@ -14,7 +14,7 @@ public:
     Bruxa() : Inimigo("Bruxa", 60, 18, 5) {}
 
     void aoAtacar(Jogador& jogador) override {
-        battlePrint(nome_ + " lança uma maldição em você!\n");
+        battlePrint(nome_ + " lança uma maldicao em voce!\n");
         jogador.aplicarEfeito({TipoEfeito::Maldicao, 3});
 
     }
