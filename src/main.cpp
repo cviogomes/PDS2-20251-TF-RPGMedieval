@@ -9,6 +9,7 @@
 #include "Utils.hpp"
 #include "Jogador.hpp"
 #include "Combate.hpp"
+#include "Finais.hpp"
 
 #include "Zumbi.hpp"
 #include "Esqueleto.hpp"
@@ -115,11 +116,13 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
     narrativePrint("Nyx", "Por suas perdas... por sua dor... eu vos trago aquilo que mais desejam... mas todo preco deve ser pago.");
 
     int classe = fazerEscolha("O mundo precisa de um heroi. Quem voce sera?", {"Guerreiro", "Arqueiro", "Mago"});
-    
+    std::string classeJogador;
+
 // imagem guerreiro, mago ou arqueiro dependendo da decisão
     
     std::unique_ptr<Jogador> jogador;
     if (classe == 1) {
+        classeJogador = "Guerreiro";
         jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 30);
         std::string guerreiro = R"(
                                                                         ##MM    ##                          
@@ -176,6 +179,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
         std::cout << guerreiro;
 
     } else if (classe == 2) {
+        classeJogador = "Arqueiro";
         jogador = std::make_unique<Jogador>("Arqueiro", 100, 25, 10);
         std::string arqueiro = R"(
                                                                                  
@@ -221,6 +225,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
 
 
     } else {
+        classeJogador = "Mago";
         jogador = std::make_unique<Jogador>("Mago", 80, 30, 15);
         std::string mago = R"(
                                                                 ##                                          
@@ -293,6 +298,7 @@ Y888888    \ L L   L \ `.      _.-'_.-+  _.-'       | |       |   Y88888b
 
     };
 
+
     narrativePrint("Narrador", "E assim comecou o fim... ou o inicio de sua redencao.");
 
     narrativePrint("Narrador", "Capitulo 1: O Suspiro da Peste.");
@@ -317,7 +323,7 @@ __/_  /   \ ______/ ''   /'\_,__
 std::cout << vila;
 
 
-    narrativePrint("Seraphina", "A morte nao e' fim... e' libertacao.");
+    narrativePrint("Vorstag", "A morte nao e' fim... e' libertacao.");
 
     int escolha_cap1 = fazerEscolha("Os gritos dos inocentes cortam o ar, mas os suprimentos em sua mao podem garantir sua sobrevivencia. O que voce prioriza?", 
     {"Salvar os Civis", 
@@ -363,7 +369,7 @@ std::cout << vila;
         ) 
         return 0;
 
-    narrativePrint("Seraphina", "Pobrezinho... Ainda acredita em esperanca? Eu sou a cura para este mundo podre.");
+    narrativePrint("Vorstag", "Pobrezinho... Ainda acredita em esperanca? Eu sou a cura para este mundo podre.");
     std::vector<std::unique_ptr<Inimigo>> boss_c1;
     boss_c1.emplace_back(std::make_unique<CavaleiroDaPeste>());
     lutar(*jogador, boss_c1);
@@ -383,7 +389,7 @@ std::cout << vila;
             return 0;
     }
 
-    narrativePrint("Seraphina", "Nao e' o fim... Eles virao... todos virao... HAHAHA!");
+    narrativePrint("Vorstag", "Nao e' o fim... Eles virao... todos virao... HAHAHA!");
     jogador->ganharOuro(500);
     jogador->visitarLoja(1);
 
@@ -434,7 +440,7 @@ std::cout << vila;
         inimigos_c2.emplace_back(std::make_unique<Goblin>());
 
         // arte goblin
-
+    };
     lutar(*jogador, inimigos_c2);
     if (!jogador->estaVivo()
         ) 
@@ -454,7 +460,7 @@ std::cout << vila;
         ) 
         return 0;
 
-    narrativePrint("Vorstag", "Comam... ou sejam comidos. Nao ha outro caminho.");
+    narrativePrint("Seraphina", "Comam... ou sejam comidos. Nao ha outro caminho.");
     std::vector<std::unique_ptr<Inimigo>> boss_c2;
     boss_c2.emplace_back(std::make_unique<CavaleiroDaFome>()
         );
@@ -467,7 +473,7 @@ std::cout << vila;
         ) 
         return 0;
 
-    narrativePrint("Vorstag", "A fome... nunca acaba... ela apenas espera...");
+    narrativePrint("Seraphina", "A fome... nunca acaba... ela apenas espera...");
     jogador->ganharOuro(750);
     jogador->visitarLoja(2);
 
@@ -555,17 +561,14 @@ std::cout << vila;
     int moralFinal = jogador->getMoral();
     bool aliadoNyx = jogador->temAliadoNyx();
 
-    if (aliadoNyx) {
-        narrativePrint("Narrador", "--- FINAL SOMBRIO ---");
-        narrativePrint("Narrador", "Voce se torna o novo arauto do apocalipse...");
-    } else if (moralFinal > 10) {
-        narrativePrint("Narrador", "--- FINAL HEROICO ---");
-        narrativePrint("Narrador", "Voce fecha a fenda com um ultimo golpe...");
-    } else {
-        narrativePrint("Narrador", "--- FINAL TRAGICO ---");
-        narrativePrint("Narrador", "Voce derrota Moros, mas a um custo terrivel...");
-    }
+    std::string final;
 
-    narrativePrint("Narrador", "\n\nFIM DE JOGO.");
+    if (aliadoNyx) final = "sombrio";
+    else if (moralFinal > 10) final = "heroico";
+    else final = "tragico";
+
+    mostrarFinal(classeJogador, final);
+
+    narrativePrint("Narrador", "OBRIGADO POR JOGAR!");
     return 0;
-}}
+}

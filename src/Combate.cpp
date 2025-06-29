@@ -395,7 +395,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
                                             @@                                                      
             )" << "\n";
         }
-        else if (inimigo->getNome() == "Seraphina, Cavaleira da Peste"){
+        else if (inimigo->getNome() == "Vorstag, Cavaleiro da Peste"){
             std::cout << R"(
                                                       _
                                         ,;;;
@@ -453,7 +453,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
   \| ____________'
             )" << "\n";
         }
-        else if (inimigo->getNome() == "Vorstag, Cavaleiro da Fome"){
+        else if (inimigo->getNome() == "Seraphina, Cavaleira da Fome"){
             std::cout << R"(
                                        /\|
                       .-_-.           /  \|

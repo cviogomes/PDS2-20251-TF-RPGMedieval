@@ -32,7 +32,7 @@ public:
     }
 
     std::unique_ptr<Inimigo> clone() const override {
-        
+
         return std::make_unique<Slime>();
     }
 

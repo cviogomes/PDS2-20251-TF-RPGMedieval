@@ -6,11 +6,12 @@
 
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
-      ouro_(100),
-      pocoes_(3),
-      investimento_(0.0),
-      moral_(10),
-      aliadoNyx_(false)
+    classe_(nome),
+    ouro_(100),
+    pocoes_(3),
+    investimento_(0.0),
+    moral_(10),
+    aliadoNyx_(false)
 {}
 
 void Jogador::ganharOuro(int quantidade)
@@ -202,4 +203,8 @@ void Jogador::reduzirAtaque(int valor) {
 void Jogador::setDefesa(int defesa) {
     defesa_ = defesa;
 
+}
+
+std::string Jogador::getClasse() const {
+    return classe_;
 }

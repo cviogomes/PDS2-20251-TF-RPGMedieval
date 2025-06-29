@@ -9,7 +9,7 @@
 
 class CavaleiroDaFome : public Inimigo {
 public:
-    CavaleiroDaFome() : Inimigo("Vorstag, Cavaleiro da Fome", 400, 20, 8) {}
+    CavaleiroDaFome() : Inimigo("Seraphina, Cavaleira da Fome", 400, 20, 8) {}
 
     void aoAtacar(Jogador& jogador) override {
         jogador.setVidaMax(std::max(10, jogador.getVidaMax() - 5));

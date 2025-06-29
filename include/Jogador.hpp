@@ -32,6 +32,7 @@ class Jogador : public Personagem {
         void reduzirAtaque(int valor);
         void setDefesa(int defesa);
 
+        std::string getClasse() const;
 
     private:
         Efeito efeito_;
@@ -40,6 +41,7 @@ class Jogador : public Personagem {
         double investimento_;
         int moral_;
         bool aliadoNyx_;
+        std::string classe_;
 
 };
 

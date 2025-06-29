@@ -10,7 +10,7 @@
 
 class CavaleiroDaPeste : public Inimigo {
 public:
-    CavaleiroDaPeste() : Inimigo("Seraphina, Cavaleira da Peste", 150, 22, 10) {}
+    CavaleiroDaPeste() : Inimigo("Vorstag, Cavaleiro da Peste", 150, 22, 10) {}
 
     void aoAtacar(Jogador& jogador) override {
         int reducao = 1;
