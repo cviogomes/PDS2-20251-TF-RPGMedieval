@@ -5,6 +5,7 @@
 #include "Utils.hpp"
 #include <iostream>
 #include <memory>
+#include <string>
 
 class Zumbi : public Inimigo {
 public:
@@ -20,6 +21,7 @@ public:
 
     std::unique_ptr<Inimigo> clone() const override {
         return std::make_unique<Zumbi>(*this);
+        
     }
 private:
     bool curou_;

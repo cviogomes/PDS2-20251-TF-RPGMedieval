@@ -16,7 +16,7 @@ Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
 void Jogador::ganharOuro(int quantidade)
 {
     ouro_ += quantidade;
-    battlePrint("Você ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
+    battlePrint("Voce ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
 }
 
 void Jogador::investirOuro(int quantidade)
