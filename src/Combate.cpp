@@ -394,6 +394,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
                                           MM++                                                      
                                             @@                                                      
             )" << "\n";
+        }
         else if (inimigo->getNome() == "Seraphina, Cavaleira da Peste"){
             std::cout << R"(
                                                       _
@@ -503,7 +504,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
                                .-'___/(__)
             )" << "\n";
         }
-         else if (inimigo->getNome() == "Thargon, Cavaleiro da Guerra"){
+        else if (inimigo->getNome() == "Thargon, Cavaleiro da Guerra"){
             std::cout << R"(
                            __.--|~|--.__                               ,,;/;
                          /~     | |    ;~\          	            ,;;;/;;'
@@ -550,7 +551,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
 
             )" << "\n";
         }
-            else if (inimigo->getNome() == "Moros, Cavaleiro da Morte"){
+        else if (inimigo->getNome() == "Moros, Cavaleiro da Morte"){
             std::cout << R"(
                                               .-.
                                           .-.( ; )-.
@@ -602,8 +603,7 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
      |.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'_.-'
      '   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'
             )" << "\n";
-        };
-
+        }
 
         // Loop de combate para o inimigo atual
         while (jogador.estaVivo() && inimigo->estaVivo()) {
