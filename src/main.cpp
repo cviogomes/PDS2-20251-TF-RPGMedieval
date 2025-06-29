@@ -518,7 +518,7 @@ std::cout << vila;
 
     narrativePrint("Narrador", "Capitulo 4: O Veu da Morte.");
     narrativePrint("Narrador", "Tres Cavaleiros cairam. A Morte aguarda no coracao da fenda. E ao seu lado... Nyx.");
-    narrativePrint("Nyx", "Voce chegou longe, heroi. Junte-se a mim... ou pereça.");
+    narrativePrint("Nyx", "Voce chegou longe, heroi. Junte-se a mim... ou pereca.");
 
     int escolha_c4_nyx = fazerEscolha("Nyx oferece poder, mas a um custo. Qual seu caminho?", 
     {"Aliar-se a Nyx", 
