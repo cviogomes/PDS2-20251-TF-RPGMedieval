@@ -49,7 +49,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 # Regra de limpeza
 clean:
 	@echo "Limpando arquivos gerados..."
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.d
 
 # PHONY targets
 .PHONY: all clean
