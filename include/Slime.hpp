@@ -4,22 +4,42 @@
 #include "Inimigo.hpp"
 #include "Utils.hpp"
 #include <iostream>
+#include <vector>
 #include <memory>
 
 class Slime : public Inimigo {
 public:
-    Slime() : Inimigo("Slime", 40, 10, 2) {}
+    // Construtor padrão para os slimes originais que aparecem no mapa.
+    // Eles podem se dividir.
+    Slime() : Inimigo("Slime", 40, 10, 2), podeDividir_(true) {}
 
-    // A lógica de divisão é complexa de implementar no loop de combate atual.
-    // Esta mensagem serve como um efeito narrativo.
-    void aoReceberDano(int) override {
-        if (vida_ <= 0) {
-            battlePrint("Ao ser derrotado, o Slime se dissolve em uma poca gosmenta.\n");
+    // Sobrescreve a função de spawn da classe base.
+    std::vector<std::unique_ptr<Inimigo>> onDeathSpawn() override {
+        // A divisão SÓ acontece se a flag 'podeDividir_' for verdadeira.
+        if (podeDividir_) {
+            battlePrint("Ao ser derrotado, o " + nome_ + " se divide em dois Slimes menores!\n");
+            
+            std::vector<std::unique_ptr<Inimigo>> novosSlimes;
+            // Cria dois novos slimes usando o construtor privado, que os impede de se dividirem novamente.
+            novosSlimes.push_back(std::make_unique<Slime>(false));
+            novosSlimes.push_back(std::make_unique<Slime>(false));
+            
+            return novosSlimes;
         }
+        
+        // Se 'podeDividir_' for falso, ele simplesmente morre e não retorna nada.
+        return {}; 
     }
 
     std::unique_ptr<Inimigo> clone() const override {
-        return std::make_unique<Slime>(*this);
+        // O clone sempre cria um slime de primeira geração que pode se dividir.
+        return std::make_unique<Slime>();
     }
+
+private:
+    // Construtor privado, usado para criar os "filhos" que não podem se dividir.
+    Slime(bool podeDividir) : Inimigo("Slime Menor", 20, 8, 1), podeDividir_(podeDividir) {}
+
+    bool podeDividir_; // Flag que controla a habilidade de divisão.
 };
 #endif
