@@ -373,7 +373,7 @@ std::cout << vila;
     if (!jogador->estaVivo()) {
         narrativePrint("Roland", 
             "Levante-se, heroi. Ainda nao e' sua hora.");
-        jogador->setVida(jogador->getVidaMax() * 0.5);
+        jogador->setVida(jogador->getVidaMax() * 0.8);
         std::vector<std::unique_ptr<Inimigo>> retry;
         retry.emplace_back(std::make_unique<CavaleiroDaPeste>()
             );
@@ -384,7 +384,7 @@ std::cout << vila;
     }
 
     narrativePrint("Seraphina", "Nao e' o fim... Eles virao... todos virao... HAHAHA!");
-    jogador->ganharOuro(50);
+    jogador->ganharOuro(500);
     jogador->visitarLoja(1);
 
     narrativePrint("Narrador", "Capitulo 2: O Banquete da Fome.");
@@ -468,11 +468,11 @@ std::cout << vila;
         return 0;
 
     narrativePrint("Vorstag", "A fome... nunca acaba... ela apenas espera...");
-    jogador->ganharOuro(75);
+    jogador->ganharOuro(750);
     jogador->visitarLoja(2);
 
     narrativePrint("Narrador", "Capitulo 3: A Forja da Guerra.");
-    narrativePrint("Narrador", "O trovao da Guerra ecoa nas planícies. Thargon marcha com seu exercito.");
+    narrativePrint("Narrador", "O trovao da Guerra ecoa nas planicies. Thargon marcha com seu exercito.");
 
     int escolha_c3 = fazerEscolha("Voce encontra uma fortaleza rebelde. O que voce faz?", 
     {"Ajudar os Rebeldes", 
@@ -513,7 +513,7 @@ std::cout << vila;
         return 0;
 
     narrativePrint("Thargon", "A guerra... nunca termina... apenas muda de rosto...");
-    jogador->ganharOuro(100);
+    jogador->ganharOuro(1000);
     jogador->visitarLoja(3);
 
     narrativePrint("Narrador", "Capitulo 4: O Veu da Morte.");

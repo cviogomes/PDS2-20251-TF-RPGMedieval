@@ -6,7 +6,7 @@
 
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
-      ouro_(0),
+      ouro_(100),
       pocoes_(3),
       investimento_(0.0),
       moral_(10),
