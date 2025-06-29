@@ -7,7 +7,7 @@ void mostrarFinal(const std::string& classe, const std::string& tipo) {
             narrativePrint("Narrador", "Quando o ceu se rompeu e o mundo tremeu, foi sua espada que ficou entre a fenda e Thyria.");
             narrativePrint("Roland", "Voce... vai mesmo fazer isso?");
             narrativePrint("Guerreiro", "Um mundo novo precisa de herois dispostos a nao voltar.");
-            narrativePrint("Narrador", "O Guerreiro investe contra a fenda em chamas, espada em mãos. Um clarão corta os ceus. A explosao de luz sela o abismo — e consome o heroi.");
+            narrativePrint("Narrador", "O Guerreiro investe contra a fenda em chamas, espada em maos. Um clarao corta os ceus. A explosao de luz sela o abismo — e consome o heroi.");
             narrativePrint("Roland", "Ele nao morreu... ele se tornou parte do que salvou.");
             narrativePrint("Narrador", "Um monumento foi erguido sobre o local. Seu nome foi esculpido no aço eterno. Dizem que nos dias de batalha... ouve-se sua voz no vento.");
         } else if (classe == "Arqueiro") {
@@ -50,7 +50,7 @@ void mostrarFinal(const std::string& classe, const std::string& tipo) {
             narrativePrint("Nyx", "Voce abracou o abismo... com gosto.");
             narrativePrint("Guerreiro", "Eu vi o mundo tentando me usar. Agora ele me serve.");
             narrativePrint("Narrador", "Roland foi o primeiro a cair. Depois, vieram as cidades. O heroi virou carrasco. Thyria virou cinzas.");
-            narrativePrint("Narrador", "Seu nome nao e' mais sussurrado com orgulho... mas com terror. “O Rei das Cinzas” — soberano do fim.");
+            narrativePrint("Narrador", "Seu nome nao e' mais sussurrado com orgulho... mas com terror. 'O Rei das Cinzas' — soberano do fim.");
         } else if (classe == "Arqueiro") {
             narrativePrint("Narrador", "Com olhos vazios e passos silenciosos, ele se tornou a sombra da floresta. A flecha da esperanca, agora carrega veneno.");
             narrativePrint("Nyx", "E pensar que um dia lutou pelo bem.");
