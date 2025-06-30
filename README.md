@@ -1,8 +1,7 @@
-# Jogo Medieval
-  Sua missão é salvar o mundo dos Quatro Cavaleiros do Apocalipse. Após enfrentar dois inimigos simples você enfrentará um Cavaleiro do Apocalipse.
-  Entre as batalhas você poderá ir para a loja melhorar seus atributos e ainda investir seu dinheiro para receber mais na próxima visita à loja.
-  Além de poder escolher a classe que mais combina com você: Arqueiro, Mago ou Guerreiro!
-## Integrantes:
+<h1>RPG Medieval</h1>
+
+<h2>Integrantes<h2>
+
 <ul>
   <li>Caio Gomes</li>
   <li>Hebert Campos Silva</li>
@@ -10,10 +9,16 @@
   <li>Joshua Denny Cabral Roque</li>
 </ul>
 
+<h2>Visão geral do projeto</h2>
+
+<p>
+RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate estratégico contra diversos inimigos, sistema de classes, loja, efeitos de status e múltiplos desfechos narrativos. O jogador assume o papel de um herói (Guerreiro, Arqueiro ou Mago), enfrentando Cavaleiros do Apocalipse e monstros clássicos em capítulos progressivos com mecânicas de ouro, investimento, poções e moral.
+</p>
+
 <h1>Classes</h1>
 
 <h2>Jogador</h2>
-<h3>Responsabilidades</h3>
+<h3>Responsabilidadeasçldkfjasçldjfs</h3>
 <p>Armazenar informações de vida, ataque, defesa e ouro.
 Restaurar a vida no início de cada batalha.
 Realizar ataques contra inimigos.
