@@ -11,6 +11,7 @@
 #include "Combate.hpp"
 #include "Finais.hpp"
 #include "AsciiArt.hpp"
+#include "Exceptions.hpp"
 
 #include "Zumbi.hpp"
 #include "Esqueleto.hpp"
@@ -37,25 +38,23 @@ int fazerEscolha(const std::string &pergunta, const std::vector<std::string> &op
     typeText(std::to_string(i + 1) + " - " + opcoes[i] + "\n", TextSpeed::NORMAL);
   }
 
-  int escolha = 0;
-  while (true)
-  {
-    std::cout << "Opcao: ";
-    std::cin >> escolha;
-    if (std::cin.good() && escolha > 0 && escolha <= static_cast<int>(opcoes.size()))
-    {
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      break;
+  int escolha;
+  std::cin >> escolha;
+    if (!std::cin.good()) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        throw InputError("Entrada invalida (nao e' um numero).");
     }
-    typeText("Opcao invalida. Tente novamente.\n", TextSpeed::NORMAL);
-    std::cin.clear();
+    if (escolha < 1 || escolha > static_cast<int>(opcoes.size())) {
+        throw InputError("Opcao fora do intervalo (1–" + std::to_string(opcoes.size()) + ").");
+    }
+    // limpa eventual lixo no buffer
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  }
-  return escolha;
+    return escolha;
 }
 
-int main()
-{
+int main(){
+  try {
 
   setupTerminal();
   std::srand(static_cast<unsigned>(std::time(nullptr)));
@@ -327,4 +326,15 @@ int main()
 
   narrativePrint("Narrador", "OBRIGADO POR JOGAR!");
   return 0;
+}  catch (const InvalidParameter& e) {
+        typeText(std::string("Parametro invalido: ") + e.what() + "\n", TextSpeed::NORMAL);
+        logError(e.what());
+        return 1;
+    }
+    catch (const std::exception& e) {
+        typeText(std::string("Erro inesperado: ") + e.what() + "\n", TextSpeed::NORMAL);
+        logError(e.what());
+        return 1;
+  }
+
 }

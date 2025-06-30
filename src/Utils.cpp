@@ -6,6 +6,7 @@
 #include <codecvt>
 #include <locale>
 #include <conio.h>
+#include <fstream>
 
 
 // Inclui bibliotecas específicas do Windows para configurar o terminal
@@ -77,4 +78,9 @@ void narrativePrint(const std::string& narrator, const std::string& text) {
 
 void battlePrint(const std::string& text) {
     typeText(text, TextSpeed::BATTLE);
+}
+
+void logError(const std::string& msg) {
+    std::ofstream log("erros.log", std::ios::app);
+    log << "[ERRO] " << msg << "\n";
 }
