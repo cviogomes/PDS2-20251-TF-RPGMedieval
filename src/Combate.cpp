@@ -25,7 +25,7 @@ void lutar(Jogador &jogador, std::vector<std::unique_ptr<Inimigo>> &inimigos)
     while (jogador.estaVivo() && inimigo->estaVivo())
     {
       std::cout << "\n";
-      battlePrint("Vida: " + std::to_string(jogador.getVida()) + "/" + std::to_string(jogador.getVidaMax()) + " | Pocoes: " + std::to_string(jogador.getPocoes()) + "\n");
+      battlePrint("Vida: " + std::to_string(jogador.getVida()) + "/" + std::to_string(jogador.getVidaMax()) + " | Defesa: " + std::to_string(jogador.getDefesa()) + " | Pocoes de cura: " + std::to_string(jogador.getPocoes()) + "\n");
       battlePrint("Inimigo: " + inimigo->getNome() + " | Vida: " + std::to_string(inimigo->getVida()) + "/" + std::to_string(inimigo->getVidaMax()) + "\n");
 
       jogador.processarEfeitos();
