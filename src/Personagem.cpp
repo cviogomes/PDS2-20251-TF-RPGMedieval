@@ -18,15 +18,33 @@ Personagem::Personagem(const std::string& nome, int vidaMax, int ataque, int def
 {}
 
 
+int randomize(int min, int max) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(min, max);
+    return distrib(gen);
+}
 
 void Personagem::atacar(Personagem& alvo) {
 
-    
-    int dano = std::max(1, ataque_- alvo.getDefesa());
+    int dado = randomize(-5, 5); // retorna um número aleatório entre 1 e 10 (inclusive)
+    int dano = std::max(1, (ataque_ + dado) - alvo.getDefesa());
     alvo.setVida(alvo.getVida() - dano);
 
-    std::string mensagem = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
-    battlePrint(mensagem);
+    battlePrint("Rolando o dado de ataque...                 \n");
+
+    if(dado > 0) {
+        std::string mensagem = "Seu ataque foi potecializado em: " + std::to_string(dado) + "\n";
+        battlePrint(mensagem);
+
+    }
+    else{
+        std::string mensagem = "Seu ataque foi diminuido em: " + std::to_string(dado) + "\n";
+        battlePrint(mensagem);
+    }
+
+    std::string mensagem2 = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
+    battlePrint(mensagem2);
 }
 
 void Personagem::defender() {
@@ -38,12 +56,7 @@ void Personagem::restaurarVida() {
     battlePrint(nome_ + " restaurou a vida para " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "!\n");
 }
 
-int randomize(int min, int max) {
-    static std::random_device rd;
-    static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(min, max);
-    return distrib(gen);
-}
+
 
 bool Personagem::estaVivo() const {
     return vida_ > 0;
