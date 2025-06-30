@@ -7,6 +7,8 @@ SRC_DIR    := src
 OBJ_DIR    := obj
 BIN_DIR    := bin
 TEST_DIR   := tests
+COVERAGE_FLAGS := --coverage
+
 
 # Executáveis
 EXEC       := jogo_medieval.exe
@@ -61,13 +63,33 @@ else
 	@mkdir -p $(OBJ_DIR) $(BIN_DIR)
 endif
 
+
+# Alvo para build com cobertura
+.PHONY: coverage
+coverage: CXXFLAGS += $(COVERAGE_FLAGS)
+coverage: LDFLAGS += $(COVERAGE_FLAGS)
+coverage: clean all
+
+# Alvo para gerar relatório gcovr (texto)
+.PHONY: gcovr
+gcovr:
+	@py -m gcovr -r . > $(TEST_DIR)/gcovr.txt
+
+# Alvo para gerar relatório gcovr (HTML)
+.PHONY: gcovr-html
+gcovr-html:
+	@py -m gcovr -r . --html --html-details -o $(TEST_DIR)/cobertura.html
+	
 # --- Limpeza completa ---
 .PHONY: clean
 clean:
-	@echo "[Clean] Removendo objetos, dependências e binários..."
+	@echo "[Clean] Removendo objetos, dependencias e binarios..."
 ifeq ($(OS),Windows_NT)
 	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o $(OBJ_DIR)\*.d
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.gcno $(OBJ_DIR)\*.d
 	@if exist $(BIN_DIR) del /q $(BIN_DIR)\*.exe
+	@if exist $(TEST_DIR) del /q $(TEST_DIR)\*.html
+	
 else
 	@rm -rf $(OBJ_DIR)/* $(BIN_DIR)/*
 endif
