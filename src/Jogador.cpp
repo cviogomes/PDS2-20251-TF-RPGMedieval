@@ -4,6 +4,8 @@
 #include "Jogador.hpp"
 #include "Utils.hpp"
 
+#include "Musica.hpp"
+
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
     classe_(nome),
@@ -81,7 +83,8 @@ bool Jogador::temAliadoNyx() const {
 void Jogador::visitarLoja(int capitulo) {
     typeText("\n--- Loja do Mercador Errante ---\n", TextSpeed::NORMAL);
     retornarInvestimento();
-
+    Musica musicaLoja;
+    musicaLoja.PlayMusic("musicas/LOJA.wav");
     int escolha = 0;
     do {
         typeText("\nOuro atual: " + std::to_string(ouro_) + "\n", TextSpeed::NORMAL);
@@ -144,6 +147,8 @@ void Jogador::visitarLoja(int capitulo) {
             }
             case 5:
                 typeText("Voce saiu da loja.\n", TextSpeed::NORMAL);
+                musicaLoja.StopMusic();
+
                 break;
             default:
                 typeText("Opcao invalida.\n", TextSpeed::NORMAL);
