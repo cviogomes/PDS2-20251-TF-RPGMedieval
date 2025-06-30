@@ -6,6 +6,8 @@
 #include "Personagem.hpp"
 #include "Utils.hpp"
 
+#include <random>
+
 
 Personagem::Personagem(const std::string& nome, int vidaMax, int ataque, int defesa)
     : nome_(nome),
@@ -15,8 +17,18 @@ Personagem::Personagem(const std::string& nome, int vidaMax, int ataque, int def
       defesa_(defesa)
 {}
 
+
+int randomize(int min, int max) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(min, max);
+    return distrib(gen);
+}
+
 void Personagem::atacar(Personagem& alvo) {
-    int dano = std::max(1, ataque_ - alvo.getDefesa());
+
+    int dado = randomize(-5, 5); // retorna um número aleatório entre -5 e 5 
+    int dano = std::max(1, (ataque_ + dado) - alvo.getDefesa());
     alvo.setVida(alvo.getVida() - dano);
 
     std::string mensagem = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
@@ -31,6 +43,8 @@ void Personagem::restaurarVida() {
     vida_ = vidaMax_;
     battlePrint(nome_ + " restaurou a vida para " + std::to_string(vida_) + "/" + std::to_string(vidaMax_) + "!\n");
 }
+
+
 
 bool Personagem::estaVivo() const {
     return vida_ > 0;
