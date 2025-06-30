@@ -791,12 +791,13 @@ $$     $$$  $$$$$$$$$$$$$$$$  $$$     $$
      |.-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-.   .-. | _.-'
      |.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'.-.`-'_.-'
      '   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'
-)"}
-};
+)"}};
 
-void mostrarArte(const std::string& key) {
+void mostrarArte(const std::string &key)
+{
     auto it = artMap.find(key);
-    if (it != artMap.end()) {
+    if (it != artMap.end())
+    {
         std::cout << it->second << std::endl;
     }
 }
