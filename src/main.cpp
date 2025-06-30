@@ -63,7 +63,7 @@ int main()
     setupTerminal();
     std::srand(static_cast<unsigned>(std::time(nullptr)));
     Musica musica;
-    musica.PlayMusic("musicas/CAP11.wav");
+    musica.PlayMusic("musicas/CAP1.wav");
     narrativePrint("Narrador", "Thyria... outrora um reino prospero de cavaleiros, florestas verdejantes e vilarejos cheios de vida. Agora... um eco.");
     // imagem castelo
 
@@ -82,7 +82,7 @@ int main()
     if (classe == 1)
     {
       classeJogador = "Guerreiro";
-      jogador = std::make_unique<Jogador>("Guerreiro", 9999, 9999, 30999);
+      jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 30);
       mostrarArte("guerreiro");
     }
     else if (classe == 2)
