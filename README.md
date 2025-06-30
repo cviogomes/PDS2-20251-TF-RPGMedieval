@@ -56,6 +56,625 @@ A seguir, cartões CRC (Classe, Responsabilidades, Colaborações) de cada class
   </li>
 </ul>
 
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+  Responsabilidaes:
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  </li>
+  <li>
+  Colaborações:
+  <p>
+  
+  </p>
+  </li>
+</ul>
+
+
 </p>
 
 
