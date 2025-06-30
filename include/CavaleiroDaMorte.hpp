@@ -49,6 +49,12 @@ public:
         return std::make_unique<CavaleiroDaMorte>(*this);
     }
 
+    void setDanoParaRefletir(int dano)
+    {
+        //setter de danoParaRefletir_ para testes ou outras lógicas.
+        danoParaRefletir_ = dano;
+    }
+
 private:
     // Esta variável precisa ser 'mutable' para que possamos alterá-la em um método 'const'.
     mutable int danoParaRefletir_;

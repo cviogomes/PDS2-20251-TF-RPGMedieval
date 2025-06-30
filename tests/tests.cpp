@@ -13,6 +13,7 @@
 #include "CavaleiroDaPeste.hpp"
 #include "CavaleiroDaFome.hpp"
 #include "CavaleiroDaGuerra.hpp"
+#include "CavaleiroDaMorte.hpp"
 #include "Jogador.hpp"
 #include "Personagem.hpp"
 #include "Utils.hpp"
@@ -147,5 +148,23 @@ TEST_CASE("Testes de Combate e Habilidades Especiais")
         guerra.aoAtacar(jogador);
 
         CHECK(jogador.getAtaque() == ataque_max_antes - 1);
+    }
+
+    // Adicione dentro do seu arquivo de testes (ex: tests.cpp)
+    SUBCASE("CavaleiroDaMorte reflete dano corretamente") {
+        CavaleiroDaMorte morte;
+
+        // Garante que o jogador começa com vida cheia
+        jogador.setVida(100);
+        int vidaAntes = jogador.getVida();
+
+        // Força a reflexão de 40 de dano usando o setter
+        morte.setDanoParaRefletir(40);
+
+        morte.aoAtacar(jogador);
+
+        // O jogador deve perder 40 de vida
+        CHECK(jogador.getVida() == vidaAntes - 40);
+
     }
 }
