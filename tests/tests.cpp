@@ -12,9 +12,11 @@
 #include "Goblin.hpp"
 #include "CavaleiroDaPeste.hpp"
 #include "CavaleiroDaFome.hpp"
+#include "CavaleiroDaGuerra.hpp"
 #include "Jogador.hpp"
 #include "Personagem.hpp"
 #include "Utils.hpp"
+
 
 // NOTA: Incluir .cpp não é uma prática padrão em projetos grandes,
 // mas simplifica enormemente a compilação para um único arquivo de teste como este.
@@ -134,5 +136,16 @@ TEST_CASE("Testes de Combate e Habilidades Especiais")
         fome.aoAtacar(jogador);
 
         CHECK(jogador.getVidaMax() == vida_max_antes - 5);
+    }
+
+
+    SUBCASE("Habilidade especial do Cavaleiro da guerra")
+    {
+        CavaleiroDaGuerra guerra;
+        int ataque_max_antes = jogador.getAtaque();
+
+        guerra.aoAtacar(jogador);
+
+        CHECK(jogador.getAtaque() == ataque_max_antes - 1);
     }
 }
