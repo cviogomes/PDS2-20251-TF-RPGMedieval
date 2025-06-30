@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html class="theme-green">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>GCC Code Coverage Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="cobertura.css"/>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>GCC Code Coverage Report</h1>
+      <hr/>
+      <div class="summary">
+<div>
+  <table class="legend">
+    <tr>
+      <th scope="row">Directory:</th>
+      <td>./</td>
+    </tr>
+    <tr>
+      <th scope="row">File:</th>
+      <td>tests/tests.cpp</td>
+    </tr>
+    <tr>
+      <th scope="row">Date:</th>
+      <td>2025-06-30 18:35:50</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table class="coverage">
+    <tr>
+      <th></th>
+      <th scope="col">Exec</th>
+      <th scope="col">Total</th>
+      <th scope="col">Coverage</th>
+    </tr>
+    <tr>
+      <th scope="row">Lines:</th>
+      <td>71</td>
+      <td>71</td>
+      <td class="coverage-high">100.0%</td>
+    </tr>
+    <tr>
+      <th scope="row">Functions:</th>
+      <td>2</td>
+      <td>2</td>
+      <td class="coverage-high">100.0%</td>
+    </tr>
+    <tr>
+      <th scope="row">Branches:</th>
+      <td>241</td>
+      <td>588</td>
+      <td class="coverage-low">41.0%</td>
+    </tr>
+  </table>
+</div>
+      </div>
+      <hr/>
+    </header>
+    <nav>
+<details>
+  <summary>List of functions</summary>
+  <table class="listOfFunctions">
+    <tr>
+      <th>Function (Line)</th>
+      <th>Call count</th>
+      <th>Line coverage</th>
+      <th>Branch coverage</th>
+      <th>Condition coverage</th>
+      <th>Block coverage</th>
+    </tr>
+    <tr><td><a href="#l25">DOCTEST_ANON_FUNC_14() (line 25)</a></td><td>called 4 times</td><td>100.0%</td><td>39.1%</td><td>-%</td><td>43.7%</td></tr>
+    <tr><td><a href="#l78">DOCTEST_ANON_FUNC_20() (line 78)</a></td><td>called 6 times</td><td>100.0%</td><td>44.3%</td><td>-%</td><td>47.1%</td></tr>
+  </table>
+</details>
+
+    </nav>
+    <main>
+<div class="file-source">
+  <table>
+    <tr>
+      <th align="right">Line</th>
+      <th align="right">Branch</th>
+      <th align="right">Exec</th>
+      <th align="left" style="width: 100%;">Source</th>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l1" href="#l1">1</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// testes.cpp</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l2" href="#l2">2</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l3" href="#l3">3</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// Esta linha mÃ¡gica faz com que a biblioteca doctest crie a funÃ§Ã£o main() para nÃ³s.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l4" href="#l4">4</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l5" href="#l5">5</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l6" href="#l6">6</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// Inclui a biblioteca de testes.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l7" href="#l7">7</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;../include/doctest.h&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l8" href="#l8">8</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l9" href="#l9">9</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// Inclui todas as classes que queremos testar.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l10" href="#l10">10</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Jogador.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l11" href="#l11">11</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Zumbi.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l12" href="#l12">12</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Goblin.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l13" href="#l13">13</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CavaleiroDaPeste.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l14" href="#l14">14</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CavaleiroDaFome.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l15" href="#l15">15</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CavaleiroDaGuerra.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l16" href="#l16">16</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;CavaleiroDaMorte.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l17" href="#l17">17</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Jogador.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l18" href="#l18">18</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Personagem.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l19" href="#l19">19</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Utils.hpp&quot;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l20" href="#l20">20</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l21" href="#l21">21</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l22" href="#l22">22</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// NOTA: Incluir .cpp nÃ£o Ã© uma prÃ¡tica padrÃ£o em projetos grandes,</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l23" href="#l23">23</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="c1">// mas simplifica enormemente a compilaÃ§Ã£o para um Ãºnico arquivo de teste como este.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l24" href="#l24">24</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l25" href="#l25">25</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine"><span class="n">TEST_CASE</span><span class="p">(</span><span class="s">&quot;Testes das classes Personagem e Jogador&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l26" href="#l26">26</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l27" href="#l27">27</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="c1">// Cria um jogador para usar nos testes deste caso.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l28" href="#l28">28</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">2/4</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (4&rightarrow;5) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (4&rightarrow;274) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (5&rightarrow;6) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (5&rightarrow;272) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">4</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">Jogador</span><span class="w"> </span><span class="n">jogador</span><span class="p">(</span><span class="s">&quot;Heroi de Teste&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l29" href="#l29">29</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l30" href="#l30">30</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="c1">// SUBCASE permite agrupar testes menores dentro de um TEST_CASE.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l31" href="#l31">31</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (8&rightarrow;9) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (8&rightarrow;280) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (9&rightarrow;10) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (9&rightarrow;278) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (12&rightarrow;13) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (12&rightarrow;119) taken 3 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">5</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;VerificaÃ§Ã£o do Construtor e Atributos Iniciais&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l32" href="#l32">32</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l33" href="#l33">33</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (14&rightarrow;15) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (14&rightarrow;281) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (17&rightarrow;18) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (17&rightarrow;286) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (18&rightarrow;19) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (18&rightarrow;286) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (19&rightarrow;20) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (19&rightarrow;286) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (20&rightarrow;21) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (20&rightarrow;284) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (23&rightarrow;24) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (23&rightarrow;295) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (24&rightarrow;25) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (24&rightarrow;26) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (25&rightarrow;26) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (25&rightarrow;295) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (26&rightarrow;27) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (26&rightarrow;295) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (291&rightarrow;292) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (291&rightarrow;293) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (292&rightarrow;23) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (292&rightarrow;295) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getNome</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Heroi de Teste&quot;</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (29&rightarrow;30) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (29&rightarrow;298) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (32&rightarrow;33) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (32&rightarrow;303) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (33&rightarrow;34) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (33&rightarrow;303) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (34&rightarrow;35) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (34&rightarrow;303) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (35&rightarrow;36) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (35&rightarrow;301) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (38&rightarrow;39) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (38&rightarrow;314) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (39&rightarrow;40) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (39&rightarrow;41) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (40&rightarrow;41) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (40&rightarrow;314) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (41&rightarrow;42) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (41&rightarrow;314) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (310&rightarrow;311) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (310&rightarrow;312) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (311&rightarrow;38) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (311&rightarrow;314) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l35" href="#l35">35</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (44&rightarrow;45) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (44&rightarrow;317) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (47&rightarrow;48) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (47&rightarrow;322) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (48&rightarrow;49) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (48&rightarrow;322) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (49&rightarrow;50) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (49&rightarrow;322) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (50&rightarrow;51) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (50&rightarrow;320) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (53&rightarrow;54) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (53&rightarrow;333) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (54&rightarrow;55) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (54&rightarrow;56) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (55&rightarrow;56) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (55&rightarrow;333) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (56&rightarrow;57) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (56&rightarrow;333) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (329&rightarrow;330) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (329&rightarrow;331) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (330&rightarrow;53) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (330&rightarrow;333) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVidaMax</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l36" href="#l36">36</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (59&rightarrow;60) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (59&rightarrow;336) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (62&rightarrow;63) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (62&rightarrow;341) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (63&rightarrow;64) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (63&rightarrow;341) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (64&rightarrow;65) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (64&rightarrow;341) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (65&rightarrow;66) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (65&rightarrow;339) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (68&rightarrow;69) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (68&rightarrow;352) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (69&rightarrow;70) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (69&rightarrow;71) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (70&rightarrow;71) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (70&rightarrow;352) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (71&rightarrow;72) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (71&rightarrow;352) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (348&rightarrow;349) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (348&rightarrow;350) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (349&rightarrow;68) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (349&rightarrow;352) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getAtaque</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l37" href="#l37">37</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (74&rightarrow;75) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (74&rightarrow;355) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (77&rightarrow;78) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (77&rightarrow;360) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (78&rightarrow;79) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (78&rightarrow;360) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (79&rightarrow;80) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (79&rightarrow;360) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (80&rightarrow;81) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (80&rightarrow;358) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (83&rightarrow;84) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (83&rightarrow;371) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (84&rightarrow;85) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (84&rightarrow;86) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (85&rightarrow;86) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (85&rightarrow;371) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (86&rightarrow;87) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (86&rightarrow;371) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (367&rightarrow;368) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (367&rightarrow;369) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (368&rightarrow;83) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (368&rightarrow;371) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getDefesa</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l38" href="#l38">38</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (89&rightarrow;90) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (89&rightarrow;374) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (92&rightarrow;93) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (92&rightarrow;379) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (93&rightarrow;94) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (93&rightarrow;379) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (94&rightarrow;95) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (94&rightarrow;379) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (95&rightarrow;96) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (95&rightarrow;377) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (98&rightarrow;99) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (98&rightarrow;390) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (99&rightarrow;100) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (99&rightarrow;101) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (100&rightarrow;101) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (100&rightarrow;390) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (101&rightarrow;102) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (101&rightarrow;390) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (386&rightarrow;387) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (386&rightarrow;388) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (387&rightarrow;98) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (387&rightarrow;390) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getMoral</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// Moral inicial</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l39" href="#l39">39</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (104&rightarrow;105) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (104&rightarrow;393) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (107&rightarrow;108) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (107&rightarrow;398) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (108&rightarrow;109) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (108&rightarrow;398) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (109&rightarrow;110) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (109&rightarrow;398) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (110&rightarrow;111) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (110&rightarrow;396) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (113&rightarrow;114) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (113&rightarrow;409) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (114&rightarrow;115) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (114&rightarrow;116) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (115&rightarrow;116) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (115&rightarrow;409) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (116&rightarrow;117) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (116&rightarrow;409) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (405&rightarrow;406) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (405&rightarrow;407) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (406&rightarrow;113) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (406&rightarrow;409) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getPocoes</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// PoÃ§Ãµes iniciais</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l40" href="#l40">40</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l41" href="#l41">41</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l42" href="#l42">42</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (120&rightarrow;121) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (120&rightarrow;417) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (121&rightarrow;122) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (121&rightarrow;415) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (124&rightarrow;125) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (124&rightarrow;158) taken 3 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">5</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Teste de ganho de ouro&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l43" href="#l43">43</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l44" href="#l44">44</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (125&rightarrow;126) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (125&rightarrow;456) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">ganharOuro</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l45" href="#l45">45</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (127&rightarrow;128) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (127&rightarrow;418) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (130&rightarrow;131) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (130&rightarrow;423) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (131&rightarrow;132) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (131&rightarrow;423) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (132&rightarrow;133) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (132&rightarrow;423) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (133&rightarrow;134) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (133&rightarrow;421) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (136&rightarrow;137) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (136&rightarrow;434) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (137&rightarrow;138) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (137&rightarrow;139) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (138&rightarrow;139) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (138&rightarrow;434) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (139&rightarrow;140) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (139&rightarrow;434) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (430&rightarrow;431) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (430&rightarrow;432) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (431&rightarrow;136) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (431&rightarrow;434) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getOuro</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span><span class="w"> </span><span class="c1">// Verifica se o ouro foi adicionado corretamente aos 100 iniciais</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l47" href="#l47">47</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (141&rightarrow;142) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (141&rightarrow;456) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">investirOuro</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l48" href="#l48">48</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (143&rightarrow;144) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (143&rightarrow;437) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (146&rightarrow;147) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (146&rightarrow;442) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (147&rightarrow;148) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (147&rightarrow;442) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (148&rightarrow;149) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (148&rightarrow;442) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (149&rightarrow;150) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (149&rightarrow;440) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (152&rightarrow;153) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (152&rightarrow;453) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (153&rightarrow;154) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (153&rightarrow;155) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (154&rightarrow;155) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (154&rightarrow;453) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (155&rightarrow;156) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (155&rightarrow;453) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (449&rightarrow;450) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (449&rightarrow;451) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (450&rightarrow;152) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (450&rightarrow;453) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getOuro</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Verifica se o ouro foi retirado corretamente apos o investimento</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l49" href="#l49">49</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (159&rightarrow;160) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (159&rightarrow;461) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (160&rightarrow;161) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (160&rightarrow;459) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (163&rightarrow;164) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (163&rightarrow;197) taken 3 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">5</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Teste de manipulacao de Moral&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (164&rightarrow;165) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (164&rightarrow;500) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">adicionarMoral</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (166&rightarrow;167) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (166&rightarrow;462) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (169&rightarrow;170) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (169&rightarrow;467) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (170&rightarrow;171) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (170&rightarrow;467) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (171&rightarrow;172) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (171&rightarrow;467) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (172&rightarrow;173) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (172&rightarrow;465) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (175&rightarrow;176) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (175&rightarrow;478) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (176&rightarrow;177) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (176&rightarrow;178) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (177&rightarrow;178) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (177&rightarrow;478) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (178&rightarrow;179) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (178&rightarrow;478) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (474&rightarrow;475) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (474&rightarrow;476) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (475&rightarrow;175) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (475&rightarrow;478) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getMoral</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (180&rightarrow;181) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (180&rightarrow;500) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">adicionarMoral</span><span class="p">(</span><span class="mi">-10</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l57" href="#l57">57</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (182&rightarrow;183) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (182&rightarrow;481) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (185&rightarrow;186) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (185&rightarrow;486) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (186&rightarrow;187) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (186&rightarrow;486) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (187&rightarrow;188) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (187&rightarrow;486) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (188&rightarrow;189) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (188&rightarrow;484) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (191&rightarrow;192) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (191&rightarrow;497) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (192&rightarrow;193) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (192&rightarrow;194) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (193&rightarrow;194) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (193&rightarrow;497) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (194&rightarrow;195) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (194&rightarrow;497) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (493&rightarrow;494) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (493&rightarrow;495) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (494&rightarrow;191) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (494&rightarrow;497) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getMoral</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l58" href="#l58">58</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l59" href="#l59">59</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l60" href="#l60">60</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (198&rightarrow;199) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (198&rightarrow;505) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (199&rightarrow;200) taken 4 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (199&rightarrow;503) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (202&rightarrow;203) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (202&rightarrow;269) taken 3 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">5</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Teste do uso de Pocoes&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l61" href="#l61">61</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l62" href="#l62">62</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l63" href="#l63">63</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l64" href="#l64">64</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (203&rightarrow;204) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (203&rightarrow;582) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">setVida</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Simula que o jogador tomou dano</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l65" href="#l65">65</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (205&rightarrow;206) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (205&rightarrow;506) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (208&rightarrow;209) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (208&rightarrow;511) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (209&rightarrow;210) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (209&rightarrow;511) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (210&rightarrow;211) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (210&rightarrow;511) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (211&rightarrow;212) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (211&rightarrow;509) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (214&rightarrow;215) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (214&rightarrow;522) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (215&rightarrow;216) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (215&rightarrow;217) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (216&rightarrow;217) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (216&rightarrow;522) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (217&rightarrow;218) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (217&rightarrow;522) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (518&rightarrow;519) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (518&rightarrow;520) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (519&rightarrow;214) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (519&rightarrow;522) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l66" href="#l66">66</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l67" href="#l67">67</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (219&rightarrow;220) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (219&rightarrow;582) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">usarPocao</span><span class="p">();</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l68" href="#l68">68</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l69" href="#l69">69</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">9/24</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (221&rightarrow;222) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (221&rightarrow;525) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (223&rightarrow;224) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (223&rightarrow;533) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (225&rightarrow;226) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (225&rightarrow;530) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (226&rightarrow;227) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (226&rightarrow;530) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (227&rightarrow;228) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (227&rightarrow;530) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (228&rightarrow;229) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (228&rightarrow;528) not taken.</div>
+            <div class="takenBranch">&check; Branch 12 (231&rightarrow;232) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 13 (231&rightarrow;541) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (232&rightarrow;233) not taken.</div>
+            <div class="takenBranch">&check; Branch 15 (232&rightarrow;234) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 16 (233&rightarrow;234) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (233&rightarrow;541) not taken.</div>
+            <div class="takenBranch">&check; Branch 18 (234&rightarrow;235) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (234&rightarrow;541) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (537&rightarrow;538) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (537&rightarrow;539) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 22 (538&rightarrow;231) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 23 (538&rightarrow;541) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">jogador</span><span class="p">.</span><span class="n">getVidaMax</span><span class="p">());</span><span class="w"> </span><span class="c1">// Vida deve ser restaurada</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l70" href="#l70">70</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l71" href="#l71">71</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (236&rightarrow;237) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (236&rightarrow;582) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">setVida</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l72" href="#l72">72</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (237&rightarrow;238) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (237&rightarrow;582) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">usarPocao</span><span class="p">();</span><span class="w">             </span><span class="c1">// Tenta usar a quarta (inexistente)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l73" href="#l73">73</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (239&rightarrow;240) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (239&rightarrow;544) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (242&rightarrow;243) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (242&rightarrow;549) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (243&rightarrow;244) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (243&rightarrow;549) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (244&rightarrow;245) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (244&rightarrow;549) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (245&rightarrow;246) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (245&rightarrow;547) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (248&rightarrow;249) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (248&rightarrow;560) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (249&rightarrow;250) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (249&rightarrow;251) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (250&rightarrow;251) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (250&rightarrow;560) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (251&rightarrow;252) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (251&rightarrow;560) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (556&rightarrow;557) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (556&rightarrow;558) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (557&rightarrow;248) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (557&rightarrow;560) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// Vida nÃ£o deve ser restaurada</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l74" href="#l74">74</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (254&rightarrow;255) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (254&rightarrow;563) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (257&rightarrow;258) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (257&rightarrow;568) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (258&rightarrow;259) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (258&rightarrow;568) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (259&rightarrow;260) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (259&rightarrow;568) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (260&rightarrow;261) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (260&rightarrow;566) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (263&rightarrow;264) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (263&rightarrow;579) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (264&rightarrow;265) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (264&rightarrow;266) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (265&rightarrow;266) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (265&rightarrow;579) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (266&rightarrow;267) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (266&rightarrow;579) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (575&rightarrow;576) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (575&rightarrow;577) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (576&rightarrow;263) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (576&rightarrow;579) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getPocoes</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// Contagem continua 0</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l75" href="#l75">75</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l76" href="#l76">76</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">4</td>
+      <td class="src coveredLine"><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l77" href="#l77">77</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l78" href="#l78">78</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="n">TEST_CASE</span><span class="p">(</span><span class="s">&quot;Testes de Combate e Habilidades Especiais&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l79" href="#l79">79</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l80" href="#l80">80</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">2/4</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (4&rightarrow;5) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (4&rightarrow;171) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (5&rightarrow;6) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (5&rightarrow;169) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">6</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">Jogador</span><span class="w"> </span><span class="n">jogador</span><span class="p">(</span><span class="s">&quot;Guerreiro Forte&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l81" href="#l81">81</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l82" href="#l82">82</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (8&rightarrow;9) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (8&rightarrow;177) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (9&rightarrow;10) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (9&rightarrow;175) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (12&rightarrow;13) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (12&rightarrow;34) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial de cura do Zumbi&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l83" href="#l83">83</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l84" href="#l84">84</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (13&rightarrow;14) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (13&rightarrow;199) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">Zumbi</span><span class="w"> </span><span class="n">zumbi</span><span class="p">;</span><span class="w"> </span><span class="c1">// Vida Max: 100</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l85" href="#l85">85</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l86" href="#l86">86</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Dano para deixar a vida abaixo de 30% (limite Ã© 30 de vida)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l87" href="#l87">87</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (14&rightarrow;15) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (14&rightarrow;197) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">zumbi</span><span class="p">.</span><span class="n">setVida</span><span class="p">(</span><span class="mi">29</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l88" href="#l88">88</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l89" href="#l89">89</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// aoReceberDano Ã© chamado dentro de atacar, mas vamos chamar diretamente para isolar o teste</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l90" href="#l90">90</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (15&rightarrow;16) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (15&rightarrow;197) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">zumbi</span><span class="p">.</span><span class="n">aoReceberDano</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l91" href="#l91">91</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l92" href="#l92">92</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// A habilidade deve ter sido ativada, restaurando a vida para o mÃ¡ximo</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l93" href="#l93">93</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">9/24</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (17&rightarrow;18) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (17&rightarrow;178) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (19&rightarrow;20) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (19&rightarrow;186) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (21&rightarrow;22) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (21&rightarrow;183) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (22&rightarrow;23) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (22&rightarrow;183) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (23&rightarrow;24) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (23&rightarrow;183) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (24&rightarrow;25) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (24&rightarrow;181) not taken.</div>
+            <div class="takenBranch">&check; Branch 12 (27&rightarrow;28) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 13 (27&rightarrow;194) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (28&rightarrow;29) not taken.</div>
+            <div class="takenBranch">&check; Branch 15 (28&rightarrow;30) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 16 (29&rightarrow;30) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (29&rightarrow;194) not taken.</div>
+            <div class="takenBranch">&check; Branch 18 (30&rightarrow;31) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (30&rightarrow;194) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (190&rightarrow;191) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (190&rightarrow;192) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 22 (191&rightarrow;27) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 23 (191&rightarrow;194) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">zumbi</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">zumbi</span><span class="p">.</span><span class="n">getVidaMax</span><span class="p">());</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l94" href="#l94">94</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l95" href="#l95">95</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l96" href="#l96">96</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (35&rightarrow;36) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (35&rightarrow;205) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (36&rightarrow;37) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (36&rightarrow;203) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (39&rightarrow;40) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (39&rightarrow;60) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial de roubo do Goblin&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l97" href="#l97">97</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l98" href="#l98">98</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (40&rightarrow;41) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (40&rightarrow;227) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">Goblin</span><span class="w"> </span><span class="n">goblin</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l99" href="#l99">99</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l100" href="#l100">100</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Damos 100 de ouro ao jogador para o teste</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l101" href="#l101">101</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (41&rightarrow;42) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (41&rightarrow;225) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">ganharOuro</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l102" href="#l102">102</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Precisamos de uma forma de verificar o ouro. Vamos usar a moral como um proxy temporÃ¡rio</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l103" href="#l103">103</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// se nÃ£o tivermos um getOuro(). Para este teste, vamos assumir que investir com</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l104" href="#l104">104</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// valor negativo em Jogador.cpp remove ouro.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l105" href="#l105">105</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l106" href="#l106">106</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Vamos modificar o mÃ©todo investirOuro para retornar o ouro, apenas para o teste</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l107" href="#l107">107</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Em um projeto real, criarÃ­amos um getOuro().</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l108" href="#l108">108</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Para este exemplo, a lÃ³gica de roubo Ã© testada conceitualmente.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l109" href="#l109">109</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// O jogador comeÃ§a com 0, ganha 100 -&gt; total 100</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l110" href="#l110">110</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Goblin ataca, rouba 20</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l111" href="#l111">111</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// jogador.ganharOuro(-20) Ã© chamado, total esperado 80</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l112" href="#l112">112</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l113" href="#l113">113</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// AÃ§Ã£o</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l114" href="#l114">114</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (42&rightarrow;43) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (42&rightarrow;225) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">goblin</span><span class="p">.</span><span class="n">aoAtacar</span><span class="p">(</span><span class="n">jogador</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l115" href="#l115">115</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l116" href="#l116">116</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (44&rightarrow;45) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (44&rightarrow;206) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (47&rightarrow;48) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (47&rightarrow;211) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (48&rightarrow;49) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (48&rightarrow;211) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (49&rightarrow;50) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (49&rightarrow;211) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (50&rightarrow;51) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (50&rightarrow;209) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (53&rightarrow;54) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (53&rightarrow;222) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (54&rightarrow;55) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (54&rightarrow;56) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (55&rightarrow;56) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (55&rightarrow;222) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (56&rightarrow;57) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (56&rightarrow;222) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (218&rightarrow;219) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (218&rightarrow;220) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (219&rightarrow;53) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (219&rightarrow;222) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getOuro</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">180</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l117" href="#l117">117</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l118" href="#l118">118</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// VerificaÃ§Ã£o: Como nÃ£o temos getOuro, o teste aqui Ã© mais conceitual.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l119" href="#l119">119</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Se tivÃ©ssemos getOuro(), a verificaÃ§Ã£o seria: CHECK(jogador.getOuro() == 80);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l120" href="#l120">120</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Por agora, garantimos que o cÃ³digo compila e a lÃ³gica existe.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l121" href="#l121">121</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l122" href="#l122">122</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l123" href="#l123">123</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (61&rightarrow;62) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (61&rightarrow;233) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (62&rightarrow;63) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (62&rightarrow;231) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (65&rightarrow;66) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (65&rightarrow;86) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial do Cavaleiro da Peste&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l124" href="#l124">124</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l125" href="#l125">125</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (66&rightarrow;67) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (66&rightarrow;255) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CavaleiroDaPeste</span><span class="w"> </span><span class="n">peste</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l126" href="#l126">126</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (67&rightarrow;68) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (67&rightarrow;253) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">defesa_antes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jogador</span><span class="p">.</span><span class="n">getDefesa</span><span class="p">();</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l127" href="#l127">127</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l128" href="#l128">128</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (68&rightarrow;69) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (68&rightarrow;253) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">peste</span><span class="p">.</span><span class="n">aoAtacar</span><span class="p">(</span><span class="n">jogador</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l129" href="#l129">129</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l130" href="#l130">130</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (70&rightarrow;71) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (70&rightarrow;234) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (73&rightarrow;74) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (73&rightarrow;239) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (74&rightarrow;75) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (74&rightarrow;239) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (75&rightarrow;76) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (75&rightarrow;239) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (76&rightarrow;77) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (76&rightarrow;237) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (79&rightarrow;80) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (79&rightarrow;250) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (80&rightarrow;81) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (80&rightarrow;82) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (81&rightarrow;82) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (81&rightarrow;250) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (82&rightarrow;83) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (82&rightarrow;250) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (246&rightarrow;247) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (246&rightarrow;248) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (247&rightarrow;79) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (247&rightarrow;250) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getDefesa</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">defesa_antes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l131" href="#l131">131</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l132" href="#l132">132</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l133" href="#l133">133</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (87&rightarrow;88) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (87&rightarrow;261) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (88&rightarrow;89) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (88&rightarrow;259) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (91&rightarrow;92) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (91&rightarrow;112) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial do Cavaleiro da Fome&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l134" href="#l134">134</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l135" href="#l135">135</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (92&rightarrow;93) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (92&rightarrow;283) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CavaleiroDaFome</span><span class="w"> </span><span class="n">fome</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l136" href="#l136">136</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (93&rightarrow;94) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (93&rightarrow;281) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">vida_max_antes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jogador</span><span class="p">.</span><span class="n">getVidaMax</span><span class="p">();</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l137" href="#l137">137</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l138" href="#l138">138</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (94&rightarrow;95) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (94&rightarrow;281) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">fome</span><span class="p">.</span><span class="n">aoAtacar</span><span class="p">(</span><span class="n">jogador</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l139" href="#l139">139</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l140" href="#l140">140</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (96&rightarrow;97) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (96&rightarrow;262) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (99&rightarrow;100) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (99&rightarrow;267) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (100&rightarrow;101) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (100&rightarrow;267) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (101&rightarrow;102) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (101&rightarrow;267) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (102&rightarrow;103) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (102&rightarrow;265) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (105&rightarrow;106) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (105&rightarrow;278) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (106&rightarrow;107) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (106&rightarrow;108) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (107&rightarrow;108) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (107&rightarrow;278) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (108&rightarrow;109) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (108&rightarrow;278) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (274&rightarrow;275) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (274&rightarrow;276) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (275&rightarrow;105) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (275&rightarrow;278) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVidaMax</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">vida_max_antes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l141" href="#l141">141</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l142" href="#l142">142</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l143" href="#l143">143</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (113&rightarrow;114) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (113&rightarrow;289) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (114&rightarrow;115) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (114&rightarrow;287) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (117&rightarrow;118) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (117&rightarrow;138) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial do Cavaleiro da guerra&quot;</span><span class="p">)</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l144" href="#l144">144</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">    </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l145" href="#l145">145</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (118&rightarrow;119) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (118&rightarrow;311) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CavaleiroDaGuerra</span><span class="w"> </span><span class="n">guerra</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l146" href="#l146">146</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (119&rightarrow;120) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (119&rightarrow;309) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ataque_max_antes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jogador</span><span class="p">.</span><span class="n">getAtaque</span><span class="p">();</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l147" href="#l147">147</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l148" href="#l148">148</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (120&rightarrow;121) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (120&rightarrow;309) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">guerra</span><span class="p">.</span><span class="n">aoAtacar</span><span class="p">(</span><span class="n">jogador</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l149" href="#l149">149</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l150" href="#l150">150</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (122&rightarrow;123) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (122&rightarrow;290) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (125&rightarrow;126) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (125&rightarrow;295) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (126&rightarrow;127) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (126&rightarrow;295) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (127&rightarrow;128) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (127&rightarrow;295) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (128&rightarrow;129) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (128&rightarrow;293) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (131&rightarrow;132) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (131&rightarrow;306) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (132&rightarrow;133) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (132&rightarrow;134) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (133&rightarrow;134) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (133&rightarrow;306) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (134&rightarrow;135) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (134&rightarrow;306) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (302&rightarrow;303) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (302&rightarrow;304) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (303&rightarrow;131) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (303&rightarrow;306) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getAtaque</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ataque_max_antes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l151" href="#l151">151</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l152" href="#l152">152</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l153" href="#l153">153</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">4/6</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (139&rightarrow;140) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (139&rightarrow;317) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (140&rightarrow;141) taken 6 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (140&rightarrow;315) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (143&rightarrow;144) taken 1 times.</div>
+            <div class="takenBranch">&check; Branch 5 (143&rightarrow;166) taken 5 times.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">7</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="n">SUBCASE</span><span class="p">(</span><span class="s">&quot;Habilidade especial do Cavaleiro da morte&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l154" href="#l154">154</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (144&rightarrow;145) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (144&rightarrow;339) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CavaleiroDaMorte</span><span class="w"> </span><span class="n">morte</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l155" href="#l155">155</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l156" href="#l156">156</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// Garante que o jogador comeÃ§a com vida cheia</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l157" href="#l157">157</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (145&rightarrow;146) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (145&rightarrow;337) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">jogador</span><span class="p">.</span><span class="n">setVida</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l158" href="#l158">158</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (146&rightarrow;147) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (146&rightarrow;337) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">vidaAntes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">();</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l159" href="#l159">159</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l160" href="#l160">160</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// ForÃ§a a reflexÃ£o de 40 de dano usando o setter</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l161" href="#l161">161</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">        </span><span class="n">morte</span><span class="p">.</span><span class="n">setDanoParaRefletir</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l162" href="#l162">162</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l163" href="#l163">163</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">1/2</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (148&rightarrow;149) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (148&rightarrow;337) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">1</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">morte</span><span class="p">.</span><span class="n">aoAtacar</span><span class="p">(</span><span class="n">jogador</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l164" href="#l164">164</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l165" href="#l165">165</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">        </span><span class="c1">// O jogador deve perder 40 de vida</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l166" href="#l166">166</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+          <summary class="linebranchSummary">8/22</summary>
+          <div class="linebranchContents">
+            <div class="takenBranch">&check; Branch 0 (150&rightarrow;151) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 1 (150&rightarrow;318) not taken.</div>
+            <div class="takenBranch">&check; Branch 2 (153&rightarrow;154) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 3 (153&rightarrow;323) not taken.</div>
+            <div class="takenBranch">&check; Branch 4 (154&rightarrow;155) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 5 (154&rightarrow;323) not taken.</div>
+            <div class="takenBranch">&check; Branch 6 (155&rightarrow;156) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 7 (155&rightarrow;323) not taken.</div>
+            <div class="takenBranch">&check; Branch 8 (156&rightarrow;157) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 9 (156&rightarrow;321) not taken.</div>
+            <div class="takenBranch">&check; Branch 10 (159&rightarrow;160) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 11 (159&rightarrow;334) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 12 (160&rightarrow;161) not taken.</div>
+            <div class="takenBranch">&check; Branch 13 (160&rightarrow;162) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 14 (161&rightarrow;162) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 15 (161&rightarrow;334) not taken.</div>
+            <div class="takenBranch">&check; Branch 16 (162&rightarrow;163) taken 1 times.</div>
+            <div class="notTakenBranch">&cross; Branch 17 (162&rightarrow;334) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 18 (330&rightarrow;331) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 19 (330&rightarrow;332) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 20 (331&rightarrow;159) not taken.</div>
+            <div class="notTakenBranch">&cross; Branch 21 (331&rightarrow;334) not taken.</div>
+          </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">        </span><span class="n">CHECK</span><span class="p">(</span><span class="n">jogador</span><span class="p">.</span><span class="n">getVida</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">vidaAntes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">40</span><span class="p">);</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l167" href="#l167">167</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l168" href="#l168">168</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l169" href="#l169">169</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l170" href="#l170">170</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+  </table>
+</div>
+      <hr/>
+    </main>
+    <footer>
+      Generated by: <a href="http://gcovr.com/en/8.3">GCOVR (Version 8.3)</a>
+    </footer>
+  </body>
+</html>

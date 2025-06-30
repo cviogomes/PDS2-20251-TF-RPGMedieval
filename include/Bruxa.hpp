@@ -13,10 +13,10 @@ class Bruxa : public Inimigo
 public:
     Bruxa() : Inimigo("Bruxa", 60, 18, 5) {}
 
-    void aoAtacar(Jogador& jogador) override {
+    void aoAtacar(Jogador &jogador) override
+    {
         battlePrint(nome_ + " lança uma maldicao em voce!\n");
         jogador.aplicarEfeito({TipoEfeito::Maldicao, 3});
-
     }
 
     std::unique_ptr<Inimigo> clone() const override

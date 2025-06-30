@@ -1,270 +1,282 @@
-# Jogo Medieval
-  Sua missão é salvar o mundo dos Quatro Cavaleiros do Apocalipse. Após enfrentar dois inimigos simples você enfrentará um Cavaleiro do Apocalipse.
-  Entre as batalhas você poderá ir para a loja melhorar seus atributos e ainda investir seu dinheiro para receber mais na próxima visita à loja.
-  Além de poder escolher a classe que mais combina com você: Arqueiro, Mago ou Guerreiro!
-## Integrantes:
-<ul>
-  <li>Caio Gomes</li>
-  <li>Hebert Campos Silva</li>
-  <li>Vitor Henrique Stanciola dos Santos</li>
-  <li>Joshua Denny Cabral Roque</li>
-</ul>
+# RPG Medieval
 
-<h1>Classes</h1>
+## 1. Visão Geral do Projeto
 
-<h2>Jogador</h2>
-<h3>Responsabilidades</h3>
-<p>Armazenar informações de vida, ataque, defesa e ouro.
-Restaurar a vida no início de cada batalha.
-Realizar ataques contra inimigos.
-Defender-se para reduzir o dano recebido.
-Recuperar pontos de vida durante o combate.
-Aumentar atributos (ataque, defesa, vida máxima) na loja.
-Investir ouro e receber retorno financeiro.
-Verificar a morte durante batalhas.
-Exibir status atual.</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Loja: para melhorar atributos e investir ouro.</li>
-    <li>Combate: para enfrentar inimigos.</li>
-  </ul>
-</p>
+RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate estratégico contra diversos inimigos, sistema de classes, loja, efeitos de status e múltiplos desfechos narrativos. O jogador assume o papel de um herói (Guerreiro, Arqueiro ou Mago), enfrentando Cavaleiros do Apocalipse e monstros clássicos em capítulos progressivos com mecânicas de ouro, investimento, poções e moral.
 
+## 2. Estrutura do Projeto
 
-<h2>Inimigo</h2>
-<h3>Responsabilidades</h3>
-<p>Armazenar informações de nome, vida e ataque.
-Receber dano de ataques do jogador.
-Realizar ataques contra o jogador.
-Exibir status atual.
-Definir nível de dificuldade baseado no estágio do jogo.</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Jogador: para realizar combates.</li>
-    <li>Combate: para controlar o fluxo de luta.</li>
-  </ul>
-</p>
+```
+src/: arquivos .hpp e .cpp de todas as classes e módulos.
+musicas/: trilhas sonoras para batalha, loja e finais.
+include/: headers compartilhados (Personagem, Utils, Efeitos, Finais).
+main.cpp: inicialização do jogo e fluxo principal.
+```
 
-<h2>Loja</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Exibir opções de melhoria de atributos.
-Permitir compra de upgrades de ataque, defesa e vida.
-Controlar o investimento de ouro.
-Retornar 50% de investimento ao jogador.
-Verificar disponibilidade de ouro.
-Atualizar atributos do jogador.
-Encerrar operações e retornar ao jogo.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Jogador: para atualizar atributos e investir ouro.</li>
-    <li>Sistema: para exibir interface e controlar ciclo de jogo.</li>
-  </ul>
-</p>
+## 3. Como Executar
 
-<h2>Sistema</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Definir a sequência de inimigos e bosses.
-Controlar o progresso do jogador.
-Iniciar combates em ordem predefinida.
-Chamar a loja após cada vitória.
-Exibir mensagens e narrativas.
-Finalizar o jogo após a última batalha.
-Controlar reinício ou saída.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Combate: para iniciar batalhas.</li>
-    <li>Loja: para exibir entre lutas.</li>
-  </ul>
-</p>
+Compile com:
+```bash
+g++ -std=c++17 src/*.cpp -o RPGMedieval
+# ou via makefile:
+make
+```
 
-<h2>Combate</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Iniciar batalhas entre jogador e inimigo.
-Controlar turnos do jogador e do inimigo.
-Definir ações possíveis: atacar, defender, recuperar vida.
-Atualizar status de vida dos participantes.
-Determinar resultado da batalha (vitória ou derrota).
-Calcular danos e efeitos das ações.
-Anunciar vencedor e distribuir recompensas.
-Encerrar combate e retornar ao menu/loja.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Jogador: para realizar ações.</li>
-    <li>Inimigo: para processar os ataques e ações.</li>
-  </ul>
-</p>
+Execute:
+```bash
+./RPGMedieval
+```
 
-<h2>Inventário</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Exibir as habilidades e itens disponíveis para batalha.
-Selecionar habilidades e itens para batalha.
-Controlar quantidade itens e habilidades utilizadas pelo jogador.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Loja: Para verificar itens adquiridos </li>
-    <li>Jogador: Para controlar ataques e efeitos de habilidades</li>
-    <li>Combate: Para processar efeitos durante a batalha</li>
-  </ul>
-</p>
+## 4. Módulos e Classes Principais
 
+A seguir, cartões CRC (Classe, Responsabilidades, Colaborações) de cada classe do projeto.
 
-<h2>Habilidade</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Armazenar nome, descrição, custo de mana (ou outro recurso), dano/cura e outros efeitos (ex: atordoamento, envenenamento).
-  Aplicar o efeito da habilidade ao alvo (jogador ou inimigo).
-  Verificar se o jogador possui recursos suficientes para usar a habilidade.
-  Exibir informações da habilidade para o jogador.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Jogador: para acessar e usar as habilidades.</li>
-    <li>Inimigo: para receber os efeitos das habilidades.</li>
-    <li>Combate: para processar a utilização e os efeitos durante a batalha.</li>
-    <li>Inventário: para gerenciar as habilidades disponíveis.</li>
-  </ul>
-</p>
+---
 
-<h2>Item</h2>
-<h3>Responsabilidades</h3>
-<p>
-  Armazenar nome, descrição e tipo (consumível, equipamento, etc.).
-  Definir o efeito do item ao ser usado (ex: cura, aumento temporário de ataque/defesa).
-  Aplicar o efeito do item ao jogador.
-  Controlar a quantidade de itens que o jogador possui.
-  Exibir informações do item para o jogador.
-</p>
-<h3>Colaborações</h3>
-<p>
-  <ul>
-    <li>Jogador: para usar os itens.</li>
-    <li>Loja: para comprar itens (se aplicável).</li>
-    <li>Inventário: para gerenciar os itens possuídos.</li>
-    <li>Combate: para processar o uso de itens durante a batalha.</li>
-  </ul>
-</p>
+### Personagem
+**Responsabilidades:**
+- Gerenciar nome do personagem
+- Controlar pontos de vida (HP) e limite máximo
+- Calcular e aplicar dano de ataque e defesa
+- Aplicar e limpar efeitos de status (veneno, paralisia, maldição)
+- Registrar nível e experiência para progressão de atributos
 
+**Colaborações:** Jogador, Inimigo, Combate, Utils, Efeitos
 
+### Jogador
+**Responsabilidades:**
+- Escolher e armazenar classe (Guerreiro, Arqueiro, Mago)
+- Gerenciar inventário (poções, itens)
+- Controlar ouro e investimentos com rendimentos
+- Administrar moral e influenciar finais
+- Processar uso de habilidades especiais de classe
 
-<h1>User Stories</h1>
+**Colaborações:** Personagem, Musica, Loja, Utils, Combate
 
-<h2>User Story 1 | @Hebert2008</h2>
-<p>Como jogador
-Quero atacar, defender ou recuperar vida no meu turno
-Para ter controle sobre a estratégia de combate
+### Inimigo
+**Responsabilidades:**
+- Definir atributos básicos (vida, ataque, defesa)
+- Executar ataque padrão no jogador
+- Receber e processar dano
+- Gerenciar habilidades especiais ao atacar ou morrer
+- Determinar drop de loot ou spawn de clones
 
-Critérios de Aceitação:
-<ul>
-<li>O jogador deve escolher entre atacar, defender ou curar.</li>
-<li>A escolha deve produzir o efeito esperado imediatamente.</li>
-</ul>
-</p>
+**Colaborações:** Personagem, Jogador, Combate, Efeitos
 
-<h2>User Story 2 | @Hebert2008</h2>
-<p>Como jogador
-Quero restaurar minha vida antes de cada batalha
-Para começar cada combate em igualdade de condições
+### Aranha
+**Responsabilidades:**
+- Aplicar paralisação de 1 turno ao jogador
+- Calcular chance de efeito com base em agilidade
+- Executar ataque de dano leve
+- Exibir arte ASCII específica
+- Notificar sistema de combate sobre efeito aplicado
 
-Critérios de Aceitação:
-<ul>
-<li>A vida do jogador deve voltar ao valor máximo no início de cada luta.</li>
-</ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Combate
 
-<h2>User Story 3 | @stanciola</h2>
-<p>
-Como jogador
-Quero visitar a loja após derrotar um inimigo
-Para gastar meu ouro em melhorias
+### Bruxa
+**Responsabilidades:**
+- Aplicar maldição que reduz ataque por 3 turnos
+- Invocar efeito de dano ao longo do tempo
+- Executar ataque mágico à distância
+- Alterar propriedades de defesa do jogador
+- Integrar trilha sonora temática
 
-Critérios de aceitação:
-  <ul>
-    <li>A loja deve abrir após cada vitória.</li>
-    <li>Deve exibir corretamente as opções e valores.</li>
-    <li>O ouro deve ser debitado e os atributos atualizados.</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Musica, Efeitos
 
-<h2>User Story 4 | @stanciola</h2>
-<p>
-Como jogador
-Quero investir parte do meu ouro
-Para receber um retorno de 50% ao voltar à loja
+### CavaleiroDaFome
+**Responsabilidades:**
+- Reduzir vida máxima do jogador em 5 pontos
+- Executar ataque físico de médio dano
+- Gerenciar cooldown de habilidade
+- Acionar animação ASCII de esqueleto
+- Verificar condições de morte do jogador
 
-Critérios de aceitação:
-  <ul>
-    <li>O jogador deve poder escolher o valor a investir.</li>
-    <li>O retorno de 50% deve ser aplicado corretamente ao retornar</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Utils
 
-<h2>User Story 5 | @cviogomes</h2>
-<p>
-Como jogador
-Quero enfrentar os Cavaleiros do Apocalipse em ordem
-Para seguir a história e aumentar a dificuldade.
+### CavaleiroDaGuerra
+**Responsabilidades:**
+- Diminuir ataque do jogador em 1 ponto
+- Conceder bônus de ataque em turnos pares
+- Calcular chance de crítico em 20%
+- Exibir efeitos visuais e sonoros
+- Reportar status para classe Combate
 
-Critérios de aceitação:
-  <ul>
-    <li>Os bosses devem aparecer na ordem correta.</li>
-    <li>Os bosses devem ter atributos superiores aos inimigos comuns.</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Musica, Combate
 
-<h2>User Storie 6 | @cviogomes</h2>
-<p>
-Como jogador
-Quero ganhar ouro após vencer batalhas
-Para comprar melhorias na loja
+### CavaleiroDaMorte
+**Responsabilidades:**
+- Refletir 30% do dano recebido
+- Executar ataque de alto dano raro
+- Aplicar status de medo (perda de ação)
+- Gerenciar probabilidade de reflexão de dano
+- Integrar lógica de moral para finais
 
-Critérios de aceitação:
-  <ul>
-    <li>O jogador deve receber X de ouro após cada vitória.</li>
-    <li>O valor do ouro deve ser atualizado corretamente.</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Efeitos, Combate
 
-<h2>User Storie 7 | @joshuadcr</h2>
-<p>
-Como jogador
-Quero usar habilidades especiais em combate
-Para ter mais opções estratégicas contra os inimigos
+### CavaleiroDaPeste
+**Responsabilidades:**
+- Reduzir defesa do jogador em 1 ponto
+- Propagar veneno leve por 2 turnos
+- Executar ataque corpo a corpo
+- Atualizar status no HUD
+- Notificar sistema de efeitos de status
 
-Critérios de aceitação:
-  <ul>
-    <li>O jogador deve ter acesso a uma lista de habilidades no combate.</li>
-    <li>Ao usar uma habilidade, o custo de mana (ou outro recurso) deve ser descontado.</li>
-    <li>O efeito da habilidade (dano, cura, etc.) deve ser aplicado ao alvo corretamente.</li>
-    <li>O jogador deve receber uma mensagem indicando o uso e o efeito da habilidade.</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Jogador, Combate, Efeitos
 
-<h2>User Storie 8 | @joshuadcr</h2>
-<p>
-Como jogador
-Quero usar itens do meu inventário durante o combate ou fora dele
-Para obter benefícios como cura ou buffs
+### Esqueleto
+**Responsabilidades:**
+- Executar ataque físico básico
+- Apresentar vida baixa e defesa média
+- Comportamento padrão de inimigo
+- Exibir arte ASCII de esqueleto
+- Servir de inimigo genérico sem efeitos especiais
 
-Critérios de aceitação:
-  <ul>
-    <li>O jogador deve ter acesso ao seu inventário de itens.</li>
-    <li>Ao usar um item consumível, sua quantidade deve diminuir.</li>
-    <li>O efeito do item deve ser aplicado ao jogador (ou outro alvo, se aplicável).</li>
-    <li>O jogador deve receber uma mensagem indicando o uso e o efeito do item.</li>
-  </ul>
-</p>
+**Colaborações:** Inimigo, Combate
+
+### Goblin
+**Responsabilidades:**
+- Roubar 20 de ouro do jogador
+- Fugir com chance de 30%
+- Executar ataque rápido de baixo dano
+- Interagir com inventário do jogador
+- Atualizar HUD de ouro
+
+**Colaborações:** Inimigo, Jogador, Combate
+
+### Lobisomem
+**Responsabilidades:**
+- Dobrar ataque se vida < 30%
+- Transformar-se alterando atributos
+- Executar ataque especial com chance de sangramento
+- Exibir arte temática
+- Registrar estado de transformação
+
+**Colaborações:** Inimigo, Jogador, Efeitos
+
+### Slime
+**Responsabilidades:**
+- Dividir-se em 2 Slimes menores ao morrer (uma vez)
+- Atribuir vida reduzida aos clones
+- Executar ataque simples de contato
+- Gerenciar flag de divisão
+- Integrar lógica de spawn no Combate
+
+**Colaborações:** Inimigo, Combate, Utils
+
+### Vampiro
+**Responsabilidades:**
+- Sugar vida do jogador em 50% do dano causado
+- Recuperar vida própria com base no dano
+- Executar ataque mágico de vampirismo
+- Aplicar status de drenagem de vida
+- Registrar efeitos de cura no sistema de status
+
+**Colaborações:** Inimigo, Jogador, Efeitos
+
+### Zumbi
+**Responsabilidades:**
+- Autocurar-se uma vez ao ficar com vida < 30%
+- Executar ataque lento de alto dano
+- Acionar animação de cura
+- Gerenciar flag de cura única
+- Atualizar HUD com nova vida
+
+**Colaborações:** Inimigo, Jogador, Combate
+
+### Musica
+**Responsabilidades:**
+- Carregar trilhas sonoras de batalha, loja e finais
+- Tocar e parar música de forma assíncrona
+- Controlar volume e transições
+- Sincronizar efeitos sonoros com eventos de jogo
+- Liberar recursos ao encerrar reprodução
+
+**Colaborações:** Jogador, Combate, Utils
+
+### Efeitos
+**Responsabilidades:**
+- Definir e categorizar tipos de status
+- Aplicar e decrementar duração de efeitos
+- Executar penalidades a cada turno
+- Notificar jogador e atualizar HUD
+- Integrar processamento com Combate
+
+**Colaborações:** Jogador, Inimigo, Combate
+
+### Utils
+**Responsabilidades:**
+- Formatar texto e aplicar cores no console
+- Imprimir narrativas e menus interativos
+- Gerenciar delays e limpeza de tela
+- Validar e parsear entradas do usuário
+- Fornecer funções de aleatoriedade e cálculos auxiliares
+
+**Colaborações:** Todos os módulos
+
+### Combate
+**Responsabilidades:**
+- Gerenciar loop de turnos completo
+- Alternar ações entre jogador e inimigo
+- Processar comandos de ataque, defesa e itens
+- Invocar habilidades e efeitos especiais
+- Determinar resultado e spawn de novos inimigos
+
+**Colaborações:** Jogador, Inimigo, Utils, Efeitos
+
+### Finais
+**Responsabilidades:**
+- Avaliar moral e registrar escolhas do jogador
+- Selecionar trilha sonora apropriada
+- Exibir narrativa final com arte ASCII
+- Salvar resultado em log para estatísticas
+- Oferecer opção de reiniciar ou encerrar jogo
+
+**Colaborações:** Jogador, Musica, Utils, Combate
+
+## 5. User Stories
+
+1. Como Jogador, quero escolher minha classe (Guerreiro, Arqueiro ou Mago) para experimentar habilidades únicas desde o início.
+2. Como Jogador, quero enfrentar inimigos variados com habilidades especiais para garantir que cada encontro seja desafiador.
+3. Como Jogador, desejo usar poções de cura e itens de suporte para manter-me vivo em batalhas difíceis.
+4. Como Jogador, desejo investir meu ouro para obter retornos e estratégias de longo prazo.
+5. Como Jogador, quero visitar a loja entre capítulos para comprar equipamentos e melhorar meu personagem.
+6. Como Jogador, quero que efeitos de status (veneno, paralisia, maldição) afetem minha estratégia de combate.
+7. Como Jogador, quero múltiplos desfechos (heroico, trágico, sombrio) baseados em minhas escolhas e moral.
+8. Como Jogador, desejo visualizar estatísticas de combate (dano causado, dano recebido, usos de habilidade) ao final de cada encontro.
+
+## 6. Detalhamento do Projeto
+
+### Fluxo de Jogo
+- Seleção de classe
+- Capítulos com encontros por turnos contra inimigos
+- Acesso à loja ao final de cada capítulo
+- Final narrativo baseado na moral
+
+### Sistema de Combate
+- Turnos alternados entre jogador e inimigo
+- Ações: atacar, defender, usar item/habilidade
+- Efeitos de status aplicados e verificados por turno
+- Combate termina por derrota, vitória ou novos spawns
+
+### Loja e Investimentos
+- Loja acessível após cada capítulo
+- Compra de poções, equipamentos e habilidades
+- Investimentos retornam 50% adicionais no capítulo seguinte
+
+### Efeitos de Status
+- Tipos: veneno, paralisia, maldição
+- Cada efeito tem duração e penalidade específica
+- Gerenciado via Efeitos::processar
+- HUD exibe efeitos e ícones
+
+### Sistema de Spawn e Drops
+- Slime e similares geram clones ao morrer
+- Clones têm atributos reduzidos
+- Memória gerenciada em Combate para múltiplos inimigos
+- Drops configurados por classe de inimigo
+
+### Moral e Finais
+- Moral depende de escolhas e desempenho
+- Três desfechos com arte e trilha exclusiva: heroico, trágico, sombrio
+- Final baseado em limiares de moral
+- Log do final salvo para análise futura

@@ -7,17 +7,20 @@
 #include <iostream>
 #include <memory>
 
-class Goblin : public Inimigo {
+class Goblin : public Inimigo
+{
 public:
     Goblin() : Inimigo("Goblin", 60, 16, 3) {}
 
-    void aoAtacar(Jogador& jogador) override {
+    void aoAtacar(Jogador &jogador) override
+    {
         int roubo = 20;
         jogador.ganharOuro(-roubo);
         battlePrint(nome_ + " te acerta e rouba " + std::to_string(roubo) + " de ouro!\n");
     }
 
-    std::unique_ptr<Inimigo> clone() const override {
+    std::unique_ptr<Inimigo> clone() const override
+    {
         return std::make_unique<Goblin>(*this);
     }
 };

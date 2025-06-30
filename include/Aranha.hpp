@@ -8,16 +8,19 @@
 #include <iostream>
 #include <memory>
 
-class Aranha : public Inimigo {
+class Aranha : public Inimigo
+{
 public:
     Aranha() : Inimigo("Aranha", 45, 12, 2) {}
 
-    void aoAtacar(Jogador& jogador) override {
+    void aoAtacar(Jogador &jogador) override
+    {
         battlePrint(nome_ + " cospe teia! Voce ficara paralisado por 1 turno!\n");
         jogador.aplicarEfeito({TipoEfeito::Paralisia, 1});
     }
 
-    std::unique_ptr<Inimigo> clone() const override {
+    std::unique_ptr<Inimigo> clone() const override
+    {
         return std::make_unique<Aranha>(*this);
     }
 };

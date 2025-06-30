@@ -3,11 +3,11 @@
 
 #include <string>
 
-class Musica {
+class Musica
+{
 public:
-
     // Toca o arquivo de música em loop (assíncrono)
-    void PlayMusic(const std::string& filename);
+    void PlayMusic(const std::string &filename);
 
     // Para a música
     static void StopMusic();
