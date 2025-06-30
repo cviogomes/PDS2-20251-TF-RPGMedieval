@@ -27,24 +27,12 @@ int randomize(int min, int max) {
 
 void Personagem::atacar(Personagem& alvo) {
 
-    int dado = randomize(-5, 5); // retorna um número aleatório entre 1 e 10 (inclusive)
+    int dado = randomize(-5, 5); // retorna um número aleatório entre -5 e 5 
     int dano = std::max(1, (ataque_ + dado) - alvo.getDefesa());
     alvo.setVida(alvo.getVida() - dano);
 
-    battlePrint("Rolando o dado de ataque...                 \n");
-
-    if(dado > 0) {
-        std::string mensagem = "Seu ataque foi potecializado em: " + std::to_string(dado) + "\n";
-        battlePrint(mensagem);
-
-    }
-    else{
-        std::string mensagem = "Seu ataque foi diminuido em: " + std::to_string(dado) + "\n";
-        battlePrint(mensagem);
-    }
-
-    std::string mensagem2 = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
-    battlePrint(mensagem2);
+    std::string mensagem = nome_ + " ataca " + alvo.getNome() + " causando " + std::to_string(dano) + " de dano! (" + std::to_string(alvo.getVida()) + "/" + std::to_string(alvo.getVidaMax()) + ")\n";
+    battlePrint(mensagem);
 }
 
 void Personagem::defender() {
