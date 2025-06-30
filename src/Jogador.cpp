@@ -21,8 +21,18 @@ Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
 
 void Jogador::ganharOuro(int quantidade)
 {
-    ouro_ += quantidade;
-    battlePrint("Voce ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
+    if (quantidade >= 0)
+    {
+        ouro_ += quantidade;
+        battlePrint("Voce ganhou " + std::to_string(quantidade) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
+    }
+    else
+    {
+        int perda = -quantidade;
+        int perdidoEfetivo = std::min(perda, ouro_);
+        ouro_ -= perdidoEfetivo;
+        battlePrint("Você perdeu " + std::to_string(perdidoEfetivo) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
+    }
 }
 
 void Jogador::investirOuro(int quantidade)
