@@ -15,8 +15,15 @@ public:
 
     void aoAtacar(Jogador &jogador) override
     {
-        battlePrint(nome_ + " cospe teia! Voce ficara paralisado por 1 turno!\n");
-        jogador.aplicarEfeito({TipoEfeito::Paralisia, 1});
+        if (jogador.getEfeito().tipo != TipoEfeito::Paralisia)
+        {
+            battlePrint(nome_ + " cospe teia! Voce ficara paralisado por 1 turno!\n");
+            jogador.aplicarEfeito({TipoEfeito::Paralisia, 1});
+        }
+        else
+        {
+            battlePrint(nome_ + " tenta paralisar, mas voce ja esta imobilizado!\n");
+        }
     }
 
     std::unique_ptr<Inimigo> clone() const override
