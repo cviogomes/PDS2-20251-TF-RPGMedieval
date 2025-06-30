@@ -1,3 +1,4 @@
-obj/Personagem.o: src/Personagem.cpp include/personagem.hpp
-
-include/personagem.hpp:
+obj/Personagem.o: src/Personagem.cpp include/Personagem.hpp \
+ include/Utils.hpp
+include/Personagem.hpp:
+include/Utils.hpp:

@@ -16,7 +16,7 @@ public:
         // Não atacamos aqui, a função atacar principal fará isso.
         // Apenas preparamos o efeito.
         vida_ = std::min(vidaMax_, vida_ + dano / 2);
-        battlePrint(nome_ + " suga sua força vital e recupera " + std::to_string(dano / 2) + " de vida!\n");
+        battlePrint(nome_ + " suga sua forca vital e recupera " + std::to_string(dano / 2) + " de vida!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {

@@ -13,7 +13,7 @@ public:
 
     void aoAtacar(Jogador& jogador) override {
         jogador.reduzirAtaque(1);
-        battlePrint(nome_ + " esmaga seu espírito de luta! Seu ataque foi reduzido para " + std::to_string(jogador.getAtaque()) + "!\n");
+        battlePrint(nome_ + " esmaga seu espirito de luta! Seu ataque foi reduzido para " + std::to_string(jogador.getAtaque()) + "!\n");
     }
 
     std::unique_ptr<Inimigo> clone() const override {

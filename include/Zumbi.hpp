@@ -5,6 +5,7 @@
 #include "Utils.hpp"
 #include <iostream>
 #include <memory>
+#include <string>
 
 class Zumbi : public Inimigo {
 public:
@@ -14,12 +15,13 @@ public:
         if (!curou_ && vida_ < vidaMax_ * 0.3) {
             vida_ = vidaMax_;
             curou_ = true;
-            battlePrint(nome_ + " se autocanibalizou e recuperou toda a sua vida!\n");
+            battlePrint(nome_ + " se autocanibalizou e recuperou toda a vida!\n");
         }
     }
 
     std::unique_ptr<Inimigo> clone() const override {
         return std::make_unique<Zumbi>(*this);
+        
     }
 private:
     bool curou_;

@@ -32,9 +32,9 @@ all: $(TARGET)
 
 # Regra de linkagem
 $(TARGET): $(OBJECTS)
-	@echo "Ligando os objetos para criar o executável final..."
+	@echo "Ligando os objetos para criar o executavel final..."
 	@if not exist $(BIN_DIR) mkdir $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^ -lwinmm
 
 # Inclui os arquivos de dependência gerados.
 # O traço na frente ignora erros se os arquivos ainda não existirem.
@@ -49,7 +49,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 # Regra de limpeza
 clean:
 	@echo "Limpando arquivos gerados..."
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.d
 
 # PHONY targets
 .PHONY: all clean

@@ -13,7 +13,7 @@ public:
     Aranha() : Inimigo("Aranha", 45, 12, 2) {}
 
     void aoAtacar(Jogador& jogador) override {
-        battlePrint(nome_ + " cospe teia! Você ficará paralisado por 1 turno!\n");
+        battlePrint(nome_ + " cospe teia! Voce ficara paralisado por 1 turno!\n");
         jogador.aplicarEfeito({TipoEfeito::Paralisia, 1});
     }
 

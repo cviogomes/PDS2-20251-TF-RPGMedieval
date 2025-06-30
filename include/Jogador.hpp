@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <memory>
+#include <sstream>
 
 class Jogador : public Personagem {
     public:
@@ -31,18 +32,16 @@ class Jogador : public Personagem {
         void reduzirAtaque(int valor);
         void setDefesa(int defesa);
 
-        void adicionarMoral(int valor);
-        int getMoral() const;
-
-        void setAliadoNyx(bool valor);
-        bool temAliadoNyx() const;
+        std::string getClasse() const;
 
     private:
         Efeito efeito_;
         int ouro_;
-        int pocoes_ = 3;
+        int pocoes_;
         double investimento_;
         int moral_;
+        bool aliadoNyx_;
+        std::string classe_;
 
 };
 

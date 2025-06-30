@@ -1,8 +1,11 @@
-PERSONAGEM.CPP ATUALIZADO
-#include "Personagem.hpp"
-#include "Utils.hpp" // Incluído para usar battlePrint
 #include <iostream>
+#include <string>
+#include <sstream>
 #include <algorithm>
+
+#include "Personagem.hpp"
+#include "Utils.hpp"
+
 
 Personagem::Personagem(const std::string& nome, int vidaMax, int ataque, int defesa)
     : nome_(nome),
