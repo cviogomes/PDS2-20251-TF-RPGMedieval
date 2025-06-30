@@ -79,7 +79,7 @@ void mostrarFinal(const std::string &classe, const std::string &tipo)
             narrativePrint("Nyx", "Voce abracou o abismo... com gosto.");
             narrativePrint("Guerreiro", "Eu vi o mundo tentando me usar. Agora ele me serve.");
             narrativePrint("Narrador", "Roland foi o primeiro a cair. Depois, vieram as cidades. O heroi virou carrasco. Thyria virou cinzas.");
-            narrativePrint("Narrador", "Seu nome nao e' mais sussurrado com orgulho... mas com terror. 'O Rei das Cinzas' — soberano do fim.");
+            narrativePrint("Narrador", "Seu nome nao e' mais sussurrado com orgulho... mas com terror. 'O Rei das Cinzas' soberano do fim.");
         }
         else if (classe == "Arqueiro")
         {
