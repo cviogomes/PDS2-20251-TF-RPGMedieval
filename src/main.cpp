@@ -554,6 +554,7 @@ __/_  /   \ ______/ ''   /'\_,__
   int moralFinal = jogador->getMoral();
   bool aliadoNyx = jogador->temAliadoNyx();
 
+  musica.StopMusic();
   std::string final;
 
   if (aliadoNyx)

@@ -1,8 +1,14 @@
 #include "Finais.hpp"
 #include "Utils.hpp"
+#include "Musica.hpp"
 
 void mostrarFinal(const std::string& classe, const std::string& tipo) {
+
+    Musica musicaFinal;
     if (tipo == "heroico") {
+
+        musicaFinal.PlayMusic("musicas/HEROICO.wav");
+
         if (classe == "Guerreiro") {
             narrativePrint("Narrador", "Quando o ceu se rompeu e o mundo tremeu, foi sua espada que ficou entre a fenda e Thyria.");
             narrativePrint("Roland", "Voce... vai mesmo fazer isso?");
@@ -25,6 +31,9 @@ void mostrarFinal(const std::string& classe, const std::string& tipo) {
             narrativePrint("Narrador", "Ate hoje, dizem que o grimorio aparece apenas para os dignos. E que, ao abri lo, sua voz sussurra: \"Conhecimento... e' sacrificio.\"");
         }
     } else if (tipo == "tragico") {
+
+        musicaFinal.PlayMusic("musicas/TRAGICO.wav");
+
         if (classe == "Guerreiro") {
             narrativePrint("Narrador", "A fenda se fechou, mas ao retornar... so havia cinzas.");
             narrativePrint("Roland", "Voce conseguiu... e' um bom fim para mim.");
@@ -45,6 +54,9 @@ void mostrarFinal(const std::string& classe, const std::string& tipo) {
             narrativePrint("Narrador", "Desde aquele dia, ele nunca mais conjurou um feitico. Vive nas montanhas, ouvindo os ecos dos que ensinou. E de quem nao pode proteger.");
         }
     } else if (tipo == "sombrio") {
+
+        musicaFinal.PlayMusic("musicas/SOMBRIO.wav");
+
         if (classe == "Guerreiro") {
             narrativePrint("Narrador", "A armadura agora brilha em roxo sombrio. A fenda se mantem aberta... alimentada por sua furia.");
             narrativePrint("Nyx", "Voce abracou o abismo... com gosto.");
