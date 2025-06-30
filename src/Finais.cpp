@@ -18,7 +18,7 @@ void mostrarFinal(const std::string &classe, const std::string &tipo)
             narrativePrint("Guerreiro", "Um mundo novo precisa de herois dispostos a nao voltar.");
             narrativePrint("Narrador", "O Guerreiro investe contra a fenda em chamas, espada em maos. Um clarao corta os ceus. A explosao de luz sela o abismo e consome o heroi.");
             narrativePrint("Roland", "Ele nao morreu... ele se tornou parte do que salvou.");
-            narrativePrint("Narrador", "Um monumento foi erguido sobre o local. Seu nome foi esculpido no aço eterno. Dizem que nos dias de batalha... ouve se sua voz no vento.");
+            narrativePrint("Narrador", "Um monumento foi erguido sobre o local. Seu nome foi esculpido no aco eterno. Dizem que nos dias de batalha... ouve se sua voz no vento.");
         }
         else if (classe == "Arqueiro")
         {

@@ -282,6 +282,10 @@ void Jogador::reduzirAtaque(int valor)
         ataque_ = 0;
 }
 
+int Jogador::getOuro(){
+    return ouro_;
+}
+
 void Jogador::setDefesa(int defesa)
 {
     defesa_ = defesa;

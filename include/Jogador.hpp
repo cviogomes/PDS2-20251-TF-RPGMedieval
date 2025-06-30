@@ -18,6 +18,8 @@ public:
     void investirOuro(int quantidade);
     void retornarInvestimento();
     void visitarLoja(int capitulo);
+    int getOuro();
+
 
     int getPocoes() const;
     void usarPocao();

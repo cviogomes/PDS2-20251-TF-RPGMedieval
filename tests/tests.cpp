@@ -40,12 +40,11 @@ TEST_CASE("Testes das classes Personagem e Jogador")
     SUBCASE("Teste de ganho de ouro")
     {
         jogador.ganharOuro(50);
-        // A função investirOuro pode ser usada para checar o ouro.
-        // Vamos simular um investimento para verificar o total.
+        CHECK(jogador.getOuro() == 150); // Verifica se o ouro foi adicionado corretamente aos 100 iniciais
+
         jogador.investirOuro(50);
-        // Este teste é mais conceitual, pois não temos um getOuro()
-        // Mas podemos verificar se a moral não foi afetada.
-        CHECK(jogador.getMoral() == 10); // A moral não deve mudar ao ganhar ouro
+        CHECK(jogador.getOuro() == 100); // Verifica se o ouro foi retirado corretamente apos o investimento
+
     }
 
     SUBCASE("Teste de manipulação de Moral")
@@ -109,6 +108,8 @@ TEST_CASE("Testes de Combate e Habilidades Especiais")
 
         // Ação
         goblin.aoAtacar(jogador);
+
+        CHECK(jogador.getOuro() == 180);
 
         // Verificação: Como não temos getOuro, o teste aqui é mais conceitual.
         // Se tivéssemos getOuro(), a verificação seria: CHECK(jogador.getOuro() == 80);

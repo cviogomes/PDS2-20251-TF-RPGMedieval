@@ -86,9 +86,9 @@ clean:
 	@echo "[Clean] Removendo objetos, dependencias e binarios..."
 ifeq ($(OS),Windows_NT)
 	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o $(OBJ_DIR)\*.d
-	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.gcno $(OBJ_DIR)\*.d
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.gcno $(OBJ_DIR)\*.d $(OBJ_DIR)\*.gcda
 	@if exist $(BIN_DIR) del /q $(BIN_DIR)\*.exe
-	@if exist $(TEST_DIR) del /q $(TEST_DIR)\*.html
+	@if exist $(TEST_DIR) del /q $(TEST_DIR)\*.html $(TEST_DIR)\*.css
 	
 else
 	@rm -rf $(OBJ_DIR)/* $(BIN_DIR)/*
