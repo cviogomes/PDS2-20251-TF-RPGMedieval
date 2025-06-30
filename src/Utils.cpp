@@ -11,6 +11,11 @@
 // Inclui bibliotecas específicas do Windows para configurar o terminal
 #ifdef _WIN32
 #include <windows.h>
+inline void sleep_ms(int ms) { Sleep(ms); }
+#else
+#include <thread>
+#include <chrono>
+inline void sleep_ms(int ms) { std::this_thread::sleep_for(std::chrono::milliseconds(ms)); }
 #endif
 
 void setupTerminal() {
@@ -59,7 +64,7 @@ void typeText(const std::string& text, TextSpeed speed) {
 #endif
             std::wcout << c << std::flush;
             if (!skip)
-                std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
+                sleep_ms(delay_ms);
         }
     }
 }
