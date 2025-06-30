@@ -1,19 +1,33 @@
 <h1>RPG Medieval</h1>
 
 <h2>Integrantes<h2>
-
+<p>
 <ul>
   <li>Caio Gomes</li>
   <li>Hebert Campos Silva</li>
   <li>Vitor Henrique Stanciola dos Santos</li>
   <li>Joshua Denny Cabral Roque</li>
 </ul>
+</p>
 
-<h2>Visão geral do projeto</h2>
+<h2>1. Visão geral do projeto</h2>
 
 <p>
 RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate estratégico contra diversos inimigos, sistema de classes, loja, efeitos de status e múltiplos desfechos narrativos. O jogador assume o papel de um herói (Guerreiro, Arqueiro ou Mago), enfrentando Cavaleiros do Apocalipse e monstros clássicos em capítulos progressivos com mecânicas de ouro, investimento, poções e moral.
 </p>
+
+<h2>2. Estrutura do projeto<h2>
+<p>
+<ul>
+  <li>scr/: arquivos .cpp de todas as classes e módulos.</li>
+  <li>include/: arquivos .hpp de todas as classes e módulos.</li>
+  <li>musicas/: trilhas sonoras para batalha, loja e finais.</li>
+  <li>tests/: arquivo para rodar o doctest.</li>
+  <li>main.cpp: inicialização do jogo e fluxo principal.</li>
+</ul>
+</p>
+
+
 
 <h1>Classes</h1>
 
