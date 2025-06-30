@@ -35,13 +35,13 @@ class Jogador : public Personagem {
         std::string getClasse() const;
 
     private:
-        Efeito efeito_;
         int ouro_;
-        int pocoes_;
+        std::string classe_;
         double investimento_;
+        int pocoes_;
         int moral_;
         bool aliadoNyx_;
-        std::string classe_;
+        Efeito efeito_;
 
 };
 

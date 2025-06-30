@@ -1,56 +1,73 @@
-# Nome do compilador C++
-CXX = g++
+# --- Ferramentas, Flags e diretórios---
+CXX        := g++
+INCLUDE_DIR:= include
+CXXFLAGS   := -std=c++17 -Wall -g -MMD -MP -I$(INCLUDE_DIR)
+LDFLAGS    := -lwinmm
+SRC_DIR    := src
+OBJ_DIR    := obj
+BIN_DIR    := bin
+TEST_DIR   := tests
 
-# Adicionamos -MMD e -MP para gerar arquivos de dependência (.d)
-# Estes arquivos ajudam o Make a saber que precisa recompilar um .cpp se um .h que ele inclui for modificado.
-CXXFLAGS = -std=c++17 -Wall -g -MMD -MP
+# Executáveis
+EXEC       := jogo_medieval.exe
+TEST_EXE   := jogo_tests.exe
 
-# Diretórios
-SRC_DIR = src
-OBJ_DIR = obj
-BIN_DIR = bin
-INCLUDE_DIR = include
+# Fontes e objetos
+SOURCES    := $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS    := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
+DEPS       := $(OBJECTS:.o=.d)
 
-# Adiciona o diretório "include" ao caminho de busca do compilador
-CXXFLAGS += -I$(INCLUDE_DIR)
+# Fontes de teste
+TEST_SRCS  := $(wildcard $(TEST_DIR)/*.cpp)
+TEST_OBJ   := $(TEST_SRCS:$(TEST_DIR)/%.cpp=$(OBJ_DIR)/%_test.o)
+TEST_DEPS  := $(TEST_OBJ:.o=.d)
 
-# Nome do executável
-EXECUTABLE = jogo_medieval
-TARGET = $(BIN_DIR)/$(EXECUTABLE)
+# --- Alvos Padrão ---
+all: dirs $(BIN_DIR)/$(EXEC)
 
-# Encontra todos os arquivos .cpp na pasta src/
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+# --- Build do jogo ---
+$(BIN_DIR)/$(EXEC): $(OBJECTS)
+	@echo "[Link]  $@"
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
-# Gera os nomes dos arquivos objeto na pasta obj/
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
+# --- Build dos objetos genéricos ---
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | dirs
+	@echo "[Comp]  $<"
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Gera os nomes dos arquivos de dependência na pasta obj/
-DEPS = $(OBJECTS:.o=.d)
+# --- Build dos objetos de teste ---
+$(OBJ_DIR)/%_test.o: $(TEST_DIR)/%.cpp | dirs
+	@echo "[Comp]  $<"
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Regra principal (padrão)
-all: $(TARGET)
+# --- Link da suíte de testes ---
+.PHONY: test
+test: dirs $(OBJECTS) $(TEST_OBJ)
+	@echo "[Link]  $(TEST_EXE)"
+	$(CXX) $(CXXFLAGS) -o $(BIN_DIR)/$(TEST_EXE) $(filter-out $(OBJ_DIR)/main.o, $(OBJECTS)) $(TEST_OBJ) $(LDFLAGS)
+	@echo "===== Executando testes ====="
+	@$(BIN_DIR)/$(TEST_EXE)
 
-# Regra de linkagem
-$(TARGET): $(OBJECTS)
-	@echo "Ligando os objetos para criar o executavel final..."
-	@if not exist $(BIN_DIR) mkdir $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^ -lwinmm
+# --- Inclui dependências automaticamente ---
+-include $(DEPS) $(TEST_DEPS)
 
-# Inclui os arquivos de dependência gerados.
-# O traço na frente ignora erros se os arquivos ainda não existirem.
--include $(DEPS)
-
-# Regra de compilação que lida com os diretórios
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@echo "Compilando $<..."
+# --- Criação de diretórios ---
+.PHONY: dirs
+dirs:
+ifeq ($(OS),Windows_NT)
 	@if not exist $(OBJ_DIR) mkdir $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+	@if not exist $(BIN_DIR) mkdir $(BIN_DIR)
+else
+	@mkdir -p $(OBJ_DIR) $(BIN_DIR)
+endif
 
-# Regra de limpeza
+# --- Limpeza completa ---
+.PHONY: clean
 clean:
-	@echo "Limpando arquivos gerados..."
-	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o
-	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.d
-
-# PHONY targets
-.PHONY: all clean
+	@echo "[Clean] Removendo objetos, dependências e binários..."
+ifeq ($(OS),Windows_NT)
+	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.o $(OBJ_DIR)\*.d
+	@if exist $(BIN_DIR) del /q $(BIN_DIR)\*.exe
+else
+	@rm -rf $(OBJ_DIR)/* $(BIN_DIR)/*
+endif

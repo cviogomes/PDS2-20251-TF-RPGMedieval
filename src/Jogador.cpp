@@ -8,12 +8,14 @@
 
 Jogador::Jogador(const std::string &nome, int vidaMax, int ataque, int defesa)
     : Personagem(nome, vidaMax, ataque, defesa),
-    classe_(nome),
+    
     ouro_(100),
-    pocoes_(3),
+    classe_(nome),
     investimento_(0.0),
+    pocoes_(3),
     moral_(10),
     aliadoNyx_(false)
+    
 {}
 
 void Jogador::ganharOuro(int quantidade)

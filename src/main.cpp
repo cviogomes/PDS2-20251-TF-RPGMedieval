@@ -41,7 +41,7 @@ int fazerEscolha(const std::string &pergunta, const std::vector<std::string> &op
   {
     std::cout << "Opcao: ";
     std::cin >> escolha;
-    if (std::cin.good() && escolha > 0 && escolha <= opcoes.size())
+    if (std::cin.good() && escolha > 0 && escolha <= static_cast<int>(opcoes.size()))
     {
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       break;
