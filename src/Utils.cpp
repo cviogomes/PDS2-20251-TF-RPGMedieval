@@ -11,6 +11,7 @@
 
 
 // Inclui bibliotecas específicas do Windows para configurar o terminal
+// No topo de Utils.cpp ou em um header comum:
 #ifdef _WIN32
 #include <windows.h>
 inline void sleep_ms(int ms) { Sleep(ms); }
