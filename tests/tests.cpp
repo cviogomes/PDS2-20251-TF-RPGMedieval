@@ -25,12 +25,12 @@
 TEST_CASE("Testes das classes Personagem e Jogador")
 {
     // Cria um jogador para usar nos testes deste caso.
-    Jogador jogador("Herói de Teste", 100, 20, 10);
+    Jogador jogador("Heroi de Teste", 100, 20, 10);
 
     // SUBCASE permite agrupar testes menores dentro de um TEST_CASE.
     SUBCASE("Verificação do Construtor e Atributos Iniciais")
     {
-        CHECK(jogador.getNome() == "Herói de Teste");
+        CHECK(jogador.getNome() == "Heroi de Teste");
         CHECK(jogador.getVida() == 100);
         CHECK(jogador.getVidaMax() == 100);
         CHECK(jogador.getAtaque() == 20);
@@ -49,7 +49,7 @@ TEST_CASE("Testes das classes Personagem e Jogador")
 
     }
 
-    SUBCASE("Teste de manipulação de Moral")
+    SUBCASE("Teste de manipulacao de Moral")
     {
         jogador.adicionarMoral(5);
         CHECK(jogador.getMoral() == 15);
@@ -57,7 +57,7 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         CHECK(jogador.getMoral() == 5);
     }
 
-    SUBCASE("Teste do uso de Poções")
+    SUBCASE("Teste do uso de Pocoes")
 
 
     {

@@ -68,7 +68,7 @@ endif
 .PHONY: coverage
 coverage: CXXFLAGS += $(COVERAGE_FLAGS)
 coverage: LDFLAGS += $(COVERAGE_FLAGS)
-coverage: clean all
+coverage: clean all test
 
 # Alvo para gerar relatório gcovr (texto)
 .PHONY: gcovr

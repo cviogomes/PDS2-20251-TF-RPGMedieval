@@ -28,7 +28,7 @@ public:
     {
         if (danoParaRefletir_ > 0)
         {
-            battlePrint(nome_ + " reflete " + std::to_string(danoParaRefletir_) + " de dano em você!\n");
+            battlePrint(nome_ + " reflete " + std::to_string(danoParaRefletir_) + " de dano em voce!\n");
             jogador.setVida(jogador.getVida() - danoParaRefletir_);
         }
     }

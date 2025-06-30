@@ -31,7 +31,7 @@ void Jogador::ganharOuro(int quantidade)
         int perda = -quantidade;
         int perdidoEfetivo = std::min(perda, ouro_);
         ouro_ -= perdidoEfetivo;
-        battlePrint("Você perdeu " + std::to_string(perdidoEfetivo) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
+        battlePrint("Voce perdeu " + std::to_string(perdidoEfetivo) + " de ouro! (Total: " + std::to_string(ouro_) + ")\n");
     }
 }
 
