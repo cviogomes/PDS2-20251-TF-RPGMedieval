@@ -5,6 +5,7 @@
 #include <clocale>
 #include <codecvt>
 #include <locale>
+#include <conio.h>
 
 
 // Inclui bibliotecas específicas do Windows para configurar o terminal
@@ -46,11 +47,20 @@ void typeText(const std::string& text, TextSpeed speed) {
     if (delay_ms == 0) {
         std::wcout << wtext;
     } else {
+        bool skip = false;
         for (wchar_t c : wtext) {
-        std::wcout << c << std::flush;
-        std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
-}
-
+#ifdef _WIN32
+            if (!skip && _kbhit()) {
+                int ch = _getch();
+                if (ch == 13) { // ENTER pressionado
+                    skip = true;
+                }
+            }
+#endif
+            std::wcout << c << std::flush;
+            if (!skip)
+                std::this_thread::sleep_for(std::chrono::milliseconds(delay_ms));
+        }
     }
 }
 

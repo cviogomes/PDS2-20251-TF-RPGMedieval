@@ -32,7 +32,7 @@ all: $(TARGET)
 
 # Regra de linkagem
 $(TARGET): $(OBJECTS)
-	@echo "Ligando os objetos para criar o executável final..."
+	@echo "Ligando os objetos para criar o executavel final..."
 	@if not exist $(BIN_DIR) mkdir $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) -o $@ $^ -lwinmm
 
