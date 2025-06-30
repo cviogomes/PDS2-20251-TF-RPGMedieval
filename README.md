@@ -27,6 +27,12 @@ RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate
 </ul>
 </p>
 
+<h2>Como executar</h2>
+<ol>
+  <li>Compile com <code>g++ -std=c++17 src/*.cpp -o RPGMedieval</code> ou via makefile (preferível).</li>
+  <li>Execute <code>./RPGMedieval</code> no terminal.</li>
+</ol>
+
 
 
 <h1>Classes</h1>
