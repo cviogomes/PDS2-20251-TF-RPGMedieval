@@ -36,22 +36,22 @@ RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate
 A seguir, cartões CRC (Classe, Responsabilidades, Colaborações) de cada classe do projeto.
 </p>
 <p>
-
+Personagem
 <ul>
   <li>
   Responsabilidaes:
   <ol>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>Gerenciar nome do personagem</li>
+  <li>Controlar pontos de vida (HP) e limite máximo</li>
+  <li>Calcular e aplicar dano de ataque e defesa</li>
+  <li>Aplicar e limpar efeitos de status (veneno, paralisia, maldição)</li>
+  <li>Registrar nível e experiência para progressão de atributos</li>
   </ol>
   </li>
   <li>
   Colaborações:
   <p>
-  
+  Jogador, Inimigo, Combate, Utils, Efeitos
   </p>
   </li>
 </ul>
