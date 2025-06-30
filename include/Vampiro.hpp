@@ -7,11 +7,13 @@
 #include <iostream>
 #include <memory>
 
-class Vampiro : public Inimigo {
+class Vampiro : public Inimigo
+{
 public:
     Vampiro() : Inimigo("Vampiro", 80, 22, 4) {}
 
-    void aoAtacar(Jogador& jogador) override {
+    void aoAtacar(Jogador &jogador) override
+    {
         int dano = std::max(1, ataque_ - jogador.getDefesa());
         // Não atacamos aqui, a função atacar principal fará isso.
         // Apenas preparamos o efeito.
@@ -19,7 +21,8 @@ public:
         battlePrint(nome_ + " suga sua forca vital e recupera " + std::to_string(dano / 2) + " de vida!\n");
     }
 
-    std::unique_ptr<Inimigo> clone() const override {
+    std::unique_ptr<Inimigo> clone() const override
+    {
         return std::make_unique<Vampiro>(*this);
     }
 };

@@ -3,6 +3,6 @@
 
 #include <string>
 
-void mostrarFinal(const std::string& classe, const std::string& tipo);
+void mostrarFinal(const std::string &classe, const std::string &tipo);
 
 #endif

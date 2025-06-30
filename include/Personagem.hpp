@@ -5,18 +5,19 @@
 #include <vector>
 #include <memory>
 
-class Personagem {
+class Personagem
+{
 public:
-    Personagem(const std::string& nome, int vidaMax, int ataque, int defesa);
+    Personagem(const std::string &nome, int vidaMax, int ataque, int defesa);
     virtual ~Personagem() = default;
 
-    virtual void atacar(Personagem& alvo);
+    virtual void atacar(Personagem &alvo);
     void defender();
     void restaurarVida();
 
     bool estaVivo() const;
 
-    const std::string& getNome() const;
+    const std::string &getNome() const;
     int getVida() const;
     int getVidaMax() const;
     int getAtaque() const;
