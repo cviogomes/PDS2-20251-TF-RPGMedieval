@@ -1,6 +1,8 @@
 #ifndef JOGADOR_HPP
 #define JOGADOR_HPP
 
+#pragma once
+
 #include "Personagem.hpp"
 #include "Efeitos.hpp"
 #include <string>
