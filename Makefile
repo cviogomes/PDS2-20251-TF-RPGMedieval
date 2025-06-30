@@ -89,6 +89,7 @@ ifeq ($(OS),Windows_NT)
 	@if exist $(OBJ_DIR) del /q $(OBJ_DIR)\*.gcno $(OBJ_DIR)\*.d $(OBJ_DIR)\*.gcda
 	@if exist $(BIN_DIR) del /q $(BIN_DIR)\*.exe
 	@if exist $(TEST_DIR) del /q $(TEST_DIR)\*.html $(TEST_DIR)\*.css
+	@if exist erros.log del erros.log
 	
 else
 	@rm -rf $(OBJ_DIR)/* $(BIN_DIR)/*

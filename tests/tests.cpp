@@ -22,7 +22,6 @@
 // NOTA: Incluir .cpp não é uma prática padrão em projetos grandes,
 // mas simplifica enormemente a compilação para um único arquivo de teste como este.
 
-// Um TEST_CASE é um conjunto de testes relacionados.
 TEST_CASE("Testes das classes Personagem e Jogador")
 {
     // Cria um jogador para usar nos testes deste caso.
@@ -59,6 +58,8 @@ TEST_CASE("Testes das classes Personagem e Jogador")
     }
 
     SUBCASE("Teste do uso de Poções")
+
+
     {
         jogador.setVida(100); // Simula que o jogador tomou dano
         CHECK(jogador.getVida() == 100);
@@ -139,7 +140,6 @@ TEST_CASE("Testes de Combate e Habilidades Especiais")
         CHECK(jogador.getVidaMax() == vida_max_antes - 5);
     }
 
-
     SUBCASE("Habilidade especial do Cavaleiro da guerra")
     {
         CavaleiroDaGuerra guerra;
@@ -150,8 +150,7 @@ TEST_CASE("Testes de Combate e Habilidades Especiais")
         CHECK(jogador.getAtaque() == ataque_max_antes - 1);
     }
 
-    // Adicione dentro do seu arquivo de testes (ex: tests.cpp)
-    SUBCASE("CavaleiroDaMorte reflete dano corretamente") {
+    SUBCASE("Habilidade especial do Cavaleiro da morte") {
         CavaleiroDaMorte morte;
 
         // Garante que o jogador começa com vida cheia
