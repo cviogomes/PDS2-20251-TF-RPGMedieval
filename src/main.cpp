@@ -124,8 +124,14 @@ int main(){
 
   inimigos_c1.emplace_back(std::make_unique<Esqueleto>());
 
+  try{
   lutar(*jogador, inimigos_c1);
-
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
+  
   if (!jogador->estaVivo())
     return 0;
 
@@ -133,9 +139,13 @@ int main(){
   std::vector<std::unique_ptr<Inimigo>> miniboss_c1;
   miniboss_c1.emplace_back(std::make_unique<Vampiro>());
 
+  try{
   lutar(*jogador, miniboss_c1);
-
-  // arte batalha
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
   if (!jogador->estaVivo())
     return 0;
@@ -143,7 +153,14 @@ int main(){
   narrativePrint("Vorstag", "Pobrezinho... Ainda acredita em esperanca? Eu sou a cura para este mundo podre.");
   std::vector<std::unique_ptr<Inimigo>> boss_c1;
   boss_c1.emplace_back(std::make_unique<CavaleiroDaPeste>());
+
+  try{
   lutar(*jogador, boss_c1);
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
   if (!jogador->estaVivo())
   {
@@ -152,9 +169,17 @@ int main(){
     jogador->setVida(jogador->getVidaMax() * 0.8);
     std::vector<std::unique_ptr<Inimigo>> retry;
     retry.emplace_back(std::make_unique<CavaleiroDaPeste>());
+
+    try{
     lutar(*jogador, retry);
+    } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+    }
+    
     if (!jogador->estaVivo())
-      return 0;
+    return 0;
   }
 
   narrativePrint("Vorstag", "Nao e' o fim... Eles virao... todos virao... HAHAHA!");
@@ -175,11 +200,8 @@ int main(){
     narrativePrint("Narrador", "Voce adentra a Floresta Sombria, lar de aranhas e lobisomens.");
     inimigos_c2.emplace_back(std::make_unique<Aranha>());
 
-    // arte aranha
-
     inimigos_c2.emplace_back(std::make_unique<Lobisomem>());
 
-    // arte lobisomen
   }
   else
   {
@@ -189,13 +211,18 @@ int main(){
 
     inimigos_c2.emplace_back(std::make_unique<Slime>());
 
-    // arte slime
-
     inimigos_c2.emplace_back(std::make_unique<Goblin>());
 
-    // arte goblin
   };
+
+  try{
   lutar(*jogador, inimigos_c2);
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
+  
   if (!jogador->estaVivo())
     return 0;
 
@@ -203,11 +230,13 @@ int main(){
   std::vector<std::unique_ptr<Inimigo>> miniboss_c2;
   miniboss_c2.emplace_back(std::make_unique<Goblin>());
 
-  // arte goblin
-
+  try{
   lutar(*jogador, miniboss_c2);
-
-  // arte batalha
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
   if (!jogador->estaVivo())
     return 0;
@@ -215,13 +244,16 @@ int main(){
   narrativePrint("Seraphina", "Comam... ou sejam comidos. Nao ha outro caminho.");
   std::vector<std::unique_ptr<Inimigo>> boss_c2;
   boss_c2.emplace_back(std::make_unique<CavaleiroDaFome>());
+
+  try{
   lutar(*jogador, boss_c2);
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
-  // arte batalha
-
-  if (!jogador->estaVivo()
-
-  )
+  if (!jogador->estaVivo())
     return 0;
 
   narrativePrint("Seraphina", "A fome... nunca acaba... ela apenas espera...");
@@ -248,15 +280,15 @@ int main(){
   std::vector<std::unique_ptr<Inimigo>> inimigos_c3;
   inimigos_c3.emplace_back(std::make_unique<Slime>());
 
-  // arte slime
-
   inimigos_c3.emplace_back(std::make_unique<Goblin>());
 
-  // arte goblin
-
+  try{
   lutar(*jogador, inimigos_c3);
-
-  // arte batalha
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
   if (!jogador->estaVivo())
     return 0;
@@ -264,9 +296,14 @@ int main(){
   narrativePrint("Thargon", "Voces chamam isso de luta? Eu sou a guerra encarnada!");
   std::vector<std::unique_ptr<Inimigo>> boss_c3;
   boss_c3.emplace_back(std::make_unique<CavaleiroDaGuerra>());
-  lutar(*jogador, boss_c3);
 
-  // arte batalha
+  try{
+  lutar(*jogador, boss_c3);
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
 
   if (!jogador->estaVivo())
     return 0;
@@ -296,7 +333,13 @@ int main(){
     std::vector<std::unique_ptr<Inimigo>> miniboss_nyx;
     miniboss_nyx.emplace_back(std::make_unique<Bruxa>());
 
+    try{
     lutar(*jogador, miniboss_nyx);
+    } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+    }
 
     if (!jogador->estaVivo())
       return 0;
@@ -305,7 +348,15 @@ int main(){
   narrativePrint("Moros", "...");
   std::vector<std::unique_ptr<Inimigo>> boss_c4;
   boss_c4.emplace_back(std::make_unique<CavaleiroDaMorte>());
+
+  try{
   lutar(*jogador, boss_c4);
+  } catch (const std::exception& e) {
+    battlePrint(std::string("Erro durante o combate: ") + e.what() + "\n");
+    logError(e.what());
+    return 0;
+  }
+
   if (!jogador->estaVivo())
     return 0;
 
