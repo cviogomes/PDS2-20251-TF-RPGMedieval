@@ -280,12 +280,4 @@ A seguir, cartões CRC (Classe, Responsabilidades, Colaborações) de cada class
 - Três desfechos com arte e trilha exclusiva: heroico, trágico, sombrio
 - Final baseado em limiares de moral
 - Log do final salvo para análise futura
-
-## 7. Como visualizar os resultados do gcovr
-```
-Para visualizar os resultados dos testes do gcovr, tudo o que você precisa fazer é localizar a pasta de testes que foi criada.
-Dentro dela, você encontrará um arquivo chamado cobertura.html.
-
-Basta abrir esse arquivo no seu navegador web preferido (como Chrome, Firefox, Edge, etc.).
-Ele exibirá um relatório detalhado da cobertura do seu código, mostrando quais partes foram testadas e quais não foram, de uma forma visualmente fácil de entender.
-```
+- 
