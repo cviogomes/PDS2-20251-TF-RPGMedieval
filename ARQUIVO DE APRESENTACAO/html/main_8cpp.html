@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RPG Medieval - Trabalho de PDS: Referência do Arquivo TRABALHO PDS - RPG/PDS2-20251-TF-RPGMedieval-master/src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capa.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">RPG Medieval - Trabalho de PDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Uma jornada épica de RPG onde suas escolhas moldam o destino de um reino à beira da aniquilação.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="dir_363be62a80fe4e656302fbe723ea87cf.html">TRABALHO PDS - RPG</a></li><li class="navelem"><a href="dir_5b9ef2e4f603e6b35561602919c79244.html">PDS2-20251-TF-RPGMedieval-master</a></li><li class="navelem"><a href="dir_00a6c215764874741e521024f518fa69.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &quot;Utils.hpp&quot;</code><br />
+<code>#include &quot;Jogador.hpp&quot;</code><br />
+<code>#include &quot;Combate.hpp&quot;</code><br />
+<code>#include &quot;Finais.hpp&quot;</code><br />
+<code>#include &quot;AsciiArt.hpp&quot;</code><br />
+<code>#include &quot;Exceptions.hpp&quot;</code><br />
+<code>#include &quot;Zumbi.hpp&quot;</code><br />
+<code>#include &quot;Esqueleto.hpp&quot;</code><br />
+<code>#include &quot;Vampiro.hpp&quot;</code><br />
+<code>#include &quot;Goblin.hpp&quot;</code><br />
+<code>#include &quot;Slime.hpp&quot;</code><br />
+<code>#include &quot;Aranha.hpp&quot;</code><br />
+<code>#include &quot;Lobisomem.hpp&quot;</code><br />
+<code>#include &quot;Bruxa.hpp&quot;</code><br />
+<code>#include &quot;CavaleiroDaPeste.hpp&quot;</code><br />
+<code>#include &quot;CavaleiroDaFome.hpp&quot;</code><br />
+<code>#include &quot;CavaleiroDaGuerra.hpp&quot;</code><br />
+<code>#include &quot;CavaleiroDaMorte.hpp&quot;</code><br />
+<code>#include &quot;Musica.hpp&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a261fd4c8cf73477662e5d2731c5656ab" id="r_a261fd4c8cf73477662e5d2731c5656ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a> (const std::string &amp;pergunta, const std::vector&lt; std::string &gt; &amp;opcoes)</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="a261fd4c8cf73477662e5d2731c5656ab" name="a261fd4c8cf73477662e5d2731c5656ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261fd4c8cf73477662e5d2731c5656ab">&#9670;&#160;</a></span>fazerEscolha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fazerEscolha </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>pergunta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>opcoes</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{</div>
+<div class="line"><span class="lineno">   37</span>  <span class="comment">// Exibe a decisão e as opções</span></div>
+<div class="line"><span class="lineno">   38</span>  <a class="code hl_function" href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(<span class="stringliteral">&quot;\n--- DECISAO ---\n&quot;</span>, TextSpeed::NORMAL);</div>
+<div class="line"><span class="lineno">   39</span>  <a class="code hl_function" href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(pergunta + <span class="stringliteral">&quot;\n&quot;</span>, TextSpeed::NORMAL);</div>
+<div class="line"><span class="lineno">   40</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; opcoes.size(); ++i)</div>
+<div class="line"><span class="lineno">   41</span>  {</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(std::to_string(i + 1) + <span class="stringliteral">&quot; - &quot;</span> + opcoes[i] + <span class="stringliteral">&quot;\n&quot;</span>, TextSpeed::NORMAL);</div>
+<div class="line"><span class="lineno">   43</span>  }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>  <span class="keywordtype">int</span> escolha;</div>
+<div class="line"><span class="lineno">   46</span>  std::cin &gt;&gt; escolha; <span class="comment">// Lê a escolha do usuário</span></div>
+<div class="line"><span class="lineno">   47</span>  <span class="keywordflow">if</span> (!std::cin.good())</div>
+<div class="line"><span class="lineno">   48</span>  {</div>
+<div class="line"><span class="lineno">   49</span>    std::cin.clear();</div>
+<div class="line"><span class="lineno">   50</span>    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">throw</span> InputError(<span class="stringliteral">&quot;Entrada invalida (nao e&#39; um numero).&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>  }</div>
+<div class="line"><span class="lineno">   53</span>  <span class="keywordflow">if</span> (escolha &lt; 1 || escolha &gt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(opcoes.size()))</div>
+<div class="line"><span class="lineno">   54</span>  {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">throw</span> InputError(<span class="stringliteral">&quot;Opcao fora do intervalo (1–&quot;</span> + std::to_string(opcoes.size()) + <span class="stringliteral">&quot;).&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+<div class="line"><span class="lineno">   57</span>  <span class="comment">// Limpa o buffer</span></div>
+<div class="line"><span class="lineno">   58</span>  std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><span class="lineno">   59</span>  <span class="keywordflow">return</span> escolha;</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+<div class="ttc" id="a_utils_8cpp_html_a224b1567ee39b40f3c3478214d1291b4"><div class="ttname"><a href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a></div><div class="ttdeci">void typeText(const std::string &amp;text, TextSpeed speed)</div><div class="ttdef"><b>Definição</b> Utils.cpp:57</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// Configura o terminal e inicializa o gerador de números aleatórios</span></div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_function" href="_utils_8cpp.html#a8303dfeccd0b733098a3d4fbba6a92c3">setupTerminal</a>();</div>
+<div class="line"><span class="lineno">   69</span>    std::srand(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span><span class="keyword">&gt;</span>(std::time(<span class="keyword">nullptr</span>)));</div>
+<div class="line"><span class="lineno">   70</span>    Musica musica;</div>
+<div class="line"><span class="lineno">   71</span>    musica.PlayMusic(<span class="stringliteral">&quot;musicas/CAP1.wav&quot;</span>); <span class="comment">// Toca música do capítulo 1</span></div>
+<div class="line"><span class="lineno">   72</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Thyria... outrora um reino prospero de cavaleiros, florestas verdejantes e vilarejos cheios de vida. Agora... um eco.&quot;</span>);</div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">// Exibe arte do castelo</span></div>
+<div class="line"><span class="lineno">   74</span>    mostrarArte(<span class="stringliteral">&quot;castelo&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Duas figuras encapuzadas ajoelham-se em um circulo profano. As sombras rasgam o ceu. A fenda foi aberta.&quot;</span>);</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Nyx&quot;</span>, <span class="stringliteral">&quot;Por suas perdas... por sua dor... eu vos trago aquilo que mais desejam... mas todo preco deve ser pago.&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <span class="comment">// Escolha da classe do jogador</span></div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordtype">int</span> classe = <a class="code hl_function" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a>(<span class="stringliteral">&quot;O mundo precisa de um heroi. Quem voce sera?&quot;</span>, {<span class="stringliteral">&quot;Guerreiro&quot;</span>, <span class="stringliteral">&quot;Arqueiro&quot;</span>, <span class="stringliteral">&quot;Mago&quot;</span>});</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    std::string classeJogador;</div>
+<div class="line"><span class="lineno">   83</span>    std::unique_ptr&lt;Jogador&gt; jogador;</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (classe == 1)</div>
+<div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      classeJogador = <span class="stringliteral">&quot;Guerreiro&quot;</span>;</div>
+<div class="line"><span class="lineno">   87</span>      jogador = std::make_unique&lt;Jogador&gt;(<span class="stringliteral">&quot;Guerreiro&quot;</span>, 999, 9990, 999930); <span class="comment">// Parâmetros de exemplo</span></div>
+<div class="line"><span class="lineno">   88</span>      mostrarArte(<span class="stringliteral">&quot;guerreiro&quot;</span>);</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (classe == 2)</div>
+<div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      classeJogador = <span class="stringliteral">&quot;Arqueiro&quot;</span>;</div>
+<div class="line"><span class="lineno">   93</span>      jogador = std::make_unique&lt;Jogador&gt;(<span class="stringliteral">&quot;Arqueiro&quot;</span>, 100, 25, 10);</div>
+<div class="line"><span class="lineno">   94</span>      mostrarArte(<span class="stringliteral">&quot;arqueiro&quot;</span>);</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>      classeJogador = <span class="stringliteral">&quot;Mago&quot;</span>;</div>
+<div class="line"><span class="lineno">   99</span>      jogador = std::make_unique&lt;Jogador&gt;(<span class="stringliteral">&quot;Mago&quot;</span>, 80, 30, 15);</div>
+<div class="line"><span class="lineno">  100</span>      mostrarArte(<span class="stringliteral">&quot;mago&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>    };</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;E assim comecou o fim... ou o inicio de sua redencao.&quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">// Início do Capítulo 1</span></div>
+<div class="line"><span class="lineno">  106</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Capitulo 1: O Suspiro da Peste.&quot;</span>);</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Voce desperta. Sua vila, Aldhaven, nao e&#39; mais lar... mas um tumulo esperando ser preenchido.&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>    mostrarArte(<span class="stringliteral">&quot;vila&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Vorstag&quot;</span>, <span class="stringliteral">&quot;A morte nao e&#39; fim... e&#39; libertacao.&quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="comment">// Primeira decisão do capítulo 1</span></div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">int</span> escolha_cap1 = <a class="code hl_function" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a>(<span class="stringliteral">&quot;Os gritos dos inocentes cortam o ar, mas os suprimentos em sua mao podem garantir sua sobrevivencia. O que voce prioriza?&quot;</span>,</div>
+<div class="line"><span class="lineno">  113</span>                                    {<span class="stringliteral">&quot;Salvar os Civis&quot;</span>,</div>
+<div class="line"><span class="lineno">  114</span>                                     <span class="stringliteral">&quot;Proteger Recursos&quot;</span>});</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (escolha_cap1 == 1)</div>
+<div class="line"><span class="lineno">  116</span>    {</div>
+<div class="line"><span class="lineno">  117</span>      <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Voce guia os sobreviventes para um celeiro, ganhando sua lealdade, mas perde recursos valiosos.&quot;</span>);</div>
+<div class="line"><span class="lineno">  118</span>      jogador-&gt;adicionarMoral(5);</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Voce guarda os suprimentos, mas os gritos dos abandonados ecoarao em sua mente.&quot;</span>);</div>
+<div class="line"><span class="lineno">  123</span>      jogador-&gt;ganharOuro(20);</div>
+<div class="line"><span class="lineno">  124</span>      jogador-&gt;adicionarMoral(-5);</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    <span class="comment">// Inimigos do capítulo 1</span></div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Os infectados pela peste se arrastam em sua direcao!&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; inimigos_c1;</div>
+<div class="line"><span class="lineno">  130</span>    inimigos_c1.emplace_back(std::make_unique&lt;Zumbi&gt;());</div>
+<div class="line"><span class="lineno">  131</span>    inimigos_c1.emplace_back(std::make_unique&lt;Esqueleto&gt;());</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (!inimigos_c1.empty())</div>
+<div class="line"><span class="lineno">  134</span>    {</div>
+<div class="line"><span class="lineno">  135</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  136</span>      {</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> (!jogador)</div>
+<div class="line"><span class="lineno">  138</span>        {</div>
+<div class="line"><span class="lineno">  139</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro: jogador não foi criado corretamente.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  140</span>          <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  141</span>        }</div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, inimigos_c1); <span class="comment">// Inicia combate</span></div>
+<div class="line"><span class="lineno">  143</span>      }</div>
+<div class="line"><span class="lineno">  144</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  145</span>      {</div>
+<div class="line"><span class="lineno">  146</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  147</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  148</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  149</span>      }</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">// Miniboss do capítulo 1</span></div>
+<div class="line"><span class="lineno">  156</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Um vampiro degenerado, um lorde caido, bloqueia seu caminho.&quot;</span>);</div>
+<div class="line"><span class="lineno">  157</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; miniboss_c1;</div>
+<div class="line"><span class="lineno">  158</span>    miniboss_c1.emplace_back(std::make_unique&lt;Vampiro&gt;());</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">if</span> (!miniboss_c1.empty())</div>
+<div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  163</span>      {</div>
+<div class="line"><span class="lineno">  164</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, miniboss_c1);</div>
+<div class="line"><span class="lineno">  165</span>      }</div>
+<div class="line"><span class="lineno">  166</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  167</span>      {</div>
+<div class="line"><span class="lineno">  168</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  169</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  171</span>      }</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  175</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="comment">// Boss do capítulo 1</span></div>
+<div class="line"><span class="lineno">  178</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Vorstag&quot;</span>, <span class="stringliteral">&quot;Pobrezinho... Ainda acredita em esperanca? Eu sou a cura para este mundo podre.&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; boss_c1;</div>
+<div class="line"><span class="lineno">  180</span>    boss_c1.emplace_back(std::make_unique&lt;CavaleiroDaPeste&gt;());</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (!boss_c1.empty())</div>
+<div class="line"><span class="lineno">  183</span>    {</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  185</span>      {</div>
+<div class="line"><span class="lineno">  186</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, boss_c1);</div>
+<div class="line"><span class="lineno">  187</span>      }</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  189</span>      {</div>
+<div class="line"><span class="lineno">  190</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  191</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  193</span>      }</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  197</span>    {</div>
+<div class="line"><span class="lineno">  198</span>      <span class="comment">// Se o jogador morrer, recebe uma segunda chance</span></div>
+<div class="line"><span class="lineno">  199</span>      <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Roland&quot;</span>,</div>
+<div class="line"><span class="lineno">  200</span>                     <span class="stringliteral">&quot;Levante-se, heroi. Ainda nao e&#39; sua hora.&quot;</span>);</div>
+<div class="line"><span class="lineno">  201</span>      jogador-&gt;setVida(jogador-&gt;getVidaMax() * 0.8);</div>
+<div class="line"><span class="lineno">  202</span>      std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; retry;</div>
+<div class="line"><span class="lineno">  203</span>      retry.emplace_back(std::make_unique&lt;CavaleiroDaPeste&gt;());</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  206</span>      {</div>
+<div class="line"><span class="lineno">  207</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, retry);</div>
+<div class="line"><span class="lineno">  208</span>      }</div>
+<div class="line"><span class="lineno">  209</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  210</span>      {</div>
+<div class="line"><span class="lineno">  211</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  212</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  214</span>      }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>      <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Vorstag&quot;</span>, <span class="stringliteral">&quot;Nao e&#39; o fim... Eles virao... todos virao... HAHAHA!&quot;</span>);</div>
+<div class="line"><span class="lineno">  221</span>    musica.StopMusic();</div>
+<div class="line"><span class="lineno">  222</span> </div>
+<div class="line"><span class="lineno">  223</span>    jogador-&gt;ganharOuro(500);</div>
+<div class="line"><span class="lineno">  224</span>    jogador-&gt;visitarLoja(1); <span class="comment">// Acesso à loja após o capítulo 1</span></div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>    <span class="comment">// Início do Capítulo 2</span></div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Capitulo 2: O Banquete da Fome.&quot;</span>);</div>
+<div class="line"><span class="lineno">  228</span>    musica.PlayMusic(<span class="stringliteral">&quot;musicas/CAP2.wav&quot;</span>);</div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Com a Peste derrotada, a fome rasteja pelas terras, e sua sombra engole tudo.&quot;</span>);</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="comment">// Escolha de caminho no capítulo 2</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordtype">int</span> caminho_c2 = <a class="code hl_function" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a>(<span class="stringliteral">&quot;Dois caminhos se abrem. Qual voce seguira?&quot;</span>, {<span class="stringliteral">&quot;A Floresta Sombria&quot;</span>, <span class="stringliteral">&quot;As Montanhas Rochosas&quot;</span>});</div>
+<div class="line"><span class="lineno">  233</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; inimigos_c2;</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keywordflow">if</span> (caminho_c2 == 1)</div>
+<div class="line"><span class="lineno">  235</span>    {</div>
+<div class="line"><span class="lineno">  236</span>      <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Voce adentra a Floresta Sombria, lar de aranhas e lobisomens.&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>      inimigos_c2.emplace_back(std::make_unique&lt;Aranha&gt;());</div>
+<div class="line"><span class="lineno">  238</span>      inimigos_c2.emplace_back(std::make_unique&lt;Lobisomem&gt;());</div>
+<div class="line"><span class="lineno">  239</span>    }</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  241</span>    {</div>
+<div class="line"><span class="lineno">  242</span>      <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Voce escala as Montanhas Rochosas, infestadas de slimes e goblins.&quot;</span>);</div>
+<div class="line"><span class="lineno">  243</span>      mostrarArte(<span class="stringliteral">&quot;montanhas&quot;</span>);</div>
+<div class="line"><span class="lineno">  244</span>      inimigos_c2.emplace_back(std::make_unique&lt;Slime&gt;());</div>
+<div class="line"><span class="lineno">  245</span>      inimigos_c2.emplace_back(std::make_unique&lt;Goblin&gt;());</div>
+<div class="line"><span class="lineno">  246</span>    };</div>
+<div class="line"><span class="lineno">  247</span> </div>
+<div class="line"><span class="lineno">  248</span>    <span class="keywordflow">if</span> (!inimigos_c1.empty())</div>
+<div class="line"><span class="lineno">  249</span>    {</div>
+<div class="line"><span class="lineno">  250</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  251</span>      {</div>
+<div class="line"><span class="lineno">  252</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, inimigos_c2);</div>
+<div class="line"><span class="lineno">  253</span>      }</div>
+<div class="line"><span class="lineno">  254</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  255</span>      {</div>
+<div class="line"><span class="lineno">  256</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  257</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  258</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  259</span>      }</div>
+<div class="line"><span class="lineno">  260</span>    }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  263</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  264</span> </div>
+<div class="line"><span class="lineno">  265</span>    <span class="comment">// Miniboss do capítulo 2</span></div>
+<div class="line"><span class="lineno">  266</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Um goblin devoto, fanatico por seu mestre, tenta impedi-lo.&quot;</span>);</div>
+<div class="line"><span class="lineno">  267</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; miniboss_c2;</div>
+<div class="line"><span class="lineno">  268</span>    miniboss_c2.emplace_back(std::make_unique&lt;Goblin&gt;());</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="keywordflow">if</span> (!miniboss_c2.empty())</div>
+<div class="line"><span class="lineno">  271</span>    {</div>
+<div class="line"><span class="lineno">  272</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  273</span>      {</div>
+<div class="line"><span class="lineno">  274</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, miniboss_c2);</div>
+<div class="line"><span class="lineno">  275</span>      }</div>
+<div class="line"><span class="lineno">  276</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  277</span>      {</div>
+<div class="line"><span class="lineno">  278</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  279</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  281</span>      }</div>
+<div class="line"><span class="lineno">  282</span>    }</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  285</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  286</span> </div>
+<div class="line"><span class="lineno">  287</span>    <span class="comment">// Boss do capítulo 2</span></div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Seraphina&quot;</span>, <span class="stringliteral">&quot;Comam... ou sejam comidos. Nao ha outro caminho.&quot;</span>);</div>
+<div class="line"><span class="lineno">  289</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; boss_c2;</div>
+<div class="line"><span class="lineno">  290</span>    boss_c2.emplace_back(std::make_unique&lt;CavaleiroDaFome&gt;());</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">if</span> (!boss_c2.empty())</div>
+<div class="line"><span class="lineno">  293</span>    {</div>
+<div class="line"><span class="lineno">  294</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  295</span>      {</div>
+<div class="line"><span class="lineno">  296</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, boss_c2);</div>
+<div class="line"><span class="lineno">  297</span>      }</div>
+<div class="line"><span class="lineno">  298</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  299</span>      {</div>
+<div class="line"><span class="lineno">  300</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  301</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  302</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  303</span>      }</div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="line"><span class="lineno">  305</span> </div>
+<div class="line"><span class="lineno">  306</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  307</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Seraphina&quot;</span>, <span class="stringliteral">&quot;A fome... nunca acaba... ela apenas espera...&quot;</span>);</div>
+<div class="line"><span class="lineno">  310</span>    musica.StopMusic();</div>
+<div class="line"><span class="lineno">  311</span>    jogador-&gt;ganharOuro(750);</div>
+<div class="line"><span class="lineno">  312</span>    jogador-&gt;visitarLoja(2); <span class="comment">// Acesso à loja após o capítulo 2</span></div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>    <span class="comment">// Início do Capítulo 3</span></div>
+<div class="line"><span class="lineno">  315</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Capitulo 3: A Forja da Guerra.&quot;</span>);</div>
+<div class="line"><span class="lineno">  316</span>    musica.PlayMusic(<span class="stringliteral">&quot;musicas/CAP3.wav&quot;</span>);</div>
+<div class="line"><span class="lineno">  317</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;O trovao da Guerra ecoa nas planicies. Thargon marcha com seu exercito.&quot;</span>);</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>    <span class="comment">// Decisão do capítulo 3</span></div>
+<div class="line"><span class="lineno">  320</span>    <span class="keywordtype">int</span> escolha_c3 = <a class="code hl_function" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a>(<span class="stringliteral">&quot;Voce encontra uma fortaleza rebelde. O que voce faz?&quot;</span>,</div>
+<div class="line"><span class="lineno">  321</span>                                  {<span class="stringliteral">&quot;Ajudar os Rebeldes&quot;</span>,</div>
+<div class="line"><span class="lineno">  322</span>                                   <span class="stringliteral">&quot;Invadir o acampamento sozinho&quot;</span>});</div>
+<div class="line"><span class="lineno">  323</span>    <span class="keywordflow">if</span> (escolha_c3 == 1)</div>
+<div class="line"><span class="lineno">  324</span>      jogador-&gt;adicionarMoral(5);</div>
+<div class="line"><span class="lineno">  325</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  326</span>    {</div>
+<div class="line"><span class="lineno">  327</span>      jogador-&gt;adicionarMoral(-5);</div>
+<div class="line"><span class="lineno">  328</span>      jogador-&gt;ganharOuro(50);</div>
+<div class="line"><span class="lineno">  329</span>    }</div>
+<div class="line"><span class="lineno">  330</span> </div>
+<div class="line"><span class="lineno">  331</span>    <span class="comment">// Inimigos do capítulo 3</span></div>
+<div class="line"><span class="lineno">  332</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;As maquinas de guerra de Thargon avancam: Slimes Corrosivos e Goblins Guerreiros.&quot;</span>);</div>
+<div class="line"><span class="lineno">  333</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; inimigos_c3;</div>
+<div class="line"><span class="lineno">  334</span>    inimigos_c3.emplace_back(std::make_unique&lt;Slime&gt;());</div>
+<div class="line"><span class="lineno">  335</span>    inimigos_c3.emplace_back(std::make_unique&lt;Goblin&gt;());</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>    <span class="keywordflow">if</span> (!inimigos_c3.empty())</div>
+<div class="line"><span class="lineno">  338</span>    {</div>
+<div class="line"><span class="lineno">  339</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  340</span>      {</div>
+<div class="line"><span class="lineno">  341</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, inimigos_c3);</div>
+<div class="line"><span class="lineno">  342</span>      }</div>
+<div class="line"><span class="lineno">  343</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  344</span>      {</div>
+<div class="line"><span class="lineno">  345</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  346</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  347</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  348</span>      }</div>
+<div class="line"><span class="lineno">  349</span>    }</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  352</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>    <span class="comment">// Boss do capítulo 3</span></div>
+<div class="line"><span class="lineno">  355</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Thargon&quot;</span>, <span class="stringliteral">&quot;Voces chamam isso de luta? Eu sou a guerra encarnada!&quot;</span>);</div>
+<div class="line"><span class="lineno">  356</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; boss_c3;</div>
+<div class="line"><span class="lineno">  357</span>    boss_c3.emplace_back(std::make_unique&lt;CavaleiroDaGuerra&gt;());</div>
+<div class="line"><span class="lineno">  358</span> </div>
+<div class="line"><span class="lineno">  359</span>    <span class="keywordflow">if</span> (!boss_c3.empty())</div>
+<div class="line"><span class="lineno">  360</span>    {</div>
+<div class="line"><span class="lineno">  361</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  362</span>      {</div>
+<div class="line"><span class="lineno">  363</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, boss_c3);</div>
+<div class="line"><span class="lineno">  364</span>      }</div>
+<div class="line"><span class="lineno">  365</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  366</span>      {</div>
+<div class="line"><span class="lineno">  367</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  368</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  369</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  370</span>      }</div>
+<div class="line"><span class="lineno">  371</span>    }</div>
+<div class="line"><span class="lineno">  372</span> </div>
+<div class="line"><span class="lineno">  373</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  374</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Thargon&quot;</span>, <span class="stringliteral">&quot;A guerra... nunca termina... apenas muda de rosto...&quot;</span>);</div>
+<div class="line"><span class="lineno">  377</span>    musica.StopMusic();</div>
+<div class="line"><span class="lineno">  378</span>    jogador-&gt;ganharOuro(1000);</div>
+<div class="line"><span class="lineno">  379</span>    jogador-&gt;visitarLoja(3); <span class="comment">// Acesso à loja após o capítulo 3</span></div>
+<div class="line"><span class="lineno">  380</span> </div>
+<div class="line"><span class="lineno">  381</span>    <span class="comment">// Início do Capítulo 4</span></div>
+<div class="line"><span class="lineno">  382</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Capitulo 4: O Veu da Morte.&quot;</span>);</div>
+<div class="line"><span class="lineno">  383</span>    musica.PlayMusic(<span class="stringliteral">&quot;musicas/CAP4.wav&quot;</span>);</div>
+<div class="line"><span class="lineno">  384</span> </div>
+<div class="line"><span class="lineno">  385</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;Tres Cavaleiros cairam. A Morte aguarda no coracao da fenda. E ao seu lado... Nyx.&quot;</span>);</div>
+<div class="line"><span class="lineno">  386</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Nyx&quot;</span>, <span class="stringliteral">&quot;Voce chegou longe, heroi. Junte-se a mim... ou pereca.&quot;</span>);</div>
+<div class="line"><span class="lineno">  387</span> </div>
+<div class="line"><span class="lineno">  388</span>    <span class="comment">// Decisão final: aliar-se ou combater Nyx</span></div>
+<div class="line"><span class="lineno">  389</span>    <span class="keywordtype">int</span> escolha_c4_nyx = <a class="code hl_function" href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a>(<span class="stringliteral">&quot;Nyx oferece poder, mas a um custo. Qual seu caminho?&quot;</span>,</div>
+<div class="line"><span class="lineno">  390</span>                                      {<span class="stringliteral">&quot;Aliar-se a Nyx&quot;</span>,</div>
+<div class="line"><span class="lineno">  391</span>                                       <span class="stringliteral">&quot;Combater Nyx&quot;</span>});</div>
+<div class="line"><span class="lineno">  392</span>    <span class="keywordflow">if</span> (escolha_c4_nyx == 1)</div>
+<div class="line"><span class="lineno">  393</span>    {</div>
+<div class="line"><span class="lineno">  394</span>      jogador-&gt;setAliadoNyx(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  395</span>      jogador-&gt;adicionarMoral(-10);</div>
+<div class="line"><span class="lineno">  396</span>    }</div>
+<div class="line"><span class="lineno">  397</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  398</span>    {</div>
+<div class="line"><span class="lineno">  399</span>      jogador-&gt;adicionarMoral(10);</div>
+<div class="line"><span class="lineno">  400</span>      std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; miniboss_nyx;</div>
+<div class="line"><span class="lineno">  401</span>      miniboss_nyx.emplace_back(std::make_unique&lt;Bruxa&gt;());</div>
+<div class="line"><span class="lineno">  402</span> </div>
+<div class="line"><span class="lineno">  403</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  404</span>      {</div>
+<div class="line"><span class="lineno">  405</span>        <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, miniboss_nyx);</div>
+<div class="line"><span class="lineno">  406</span>      }</div>
+<div class="line"><span class="lineno">  407</span>      <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  408</span>      {</div>
+<div class="line"><span class="lineno">  409</span>        <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  410</span>        <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  412</span>      }</div>
+<div class="line"><span class="lineno">  413</span> </div>
+<div class="line"><span class="lineno">  414</span>      <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  415</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  416</span>    }</div>
+<div class="line"><span class="lineno">  417</span> </div>
+<div class="line"><span class="lineno">  418</span>    <span class="comment">// Boss final</span></div>
+<div class="line"><span class="lineno">  419</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Moros&quot;</span>, <span class="stringliteral">&quot;...&quot;</span>);</div>
+<div class="line"><span class="lineno">  420</span>    std::vector&lt;std::unique_ptr&lt;Inimigo&gt;&gt; boss_c4;</div>
+<div class="line"><span class="lineno">  421</span>    boss_c4.emplace_back(std::make_unique&lt;CavaleiroDaMorte&gt;());</div>
+<div class="line"><span class="lineno">  422</span> </div>
+<div class="line"><span class="lineno">  423</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  424</span>    {</div>
+<div class="line"><span class="lineno">  425</span>      <a class="code hl_function" href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a>(*jogador, boss_c4);</div>
+<div class="line"><span class="lineno">  426</span>    }</div>
+<div class="line"><span class="lineno">  427</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  428</span>    {</div>
+<div class="line"><span class="lineno">  429</span>      <a class="code hl_function" href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a>(std::string(<span class="stringliteral">&quot;Erro durante o combate: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  430</span>      <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  431</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  432</span>    }</div>
+<div class="line"><span class="lineno">  433</span> </div>
+<div class="line"><span class="lineno">  434</span>    <span class="keywordflow">if</span> (!jogador-&gt;estaVivo())</div>
+<div class="line"><span class="lineno">  435</span>      <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  436</span> </div>
+<div class="line"><span class="lineno">  437</span>    <span class="comment">// Determina o final do jogo</span></div>
+<div class="line"><span class="lineno">  438</span>    <span class="keywordtype">int</span> moralFinal = jogador-&gt;getMoral();</div>
+<div class="line"><span class="lineno">  439</span>    <span class="keywordtype">bool</span> aliadoNyx = jogador-&gt;temAliadoNyx();</div>
+<div class="line"><span class="lineno">  440</span> </div>
+<div class="line"><span class="lineno">  441</span>    musica.StopMusic();</div>
+<div class="line"><span class="lineno">  442</span>    std::string <span class="keyword">final</span>;</div>
+<div class="line"><span class="lineno">  443</span> </div>
+<div class="line"><span class="lineno">  444</span>    <span class="keywordflow">if</span> (aliadoNyx)</div>
+<div class="line"><span class="lineno">  445</span>      <span class="keyword">final</span> = <span class="stringliteral">&quot;sombrio&quot;</span>;</div>
+<div class="line"><span class="lineno">  446</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (moralFinal &gt; 10)</div>
+<div class="line"><span class="lineno">  447</span>      <span class="keyword">final</span> = <span class="stringliteral">&quot;heroico&quot;</span>;</div>
+<div class="line"><span class="lineno">  448</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  449</span>      <span class="keyword">final</span> = <span class="stringliteral">&quot;tragico&quot;</span>;</div>
+<div class="line"><span class="lineno">  450</span> </div>
+<div class="line"><span class="lineno">  451</span>    <span class="keywordflow">if</span> (<span class="keyword">final</span> == <span class="stringliteral">&quot;sombrio&quot;</span> || <span class="keyword">final</span> == <span class="stringliteral">&quot;heroico&quot;</span> || <span class="keyword">final</span> == <span class="stringliteral">&quot;tragico&quot;</span>)</div>
+<div class="line"><span class="lineno">  452</span>    {</div>
+<div class="line"><span class="lineno">  453</span>      <a class="code hl_function" href="_finais_8cpp.html#af4e47b22e3aa1ba790bf92691ee4e446">mostrarFinal</a>(classeJogador, <span class="keyword">final</span>);</div>
+<div class="line"><span class="lineno">  454</span>    }</div>
+<div class="line"><span class="lineno">  455</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  456</span>    {</div>
+<div class="line"><span class="lineno">  457</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;Erro: tipo de final inválido.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  458</span>    }</div>
+<div class="line"><span class="lineno">  459</span> </div>
+<div class="line"><span class="lineno">  460</span>    <a class="code hl_function" href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a>(<span class="stringliteral">&quot;Narrador&quot;</span>, <span class="stringliteral">&quot;OBRIGADO POR JOGAR!&quot;</span>);</div>
+<div class="line"><span class="lineno">  461</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  462</span>  }</div>
+<div class="line"><span class="lineno">  463</span>  <span class="keywordflow">catch</span> (<span class="keyword">const</span> InvalidParameter &amp;e)</div>
+<div class="line"><span class="lineno">  464</span>  {</div>
+<div class="line"><span class="lineno">  465</span>    <a class="code hl_function" href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(std::string(<span class="stringliteral">&quot;Parametro invalido: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>, TextSpeed::NORMAL);</div>
+<div class="line"><span class="lineno">  466</span>    <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  467</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  468</span>  }</div>
+<div class="line"><span class="lineno">  469</span>  <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  470</span>  {</div>
+<div class="line"><span class="lineno">  471</span>    <a class="code hl_function" href="_utils_8cpp.html#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(std::string(<span class="stringliteral">&quot;Erro inesperado: &quot;</span>) + e.what() + <span class="stringliteral">&quot;\n&quot;</span>, TextSpeed::NORMAL);</div>
+<div class="line"><span class="lineno">  472</span>    <a class="code hl_function" href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a>(e.what());</div>
+<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  474</span>  }</div>
+<div class="line"><span class="lineno">  475</span>}</div>
+<div class="ttc" id="a_combate_8cpp_html_aedf8b0cd4fd9e7330bb79760e42a8217"><div class="ttname"><a href="_combate_8cpp.html#aedf8b0cd4fd9e7330bb79760e42a8217">lutar</a></div><div class="ttdeci">void lutar(Jogador &amp;jogador, std::vector&lt; std::unique_ptr&lt; Inimigo &gt; &gt; &amp;inimigos)</div><div class="ttdef"><b>Definição</b> Combate.cpp:10</div></div>
+<div class="ttc" id="a_finais_8cpp_html_af4e47b22e3aa1ba790bf92691ee4e446"><div class="ttname"><a href="_finais_8cpp.html#af4e47b22e3aa1ba790bf92691ee4e446">mostrarFinal</a></div><div class="ttdeci">void mostrarFinal(const std::string &amp;classe, const std::string &amp;tipo)</div><div class="ttdef"><b>Definição</b> Finais.cpp:5</div></div>
+<div class="ttc" id="a_utils_8cpp_html_a02cb3f00dbded2daa371958d84f26777"><div class="ttname"><a href="_utils_8cpp.html#a02cb3f00dbded2daa371958d84f26777">logError</a></div><div class="ttdeci">void logError(const std::string &amp;msg)</div><div class="ttdef"><b>Definição</b> Utils.cpp:120</div></div>
+<div class="ttc" id="a_utils_8cpp_html_a306ee749c86ded05af15d92aac75608d"><div class="ttname"><a href="_utils_8cpp.html#a306ee749c86ded05af15d92aac75608d">battlePrint</a></div><div class="ttdeci">void battlePrint(const std::string &amp;text)</div><div class="ttdef"><b>Definição</b> Utils.cpp:113</div></div>
+<div class="ttc" id="a_utils_8cpp_html_a8303dfeccd0b733098a3d4fbba6a92c3"><div class="ttname"><a href="_utils_8cpp.html#a8303dfeccd0b733098a3d4fbba6a92c3">setupTerminal</a></div><div class="ttdeci">void setupTerminal()</div><div class="ttdef"><b>Definição</b> Utils.cpp:24</div></div>
+<div class="ttc" id="a_utils_8cpp_html_aecd3f8a9188f68fbe28b46ccfde34fc7"><div class="ttname"><a href="_utils_8cpp.html#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a></div><div class="ttdeci">void narrativePrint(const std::string &amp;narrator, const std::string &amp;text)</div><div class="ttdef"><b>Definição</b> Utils.cpp:104</div></div>
+<div class="ttc" id="amain_8cpp_html_a261fd4c8cf73477662e5d2731c5656ab"><div class="ttname"><a href="#a261fd4c8cf73477662e5d2731c5656ab">fazerEscolha</a></div><div class="ttdeci">int fazerEscolha(const std::string &amp;pergunta, const std::vector&lt; std::string &gt; &amp;opcoes)</div><div class="ttdef"><b>Definição</b> main.cpp:35</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

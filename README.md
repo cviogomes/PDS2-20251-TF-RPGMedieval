@@ -280,3 +280,4 @@ A seguir, cartões CRC (Classe, Responsabilidades, Colaborações) de cada class
 - Três desfechos com arte e trilha exclusiva: heroico, trágico, sombrio
 - Final baseado em limiares de moral
 - Log do final salvo para análise futura
+- 

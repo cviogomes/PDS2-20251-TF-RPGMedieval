@@ -82,7 +82,7 @@ int main()
     if (classe == 1)
     {
       classeJogador = "Guerreiro";
-      jogador = std::make_unique<Jogador>("Guerreiro", 999, 999, 39990);
+      jogador = std::make_unique<Jogador>("Guerreiro", 120, 20, 30);
       mostrarArte("guerreiro");
     }
     else if (classe == 2)

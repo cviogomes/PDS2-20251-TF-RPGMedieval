@@ -27,7 +27,8 @@ TEST_CASE("Testes das classes Personagem e Jogador")
     // Cria um jogador para usar nos testes deste caso.
     Jogador jogador("Heroi de Teste", 100, 20, 10);
 
-    // SUBCASE permite agrupar testes menores dentro de um TEST_CASE.
+    
+
     SUBCASE("Verificação do Construtor e Atributos Iniciais")
     {
         CHECK(jogador.getNome() == "Heroi de Teste");
@@ -39,6 +40,64 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         CHECK(jogador.getPocoes() == 3); // Poções iniciais
     }
 
+    SUBCASE("Destruição de objetos") {
+
+        // Não deve dar memory leak ou crash
+
+        Personagem* p = new Jogador("Teste", 10, 10, 10);
+        delete p; 
+        CHECK(true); // Apenas para garantir que passou
+
+        Personagem* inimigo = new CavaleiroDaMorte();
+        delete inimigo;
+
+        Personagem* z = new Zumbi();
+        delete z;
+        CHECK(true);
+        
+        Personagem* g = new Goblin();
+        delete g;
+        CHECK(true);
+        
+        Personagem* peste = new CavaleiroDaPeste();
+        delete peste;
+        CHECK(true);
+        
+        Personagem* fome = new CavaleiroDaFome();
+        delete fome;
+        CHECK(true);
+        
+        Personagem* guerra = new CavaleiroDaGuerra();
+        delete guerra;
+        CHECK(true);
+        
+        Personagem* morte = new CavaleiroDaMorte();
+        delete morte;
+        CHECK(true);
+
+    }
+    
+    
+    SUBCASE("Teste de setters")
+    {
+
+        jogador.setVida(80);
+        CHECK(jogador.getVida() == 80);
+        jogador.setVida(-10);
+        CHECK(jogador.getVida() >= 0);
+
+        jogador.setVidaMax(120);
+        CHECK(jogador.getVidaMax() == 120);
+        jogador.setVidaMax(-5);
+        CHECK(jogador.getVidaMax() >= 0);
+
+        jogador.setDefesa(15);
+        CHECK(jogador.getDefesa() == 15);
+        jogador.setDefesa(-5);
+        CHECK(jogador.getDefesa() >= 0);
+
+    }
+
     SUBCASE("Teste de ganho de ouro")
     {
         jogador.ganharOuro(50);
@@ -47,18 +106,24 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         jogador.investirOuro(50);
         CHECK(jogador.getOuro() == 100); // Verifica se o ouro foi retirado corretamente apos o investimento
 
+        jogador.investirOuro(999999); // verifica se o jogador não pode investir mais do que tem
+        CHECK(jogador.getOuro() >= 0);
+
     }
 
     SUBCASE("Teste de manipulacao de Moral")
     {
         jogador.adicionarMoral(5);
         CHECK(jogador.getMoral() == 15);
+
         jogador.adicionarMoral(-10);
         CHECK(jogador.getMoral() == 5);
+
+        jogador.adicionarMoral(-10);
+        CHECK(jogador.getMoral() >= 0);
     }
 
     SUBCASE("Teste do uso de Pocoes")
-
 
     {
         jogador.setVida(100); // Simula que o jogador tomou dano
