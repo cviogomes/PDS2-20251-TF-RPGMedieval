@@ -40,17 +40,23 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         CHECK(jogador.getPocoes() == 3); // Poções iniciais
     }
     
-    SUBCASE("Teste de getters e setters")
+    SUBCASE("Teste de setters")
     {
 
         jogador.setVida(80);
         CHECK(jogador.getVida() == 80);
+        jogador.setVida(-10);
+        CHECK(jogador.getVida() >= 0);
 
         jogador.setVidaMax(120);
         CHECK(jogador.getVidaMax() == 120);
+        jogador.setVidaMax(-5);
+        CHECK(jogador.getVidaMax() >= 0);
 
         jogador.setDefesa(15);
         CHECK(jogador.getDefesa() == 15);
+        jogador.setDefesa(-5);
+        CHECK(jogador.getDefesa() >= 0);
 
     }
 
