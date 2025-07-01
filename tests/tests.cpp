@@ -39,6 +39,18 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         CHECK(jogador.getMoral() == 10); // Moral inicial
         CHECK(jogador.getPocoes() == 3); // Poções iniciais
     }
+
+    SUBCASE("Destruição de objetos") {
+        Personagem* p = new Jogador("Teste", 10, 10, 10);
+        delete p; // Não deve dar memory leak ou crash
+        CHECK(true); // Apenas para garantir que passou
+
+        Personagem* inimigo = new CavaleiroDaMorte();
+        delete inimigo; // Não deve dar memory leak ou crash
+        CHECK(true); // Apenas para garantir que passou
+
+    }
+    
     
     SUBCASE("Teste de setters")
     {
