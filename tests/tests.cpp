@@ -68,14 +68,21 @@ TEST_CASE("Testes das classes Personagem e Jogador")
         jogador.investirOuro(50);
         CHECK(jogador.getOuro() == 100); // Verifica se o ouro foi retirado corretamente apos o investimento
 
+        jogador.investirOuro(999999); // verifica se o jogador não pode investir mais do que tem
+        CHECK(jogador.getOuro() >= 0);
+
     }
 
     SUBCASE("Teste de manipulacao de Moral")
     {
         jogador.adicionarMoral(5);
         CHECK(jogador.getMoral() == 15);
+
         jogador.adicionarMoral(-10);
         CHECK(jogador.getMoral() == 5);
+
+        jogador.adicionarMoral(-10);
+        CHECK(jogador.getMoral() >= 0);
     }
 
     SUBCASE("Teste do uso de Pocoes")

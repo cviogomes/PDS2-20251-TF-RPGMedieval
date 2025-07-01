@@ -81,6 +81,8 @@ int Jogador::getPocoes() const
 void Jogador::adicionarMoral(int valor)
 {
     moral_ += valor;
+    if (moral_ < 0)
+        moral_ = 0;
     if (valor > 0)
     {
         battlePrint("[Sua moral aumentou!]\n");
