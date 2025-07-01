@@ -277,6 +277,11 @@ Efeito Jogador::getEfeito() const
 
 void Jogador::setVidaMax(int novaVidaMax)
 {
+    if (novaVidaMax < 0)
+    {
+        vidaMax_ = 0; // Garantir que a vida máxima não seja negativa
+        return;
+    }
 
     vidaMax_ = novaVidaMax;
     if (vida_ > vidaMax_)
@@ -298,6 +303,11 @@ int Jogador::getOuro(){
 
 void Jogador::setDefesa(int defesa)
 {
+    if (defesa < 0)
+    {
+        defesa_ = 0; // Garantir que a defesa não seja negativa
+        return;
+    }
     defesa_ = defesa;
 }
 
