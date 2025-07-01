@@ -7,7 +7,7 @@ RPG Medieval é um jogo de RPG por turnos desenvolvido em C++, focado em combate
 ## 2. Estrutura do Projeto
 
 ```
-src/: arquivos .hpp e .cpp de todas as classes e módulos.
+src/: arquivos .cpp de todas as classes e módulos.
 musicas/: trilhas sonoras para batalha, loja e finais.
 include/: headers compartilhados (Personagem, Utils, Efeitos, Finais).
 main.cpp: inicialização do jogo e fluxo principal.
