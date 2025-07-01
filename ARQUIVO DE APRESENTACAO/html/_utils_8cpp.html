@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RPG Medieval - Trabalho de PDS: Referência do Arquivo TRABALHO PDS - RPG/PDS2-20251-TF-RPGMedieval-master/src/Utils.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capa.jpeg"/></td>
+  <td id="projectalign">
+   <div id="projectname">RPG Medieval - Trabalho de PDS<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Uma jornada épica de RPG onde suas escolhas moldam o destino de um reino à beira da aniquilação.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',false);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a href="dir_363be62a80fe4e656302fbe723ea87cf.html">TRABALHO PDS - RPG</a></li><li class="navelem"><a href="dir_5b9ef2e4f603e6b35561602919c79244.html">PDS2-20251-TF-RPGMedieval-master</a></li><li class="navelem"><a href="dir_00a6c215764874741e521024f518fa69.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo Utils.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;Utils.hpp&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;clocale&gt;</code><br />
+<code>#include &lt;codecvt&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;conio.h&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a3fe4facef311953c212ced8f8a6cd59c" id="r_a3fe4facef311953c212ced8f8a6cd59c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fe4facef311953c212ced8f8a6cd59c">sleep_ms</a> (int ms)</td></tr>
+<tr class="memitem:a8303dfeccd0b733098a3d4fbba6a92c3" id="r_a8303dfeccd0b733098a3d4fbba6a92c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8303dfeccd0b733098a3d4fbba6a92c3">setupTerminal</a> ()</td></tr>
+<tr class="memitem:a3712a0b2655b4e1199c79bf57281610b" id="r_a3712a0b2655b4e1199c79bf57281610b"><td class="memItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3712a0b2655b4e1199c79bf57281610b">utf8ToWstring</a> (const std::string &amp;str)</td></tr>
+<tr class="memitem:a224b1567ee39b40f3c3478214d1291b4" id="r_a224b1567ee39b40f3c3478214d1291b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a224b1567ee39b40f3c3478214d1291b4">typeText</a> (const std::string &amp;text, TextSpeed speed)</td></tr>
+<tr class="memitem:aecd3f8a9188f68fbe28b46ccfde34fc7" id="r_aecd3f8a9188f68fbe28b46ccfde34fc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecd3f8a9188f68fbe28b46ccfde34fc7">narrativePrint</a> (const std::string &amp;narrator, const std::string &amp;text)</td></tr>
+<tr class="memitem:a306ee749c86ded05af15d92aac75608d" id="r_a306ee749c86ded05af15d92aac75608d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306ee749c86ded05af15d92aac75608d">battlePrint</a> (const std::string &amp;text)</td></tr>
+<tr class="memitem:a02cb3f00dbded2daa371958d84f26777" id="r_a02cb3f00dbded2daa371958d84f26777"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02cb3f00dbded2daa371958d84f26777">logError</a> (const std::string &amp;msg)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="a306ee749c86ded05af15d92aac75608d" name="a306ee749c86ded05af15d92aac75608d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306ee749c86ded05af15d92aac75608d">&#9670;&#160;</a></span>battlePrint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void battlePrint </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
+<div class="line"><span class="lineno">  115</span>    verificaAcentos(text);</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(text, TextSpeed::BATTLE);</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+<div class="ttc" id="a_utils_8cpp_html_a224b1567ee39b40f3c3478214d1291b4"><div class="ttname"><a href="#a224b1567ee39b40f3c3478214d1291b4">typeText</a></div><div class="ttdeci">void typeText(const std::string &amp;text, TextSpeed speed)</div><div class="ttdef"><b>Definição</b> Utils.cpp:57</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a02cb3f00dbded2daa371958d84f26777" name="a02cb3f00dbded2daa371958d84f26777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02cb3f00dbded2daa371958d84f26777">&#9670;&#160;</a></span>logError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logError </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  121</span>{</div>
+<div class="line"><span class="lineno">  122</span>    std::ofstream log(<span class="stringliteral">&quot;erros.log&quot;</span>, std::ios::app);</div>
+<div class="line"><span class="lineno">  123</span>    log &lt;&lt; <span class="stringliteral">&quot;[ERRO] &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecd3f8a9188f68fbe28b46ccfde34fc7" name="aecd3f8a9188f68fbe28b46ccfde34fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd3f8a9188f68fbe28b46ccfde34fc7">&#9670;&#160;</a></span>narrativePrint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void narrativePrint </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>narrator</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    verificaAcentos(text);</div>
+<div class="line"><span class="lineno">  108</span>    std::wcout &lt;&lt; L<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(narrator + <span class="stringliteral">&quot;: &quot;</span>, TextSpeed::BATTLE);</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="#a224b1567ee39b40f3c3478214d1291b4">typeText</a>(text + <span class="stringliteral">&quot;\n&quot;</span>, TextSpeed::NARRATIVE);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8303dfeccd0b733098a3d4fbba6a92c3" name="a8303dfeccd0b733098a3d4fbba6a92c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8303dfeccd0b733098a3d4fbba6a92c3">&#9670;&#160;</a></span>setupTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupTerminal </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">   27</span>    SetConsoleOutputCP(CP_UTF8);</div>
+<div class="line"><span class="lineno">   28</span>    SetConsoleCP(CP_UTF8);</div>
+<div class="line"><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   30</span>    std::setlocale(LC_ALL, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        std::wcout.imbue(std::locale(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">catch</span> (...)</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        std::wcout.imbue(std::locale(<span class="stringliteral">&quot;C&quot;</span>));</div>
+<div class="line"><span class="lineno">   38</span>    } <span class="comment">// usa locale do sistema no wcout</span></div>
+<div class="line"><span class="lineno">   39</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3fe4facef311953c212ced8f8a6cd59c" name="a3fe4facef311953c212ced8f8a6cd59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe4facef311953c212ced8f8a6cd59c">&#9670;&#160;</a></span>sleep_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sleep_ms </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{ std::this_thread::sleep_for(std::chrono::milliseconds(ms)); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a224b1567ee39b40f3c3478214d1291b4" name="a224b1567ee39b40f3c3478214d1291b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224b1567ee39b40f3c3478214d1291b4">&#9670;&#160;</a></span>typeText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void typeText </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TextSpeed</td>          <td class="paramname"><span class="paramname"><em>speed</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">int</span> delay_ms = 0;</div>
+<div class="line"><span class="lineno">   60</span>    verificaAcentos(text);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">switch</span> (speed)</div>
+<div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">case</span> TextSpeed::NARRATIVE:</div>
+<div class="line"><span class="lineno">   65</span>        delay_ms = 40;</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">case</span> TextSpeed::BATTLE:</div>
+<div class="line"><span class="lineno">   68</span>        delay_ms = 10;</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">case</span> TextSpeed::NORMAL:</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   72</span>        delay_ms = 0;</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    std::wstring wtext = <a class="code hl_function" href="#a3712a0b2655b4e1199c79bf57281610b">utf8ToWstring</a>(text);</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (delay_ms == 0)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        std::wcout &lt;&lt; wtext;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordtype">bool</span> skip = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">for</span> (<span class="keywordtype">wchar_t</span> c : wtext)</div>
+<div class="line"><span class="lineno">   86</span>        {</div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordflow">if</span> (!skip &amp;&amp; _kbhit())</div>
+<div class="line"><span class="lineno">   89</span>            {</div>
+<div class="line"><span class="lineno">   90</span>                <span class="keywordtype">int</span> ch = _getch();</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">if</span> (ch == 13)</div>
+<div class="line"><span class="lineno">   92</span>                { <span class="comment">// ENTER pressionado</span></div>
+<div class="line"><span class="lineno">   93</span>                    skip = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   94</span>                }</div>
+<div class="line"><span class="lineno">   95</span>            }</div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   97</span>            std::wcout &lt;&lt; c &lt;&lt; std::flush;</div>
+<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">if</span> (!skip)</div>
+<div class="line"><span class="lineno">   99</span>                <a class="code hl_function" href="#a3fe4facef311953c212ced8f8a6cd59c">sleep_ms</a>(delay_ms);</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="a_utils_8cpp_html_a3712a0b2655b4e1199c79bf57281610b"><div class="ttname"><a href="#a3712a0b2655b4e1199c79bf57281610b">utf8ToWstring</a></div><div class="ttdeci">std::wstring utf8ToWstring(const std::string &amp;str)</div><div class="ttdef"><b>Definição</b> Utils.cpp:51</div></div>
+<div class="ttc" id="a_utils_8cpp_html_a3fe4facef311953c212ced8f8a6cd59c"><div class="ttname"><a href="#a3fe4facef311953c212ced8f8a6cd59c">sleep_ms</a></div><div class="ttdeci">void sleep_ms(int ms)</div><div class="ttdef"><b>Definição</b> Utils.cpp:21</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3712a0b2655b4e1199c79bf57281610b" name="a3712a0b2655b4e1199c79bf57281610b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3712a0b2655b4e1199c79bf57281610b">&#9670;&#160;</a></span>utf8ToWstring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring utf8ToWstring </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   52</span>{</div>
+<div class="line"><span class="lineno">   53</span>    std::wstring_convert&lt;std::codecvt_utf8&lt;wchar_t&gt;&gt; converter;</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> converter.from_bytes(str);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>
