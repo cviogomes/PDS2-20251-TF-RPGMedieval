@@ -41,13 +41,39 @@ TEST_CASE("Testes das classes Personagem e Jogador")
     }
 
     SUBCASE("Destruição de objetos") {
+
+        // Não deve dar memory leak ou crash
+
         Personagem* p = new Jogador("Teste", 10, 10, 10);
-        delete p; // Não deve dar memory leak ou crash
+        delete p; 
         CHECK(true); // Apenas para garantir que passou
 
         Personagem* inimigo = new CavaleiroDaMorte();
-        delete inimigo; // Não deve dar memory leak ou crash
-        CHECK(true); // Apenas para garantir que passou
+        delete inimigo;
+
+        Personagem* z = new Zumbi();
+        delete z;
+        CHECK(true);
+        
+        Personagem* g = new Goblin();
+        delete g;
+        CHECK(true);
+        
+        Personagem* peste = new CavaleiroDaPeste();
+        delete peste;
+        CHECK(true);
+        
+        Personagem* fome = new CavaleiroDaFome();
+        delete fome;
+        CHECK(true);
+        
+        Personagem* guerra = new CavaleiroDaGuerra();
+        delete guerra;
+        CHECK(true);
+        
+        Personagem* morte = new CavaleiroDaMorte();
+        delete morte;
+        CHECK(true);
 
     }
     
@@ -98,7 +124,6 @@ TEST_CASE("Testes das classes Personagem e Jogador")
     }
 
     SUBCASE("Teste do uso de Pocoes")
-
 
     {
         jogador.setVida(100); // Simula que o jogador tomou dano
